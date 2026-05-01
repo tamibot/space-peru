@@ -1,11 +1,20 @@
 # Roadmap
 
-## Fase 0 — Setup y research (semana 1)
+> Plan detallado en [`plan-de-trabajo.md`](./plan-de-trabajo.md). Este archivo es el resumen.
+
+## Fase 0 — Setup (completada)
 - [x] Estructura del repo
 - [x] Conexión a Railway PG
-- [ ] Análisis de mercado completo (`analisis-mercado/`)
-- [ ] Definir branding tokens (paleta azul, tipografías) → `documentation/branding.md`
-- [ ] Decidir stack de landing y app
+- [x] Agentes (orchestrator, librarian, reviewer, +5 ejecutores)
+- [x] Skills CLI con 14 skills activas
+- [x] `brand/` con identidad inicial
+- [x] Repo en GitHub: tamibot/space-peru
+
+## Fase 1 — Análisis de mercado (en curso)
+- [x] Research base (12 docs ya escritos)
+- [ ] Mapa de soluciones actuales
+- [ ] Tabla maestra de empresas (locales + internacionales)
+- [ ] Conclusión: qué hay, qué falta, dónde jugamos
 
 ## Fase 1 — Landing + waitlist (semana 2-3)
 - [ ] Landing estática en `landing/`

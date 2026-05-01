@@ -20,6 +20,11 @@ Skills locales del proyecto + skills externas instaladas vía `npx skills`.
 | `extract-design-system` | arvindrk/extract-design-system | 79K | Extraer design system de un sitio (útil para benchmarks de Space-Pal) |
 | `landing-page-design` | infsh-skills/skills | 14K | Diseño de landing pages |
 | `postgresql-table-design` | wshobson/agents | 15K | Diseñar schemas/tablas en PG |
+| `customer-research` | coreyhaines31/marketingskills | 21K | Plan y ejecución de research de clientes (Fase 1) |
+| `startup-financial-modeling` | wshobson/agents | 6.3K | Modelo financiero MVP, unit economics, runway |
+| `startup-metrics-framework` | wshobson/agents | 5.8K | North star + KPIs, framework para Fase 2 |
+| `lean-canvas` | phuryn/pm-skills | 571 | Lean Canvas (Fase 2 — definir oferta y MVP) |
+| `business-model` | phuryn/pm-skills | 652 | Business Model Canvas |
 
 ## Cómo invocar
 ```
