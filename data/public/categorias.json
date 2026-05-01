@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "updated": "2026-05-01",
+  "categorias": [
+    { "slug": "salones-eventos", "label": "Salones para eventos", "icon": "party", "descripcion": "Bodas, cumpleaños, corporativos, sociales" },
+    { "slug": "salas-reuniones", "label": "Salas de reuniones", "icon": "meeting", "descripcion": "Reuniones, capacitaciones, entrevistas" },
+    { "slug": "estudios-foto-video", "label": "Estudios foto y video", "icon": "camera", "descripcion": "Lofts, sets, ciclorama, locaciones" },
+    { "slug": "estudios-grabacion", "label": "Estudios de grabación", "icon": "mic", "descripcion": "Audio profesional, podcasts, voiceover" },
+    { "slug": "espacios-deportivos", "label": "Espacios deportivos", "icon": "ball", "descripcion": "Canchas, gimnasios, dojos" },
+    { "slug": "estudios-clase", "label": "Estudios para clases", "icon": "yoga", "descripcion": "Yoga, danza, fitness, talleres" },
+    { "slug": "coworking-horas", "label": "Coworking por horas", "icon": "desk", "descripcion": "Escritorios y oficinas privadas" },
+    { "slug": "espacios-rodaje", "label": "Espacios para rodaje", "icon": "clapboard", "descripcion": "Casas, oficinas, exteriores" },
+    { "slug": "cocinas", "label": "Cocinas", "icon": "chef", "descripcion": "Cocinas industriales y home studio" },
+    { "slug": "almacenes-lockers", "label": "Almacenes y lockers", "icon": "box", "descripcion": "Storage corto/largo plazo" }
+  ]
+}

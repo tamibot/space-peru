@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "updated": "2026-05-01",
+  "equipamiento": [
+    { "slug": "wifi", "label": "Wi-Fi" },
+    { "slug": "proyector", "label": "Proyector" },
+    { "slug": "tv", "label": "Smart TV" },
+    { "slug": "sonido", "label": "Equipo de sonido" },
+    { "slug": "microfonos", "label": "Micrófonos" },
+    { "slug": "iluminacion", "label": "Iluminación profesional" },
+    { "slug": "ciclorama", "label": "Ciclorama" },
+    { "slug": "cocina", "label": "Cocina equipada" },
+    { "slug": "aire", "label": "Aire acondicionado" },
+    { "slug": "calefaccion", "label": "Calefacción" },
+    { "slug": "estacionamiento", "label": "Estacionamiento" },
+    { "slug": "accesible", "label": "Accesible silla de ruedas" },
+    { "slug": "ascensor", "label": "Ascensor" },
+    { "slug": "pet-friendly", "label": "Pet friendly" },
+    { "slug": "fumadores", "label": "Zona fumadores" },
+    { "slug": "terraza", "label": "Terraza / outdoor" },
+    { "slug": "piscina", "label": "Piscina" },
+    { "slug": "vestidor", "label": "Vestidor / camerino" },
+    { "slug": "duchas", "label": "Duchas" },
+    { "slug": "limpieza-incluida", "label": "Limpieza incluida" }
+  ]
+}

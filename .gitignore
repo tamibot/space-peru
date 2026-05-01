@@ -1,0 +1,42 @@
+# Credenciales y secretos — NUNCA commitear
+credentials.env
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Node / web
+node_modules/
+dist/
+build/
+.next/
+.cache/
+.parcel-cache/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Datos pesados / scrapings privados
+data/raw/
+data/private/
+*.sqlite
+*.db
+
+# Output temporal de agentes
+.claude-tmp/

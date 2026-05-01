@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "updated": "2026-05-01",
+  "ciudad": "Lima",
+  "distritos_prioritarios": [
+    { "slug": "miraflores", "label": "Miraflores", "lat": -12.1213, "lng": -77.0297, "perfil": "turismo, eventos, fotografía" },
+    { "slug": "san-isidro", "label": "San Isidro", "lat": -12.0978, "lng": -77.0365, "perfil": "corporativo, salas reuniones" },
+    { "slug": "barranco", "label": "Barranco", "lat": -12.1465, "lng": -77.0220, "perfil": "creativo, lofts, eventos sociales" },
+    { "slug": "surco", "label": "Santiago de Surco", "lat": -12.1449, "lng": -76.9947, "perfil": "residencial, salones, deportivo" },
+    { "slug": "la-molina", "label": "La Molina", "lat": -12.0867, "lng": -76.9511, "perfil": "residencial, salones grandes" },
+    { "slug": "san-borja", "label": "San Borja", "lat": -12.1080, "lng": -76.9985, "perfil": "residencial, capacitaciones" },
+    { "slug": "magdalena", "label": "Magdalena del Mar", "lat": -12.0907, "lng": -77.0717, "perfil": "boutique, talleres" },
+    { "slug": "pueblo-libre", "label": "Pueblo Libre", "lat": -12.0762, "lng": -77.0631, "perfil": "salones medianos, asequible" }
+  ]
+}

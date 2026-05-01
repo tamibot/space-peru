@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Space-Peru — Espacios por horas en Lima</title>
+  <meta name="description" content="Encuentra y reserva espacios por horas en Lima: salones, estudios, salas, canchas. Más simple, más confiable." />
+  <meta name="theme-color" content="#2563EB" />
+  <meta property="og:title" content="Space-Peru" />
+  <meta property="og:description" content="Espacios por horas en Lima — minimalista, claro, confiable." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/">space-peru</a>
+  <nav class="nav-links">
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#categorias">Categorías</a>
+    <a href="#anfitriones">Anfitriones</a>
+    <a href="#waitlist" class="btn btn-primary btn-sm">Únete</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <h1>Espacios por horas en Lima.<br><span class="ink-2">Sin vueltas, sin sorpresas.</span></h1>
+    <p class="lead">Salones para eventos, estudios, salas, canchas. Reserva claro y rápido. Hosts verificados.</p>
+    <form id="waitlist-form" class="waitlist" novalidate>
+      <input type="email" name="email" placeholder="tu@correo.com" required aria-label="Tu correo" />
+      <select name="role" aria-label="Soy">
+        <option value="guest">Busco un espacio</option>
+        <option value="host">Tengo un espacio</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Únete a la lista</button>
+    </form>
+    <p class="micro mute">Te avisamos cuando abramos. Cero spam.</p>
+  </div>
+</section>
+
+<section id="como-funciona" class="section">
+  <div class="container">
+    <h2>Cómo funciona</h2>
+    <div class="grid-3">
+      <article class="card">
+        <span class="step">1</span>
+        <h3>Encuentra</h3>
+        <p>Filtra por distrito, categoría y horario. Solo espacios verificados.</p>
+      </article>
+      <article class="card">
+        <span class="step">2</span>
+        <h3>Reserva</h3>
+        <p>Paga seguro con tarjeta o Yape. Recibe confirmación al instante.</p>
+      </article>
+      <article class="card">
+        <span class="step">3</span>
+        <h3>Disfruta</h3>
+        <p>Llegas, lo usas, lo dejas listo. Calificas y listo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="categorias" class="section surface">
+  <div class="container">
+    <h2>Categorías</h2>
+    <div class="chips" id="cat-chips"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container two-col">
+    <div>
+      <h2>¿Por qué Space-Peru?</h2>
+      <ul class="bullets">
+        <li><strong>Minimalista y claro.</strong> Encuentras lo que buscas en segundos.</li>
+        <li><strong>Pago local.</strong> Yape, Plin, tarjeta — sin fricción.</li>
+        <li><strong>Verificado.</strong> Visitamos los espacios antes de listarlos.</li>
+        <li><strong>Soporte real.</strong> Por WhatsApp, en horario humano.</li>
+      </ul>
+    </div>
+    <div class="kpi">
+      <div><b>Lima</b><span>Ciudad de lanzamiento</span></div>
+      <div><b>0%</b><span>Comisión a hosts los primeros 6 meses</span></div>
+      <div><b>1h</b><span>Bloque mínimo de reserva</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="anfitriones" class="section blue">
+  <div class="container two-col">
+    <div>
+      <h2 class="white">¿Tienes un espacio?</h2>
+      <p class="white-2">Lánzalo con nosotros sin comisión los primeros 6 meses. Te ayudamos con fotos, descripción y precio.</p>
+    </div>
+    <form class="waitlist on-blue" id="host-form" novalidate>
+      <input type="email" name="email" placeholder="tu@correo.com" required />
+      <input type="text" name="space" placeholder="¿Qué espacio tienes?" />
+      <button type="submit" class="btn btn-light">Postular mi espacio</button>
+    </form>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Preguntas</h2>
+    <details><summary>¿Cuándo lanzan?</summary><p>Mayo–junio 2026 con los primeros 50 espacios curados en Lima.</p></details>
+    <details><summary>¿Cuánto cobran de comisión?</summary><p>Cero a hosts los primeros 6 meses. Después, comisión transparente que vamos a publicar acá.</p></details>
+    <details><summary>¿Qué tipo de espacios?</summary><p>Salones para eventos, salas de reuniones, estudios foto/video, canchas, estudios para clases, coworking por horas.</p></details>
+    <details><summary>¿Solo Lima?</summary><p>Empezamos por Lima. Arequipa, Trujillo y Cusco vienen después.</p></details>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container foot">
+    <div>
+      <span class="brand">space-peru</span>
+      <p class="micro mute">© 2026 Space-Peru. Lima, Perú.</p>
+    </div>
+    <div class="foot-links">
+      <a href="mailto:info@proper.com.pe">info@proper.com.pe</a>
+    </div>
+  </div>
+</footer>
+
+<script src="./app.js" type="module"></script>
+</body>
+</html>
