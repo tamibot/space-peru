@@ -40,3 +40,11 @@ data/private/
 
 # Output temporal de agentes
 .claude-tmp/
+
+# Skills CLI: el contenido real se restaura desde skills-lock.json con
+# `npx skills experimental_install`. Los symlinks dentro de .claude/skills/
+# apuntan acá y se ignoran. find-skills es nativa del proyecto y se commitea.
+.agents/
+.kiro/
+.claude/skills/*
+!.claude/skills/find-skills/

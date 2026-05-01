@@ -10,14 +10,15 @@ MVP en construcción. Hospedaje sobre **GitHub Pages**, base de datos en **Railw
 | Carpeta | Propósito |
 |---|---|
 | `analisis-mercado/` | Research de competidores, perfil de usuario, pricing, oportunidades |
+| `brand/` | Identidad, manifiesto, posicionamiento, pitch deck, taglines |
 | `landing/` | Landing pública (estática, sirve por GitHub Pages) |
 | `app/` | Producto principal (frontend + backend + DB) |
 | `social/` | Contenido para LinkedIn / IG / TikTok / FB / X |
-| `agents/` | Sub-agentes de Claude especializados |
-| `skills/` | Skills reutilizables |
+| `agents/` | Sub-agentes de Claude (orchestrator, librarian, reviewer + 5 ejecutores) |
+| `skills/` | Skills locales + `.claude/skills/` con `find-skills` y otras instaladas |
 | `data/` | Datasets de research, exports, fixtures |
-| `documentation/` | Docs técnica y de producto |
-| `backlog/` | Tareas pendientes, ideas, roadmap |
+| `documentation/` | Docs técnica, branding tokens, variables, incidents |
+| `backlog/` | Tareas pendientes, ideas, roadmap, decisiones (ADR) |
 | `scripts/` | Utilitarios (test DB, deploy, scrapers) |
 
 ## Archivos raíz

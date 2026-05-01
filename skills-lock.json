@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "brand-guidelines": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/brand-guidelines/SKILL.md",
+      "computedHash": "e48840db6ea772ceecdb68b4e50f8cc77e2534b7580aeaf4a6fe6ee7bd845d7d"
+    },
+    "extract-design-system": {
+      "source": "arvindrk/extract-design-system",
+      "sourceType": "github",
+      "skillPath": "skills/extract-design-system/SKILL.md",
+      "computedHash": "5f231fda377e304b202848f09ecc0fd42839355e76f60e06c3ceb7a643c15500"
+    },
+    "landing-page-design": {
+      "source": "infsh-skills/skills",
+      "sourceType": "github",
+      "skillPath": "guides/design/landing-page-design/SKILL.md",
+      "computedHash": "8343dbd3e73e0a87a1804e60abda2e2b7433d989c63073fcc1f8db6b040c8003"
+    },
+    "postgresql-table-design": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "skillPath": "plugins/database-design/skills/postgresql/SKILL.md",
+      "computedHash": "dcace78e5cef7d8dce8ffef7ebee146e6c83a438aa4cf80bf502730e870c02d4"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "computedHash": "f3bc47f890f42a44db1007ab390709ec368e4b8c089baee6b0007182236ac474"
+    }
+  }
+}
