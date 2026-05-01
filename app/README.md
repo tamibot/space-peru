@@ -1,6 +1,6 @@
 # App
 
-Producto principal de Space-Peru.
+Producto principal de Planea Ya.
 
 ## Estructura
 ```

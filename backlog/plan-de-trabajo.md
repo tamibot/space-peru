@@ -1,261 +1,276 @@
-# Plan de trabajo Space-Peru
+# Plan de trabajo Planea Ya
 
-> **Estado**: aprobado por owner el 2026-05-01.
-> **Ajuste vigente**: Fase 1 NO incluye entrevistas ni validación SUNAT. Foco: análisis de mercado completo (qué existe, cómo se resuelve hoy, listado de empresas locales e internacionales).
+> **Última revisión**: 2026-05-01.
+> **Status global**: Fase 1 ✅ · Fase 2 (branding) en curso · Fase 3 (PRD) ✅ documentos base escritos · Fase 4-7 pendientes.
 
-6 fases secuenciales con dependencias. Cada una tiene objetivo, entregables, agentes/skills, decisiones del owner, criterio de cierre y estimado.
+7 fases. Cada una tiene objetivo, entregables, agentes/skills, decisiones del owner, criterio de cierre y estimado.
 
 ---
 
-## Fase 1 — Análisis de mercado completo
+## ✅ Fase 1 — Análisis de mercado completo
 
-**Objetivo:** entender en general qué hay actualmente en el mercado, cómo se resuelve hoy el problema, qué empresas existen (locales + internacionales) y qué oportunidad real queda. Salir con una **foto clara del estado del arte**, no con investigación de campo.
+**Objetivo:** entender qué hay, cómo se resuelve hoy, qué empresas existen.
 
-**Lo que NO entra en esta fase** (por decisión explícita del owner):
-- ❌ Entrevistas a hosts/buyers
-- ❌ Validación SUNAT / empresas activas
-- ❌ Scraping intensivo de contactos
-- ❌ Profundizar en willingness to pay con data primaria
+**Entregables completados**
+- `analisis-mercado/01-resumen-ejecutivo.md` ✓
+- `analisis-mercado/competidores/{space-pal,internacionales,otros-peru}.md` ✓
+- `analisis-mercado/personas/{buyer,host}-personas.md` ✓
+- `analisis-mercado/pricing/modelo-monetizacion.md` ✓
+- `analisis-mercado/research/*.md` (6 docs) ✓
+- `analisis-mercado/04-mapa-de-soluciones.md` ✓
+- `analisis-mercado/05-empresas-listadas.md` ✓ (45 jugadores)
+- `analisis-mercado/06-conclusion-mercado.md` ✓ (recomendación: vertical eventos sociales Lima)
+
+**Conclusión accionable**: SpacePal Lima vacío. Ventana 12-18 meses. Modelo recomendado (post-pivote): plataforma gratuita lead-gen + concierge humano + agencia de eventos del owner.
+
+---
+
+## 🟡 Fase 2 — Branding básico
+
+**Objetivo:** cerrar identidad visual base antes de invertir en landing.
 
 **Entregables**
-- `analisis-mercado/01-resumen-ejecutivo.md` — ya existe, validar y refrescar.
-- `analisis-mercado/competidores/space-pal.md` — análisis profundo (referente de origen de la idea). Ya existe; complementar con scraping ético del catálogo público.
-- `analisis-mercado/competidores/internacionales.md` — Peerspace, Splacer, Tagvenue, Storefront, ShareDesk, Breather, This Open Space. Ya existe; revisar y completar.
-- `analisis-mercado/competidores/otros-peru.md` — Comparto Espacios, Ineventos, marketplaces de coworking (Comunal, WeWork, Worx, Regus, Lima Coworking, Swiss Rents), Mercado Libre, grupos Facebook activos. Ya existe; refresco.
-- `analisis-mercado/04-mapa-de-soluciones.md` — **NUEVO**: mapa visual de cómo se resuelve hoy el problema. 4 columnas: (1) descubrimiento, (2) reserva, (3) pago, (4) post-uso. Por cada columna: qué herramienta usa la gente hoy.
-- `analisis-mercado/05-empresas-listadas.md` — **NUEVO**: tabla maestra única con todas las empresas/plataformas que tocan el problema. Columnas: nombre, país, modelo, categorías, fortalezas, debilidades, URL.
-- `analisis-mercado/06-conclusion-mercado.md` — **NUEVO**: 1–2 páginas que respondan "¿qué hay, qué falta, dónde podemos jugar?" — base para Fase 2.
+- `brand/logo/wordmark.svg` ✓ — wordmark "planea ya" tipográfico simple, dos palabras, azul.
+- `brand/logo/wordmark-white.svg` ✓ — versión sobre fondos oscuros.
+- `brand/logo/icon.svg` ✓ — isotipo cuadrado para favicon/IG profile.
+- `brand/identity/posicionamiento.md` ✓ — actualizado con modelo lead-gen + agencia.
+- `brand/identity/naming.md` ✓ — Planea Ya con backups.
+- `brand/messaging/voz.md` ✓ — voz de marca.
+- `brand/messaging/taglines.md` ✓ — pendiente seleccionar final.
+- `documentation/branding.md` ✓ — tokens (color, tipografía, spacing).
+- `brand/identity/moodboard.md` — pendiente.
+- Favicon + OG image — pendiente.
 
-**Agentes/skills**
-- `orchestrator` (coordina), `market-researcher` (background), `reviewer` (cierra)
-- Skills: `customer-research` (21K), `extract-design-system` (analizar branding de Space-Pal y referentes), `find-skills` (si surge necesidad nueva)
-- Tools: WebFetch, WebSearch, Chrome MCP si se necesita scraping autenticado
+**Agentes/skills usadas**
+- Skills: `brand-guidelines` (anthropics), `extract-design-system`, `web-design-guidelines`, `space-branding`, `copywriting`.
 
-**Decisiones que tomas tú**
-- Aprobar el listado final de empresas a analizar (mi propuesta inicial, tú agregas/quitas).
-- Confirmar que el alcance "general" es suficiente o si quieres profundizar en alguna empresa específica.
+**Decisiones tomadas**
+- Nombre placeholder: **Planea Ya** / `planearya.com`.
+- Color principal: `#2563EB`.
+- Wordmark tipográfico simple (Inter 700, dos palabras separadas por color).
+- Sin isotipo elaborado en MVP (un cuadrado azul con la "p" inicial).
+
+**Decisiones pendientes**
+- ¿Confirmar nombre final o cambiar?
+- ¿Agencia de eventos del owner ya tiene marca? Alinear o separar.
+- Tagline final.
 
 **Criterio de cierre**
-- 6 documentos aprobados por `reviewer`.
-- Tabla maestra con ≥20 empresas listadas (locales + internacionales).
-- Mapa de soluciones cubre 4 columnas con ≥3 herramientas cada una.
-- 0 marcadores `[a validar]` en los 3 documentos NUEVOS (los anteriores pueden quedar con flags).
+- Aprobación owner de wordmark + nombre.
+- Tokens documentados.
+- Favicon + OG image generados.
 
-**Estimado:** 3–4 días.
-
----
-
-## Fase 2 — Definir oferta, público y scope del MVP
-
-**Objetivo:** convertir hallazgos de Fase 1 en un PRD del MVP con scope estrecho y métricas de éxito.
-
-**Entregables**
-- `app/docs/lean-canvas.md` — Lean Canvas completo (problema, segmentos, propuesta única, solución, canales, ingresos, costos, métricas, ventaja).
-- `app/docs/prd-mvp.md` — Product Requirements Document:
-  - Vertical único del MVP (recomendación tentativa: salones eventos sociales en Lima Moderna).
-  - 2 personas focales (1 host, 1 buyer) detalladas.
-  - User stories priorizadas (MoSCoW).
-  - Out-of-scope explícito.
-  - Métricas de éxito (north star + 3 KPIs).
-- `app/docs/journey-maps.md` — flujo guest (descubrir → reservar → pagar → usar → reseñar) y host (postular → verificar → publicar → recibir → cobrar).
-- `app/docs/financial-model.md` — modelo financiero MVP (unit economics, take-rate, costos fijos/variables, runway 12 meses).
-- `backlog/decisiones.md` actualizado con ADRs: vertical de lanzamiento, scope MVP, take-rate confirmado.
-
-**Agentes/skills**
-- `orchestrator` (lidera), `reviewer` (audita PRD)
-- Skills: `lean-canvas`, `business-model`, `startup-metrics-framework`, `startup-financial-modeling`, `product-management:write-spec`, `product-management:product-brainstorming`
-
-**Decisiones que tomas tú** (críticas)
-- **Vertical único de lanzamiento** (recomendación: salones eventos sociales).
-- **Take-rate final** (recomendado: 15% host + 5% guest, 0% host primeros 6 meses).
-- **Cohorte cero**: coworkings vs hosts individuales (research sugiere coworkings).
-- **Métrica principal del MVP**: reservas pagadas/mes vs GMV vs # hosts activos.
-
-**Criterio de cierre**
-- PRD aprobado y firmado por owner.
-- Lean Canvas en 1 página.
-- Backlog dividido en P0 (MVP) y P1+ (post-MVP) con ETA.
-
-**Estimado:** 3–4 días.
+**Estimado**: 2-3 días desde aprobación final del owner.
 
 ---
 
-## Fase 3 — Concepto de marca e identidad
+## ✅ Fase 3 — Lean Canvas + PRD MVP
 
-**Objetivo:** cerrar la marca antes de invertir en landing y producto.
+**Objetivo:** convertir hallazgos en spec accionable.
 
-**Entregables**
-- `brand/identity/posicionamiento.md` validado.
-- `brand/messaging/taglines.md` — tagline final elegida.
-- `brand/logo/` — wordmark + isotipo + favicons + OG image (SVG/PNG).
-- `documentation/branding.md` — tokens validados (hex, tipos, spacing finales).
-- `brand/identity/moodboard.md` — estética visual de referencia.
-- `brand/assets/templates/` — plantillas IG carrusel, LinkedIn, OG.
+**Entregables completados**
+- `app/docs/lean-canvas.md` ✓
+- `app/docs/prd-mvp.md` ✓ (12 secciones, MoSCoW, schema PG preliminar, riesgos, hitos)
+- `documentation/scraping-policy.md` ✓ (política ética/legal para Fase 6)
 
-**Agentes/skills**
-- Skills: `brand-guidelines`, `extract-design-system`, `web-design-guidelines`, `space-branding`.
-- Externos: si el wordmark se hace en Figma, el owner o un diseñador. Yo entrego specs y mockups en SVG código.
+**Pendientes** (no bloquean MVP)
+- `app/docs/journey-maps.md` — diagramas visuales del PRD.
+- `app/docs/financial-model.md` — modelo agencia.
 
-**Decisiones que tomas tú**
-- Tagline final (favorita actual: "Reserva claro. Llega tranquilo.").
-- Wordmark: tipográfico puro o con isotipo.
-- Paleta: confirmar `--blue-600` (#2563EB) o variante.
-- Tono fotográfico: real vs ilustrado.
+**Decisiones críticas tomadas**
+- Vertical: horizontal multi-categoría (estilo Peerspace) en Lima.
+- Geografía MVP: **solo Lima**.
+- Monetización: **0% comisión, lead-gen + agencia**.
+- North star: leads calificados/mes a la agencia (no bookings pagados).
+- Sin pasarela de pagos en MVP.
 
-**Criterio de cierre**
-- Logo en 5 versiones commiteado.
-- Tokens aplicados en mockups (landing + slide pitch).
-- Aprobación owner firmada.
-
-**Estimado:** 1 semana (depende de iteración de diseño).
+**Estimado**: hecho.
 
 ---
 
-## Fase 4 — Landing page v1
+## ⏳ Fase 4 — Landing v1
 
-**Objetivo:** landing pública en GitHub Pages con waitlist real, captura a Postgres, analytics privacy-first.
+**Objetivo:** landing pública que captura leads del asistente desde día 1.
 
 **Entregables**
-- `landing/src/` — landing v1 con branding final, copy es-PE, 7 secciones.
-- `app/db/migrations/0001_init.sql` — schema mínimo waitlist.
-- `app/backend/api-waitlist.ts` — Cloudflare Worker o Vercel Function que graba en PG.
+- `landing/src/` actualizado con branding final, copy es-PE, hero con asistente form como CTA principal.
+- API que recibe leads del form y los graba en Railway PG.
 - Plausible analytics activado.
-- Dominio `space-peru.com` apuntando a GitHub Pages.
-- `social/calendar.md` — primeros 5 posts pre-anuncio listos.
+- OG image, favicons, sitemap, robots.txt.
+- Dominio comprado y apuntando a hosting (GitHub Pages temporal, migrar a Cloudflare Pages cuando crezca).
 
 **Agentes/skills**
 - `landing-builder`, `db-migrator`, `librarian`, `reviewer`.
-- Skills: `landing-page-design`, `web-design-guidelines`, `space-copy-pe`, `postgresql-table-design`.
+- Skills: `landing-page-design`, `web-design-guidelines`, `copywriting`, `space-copy-pe`, `postgresql-table-design`.
 
 **Decisiones que tomas tú**
-- Dominio: comprar `space-peru.com` (~US$10/año) y `.pe` opcional.
-- Email transaccional: Resend (recomendado) vs Postmark vs SES.
-- Analítica: Plausible (US$9/mes) vs Umami self-host vs nada.
-- CTA principal hero.
+- Comprar `planearya.com` (~US$10/año).
+- Email transaccional: Resend recomendado.
+- Analítica: Plausible (US$9/mes) vs Umami self-host.
 
 **Criterio de cierre**
-- Lighthouse 95+ en perf/a11y/SEO en mobile.
-- Waitlist funcional E2E.
-- 50+ signups orgánicos en primera semana de soft-launch.
+- Lighthouse 95+ en perf/a11y/SEO mobile.
+- Form de asistente captura leads E2E.
+- 50+ visitas orgánicas semana 1.
 
-**Estimado:** 2 semanas.
+**Estimado**: 2 semanas.
 
 ---
 
-## Fase 5 — Arquitectura técnica + app v1
+## ⏳ Fase 5 — App MVP
 
-### 5.A — Arquitectura (1 semana)
-**Entregables**
-- `documentation/architecture.md` con stack final.
-- `documentation/db-schema.md` — schema completo MVP.
-- ADRs: stack frontend, auth, storage imágenes, pagos.
+**Objetivo:** producto funcional con catálogo + asistente + onboarding host + dashboard interno.
 
-### 5.B — App MVP (4–6 semanas)
-**Entregables**
-- Schema migrado a Railway.
-- Listado público de espacios (sin booking).
-- Onboarding de host.
-- Búsqueda por distrito y categoría.
-- Backoffice mínimo para aprobar.
-- Booking real con Culqi + Yape manual.
-- Confirmación email + WhatsApp Business API.
-- Reseñas post-booking.
+### 5.A — Arquitectura (3-4 días)
+- ADR de stack final (Astro recomendado).
+- `documentation/db-schema.md` con esquema completo del PRD.
+- `documentation/architecture.md` actualizado.
+- ADR auth (Auth.js + Postgres).
+- ADR storage imágenes (Cloudflare R2).
+
+### 5.B — Construcción (4-5 semanas)
+- Migraciones SQL aplicadas.
+- Catálogo público navegable.
+- Páginas SEO por distrito × caso de uso.
+- Asistente conversacional scriptado (form de 5-7 preguntas, match SQL).
+- Form fallback para concierge.
+- Onboarding de host (registro + crear espacio en 5 min).
+- Dashboard host (sus espacios, leads recibidos).
+- Dashboard interno equipo (todos los leads, status, export).
+- Notificaciones a host por WhatsApp (Meta Cloud API).
+- Verificación bajo demanda (botón "agendar visita").
 
 **Agentes/skills**
-- `db-migrator`, `landing-builder`, `reviewer`.
-- Skills: `engineering:architecture`, `engineering:system-design`, `postgresql-table-design`, `claude-api`, `data:sql-queries`.
-- MCPs: Supabase / Neon (si migramos), Stripe / Culqi.
+- `db-migrator`, `landing-builder` (extensión a app), `reviewer`.
+- Skills: `engineering:architecture`, `engineering:system-design`, `postgresql-table-design`, `claude-api`.
 
 **Decisiones que tomas tú**
-- Stack frontend (Astro vs Next.js export vs Cloudflare full SSR).
-- Auth (Auth.js vs Clerk vs Supabase Auth).
-- Migrar DB de Railway a Supabase/Neon ahora o después.
-- Pagos (Culqi recomendado vs Niubiz vs MercadoPago).
-- WhatsApp (Meta Cloud API vs Twilio).
+- Stack frontend: Astro vs Next.js export. Recomendación: Astro.
+- Auth: Auth.js vs Clerk. Recomendación: Auth.js (open source).
+- WhatsApp: Meta Cloud API vs Twilio. Recomendación: Meta Cloud directo.
+- Migrar Railway PG a Neon/Supabase ahora o después.
 
 **Criterio de cierre**
-- 5.A: 5 ADRs aprobados, schema completo.
-- 5.B: 1 booking real end-to-end (host real → guest real → pago → reseña).
+- 1 lead end-to-end real: guest llena asistente → 3 matches → agenda visita → host responde por WhatsApp.
 
-**Estimado:** A: 1 semana. B: 4–6 semanas.
+**Estimado**: 5.A: 3-4 días. 5.B: 4-5 semanas.
 
 ---
 
-## Fase 6 — Comunicación, contenido y crecimiento
+## ⏳ Fase 6 — Scrape & Claim (post-app, según ajuste owner)
 
-**Objetivo:** activar canales para volumen de waitlist → conversión a primeros usuarios.
+**Objetivo:** poblar el catálogo con 500-2.000 espacios scrapeados de portales públicos para acelerar SEO y outreach a hosts.
 
 **Entregables**
-- `social/` — primer mes de calendario con posts redactados.
-- `brand/pitch-deck/` — 3 versiones .pptx (host pitch, investor, press kit).
-- Outreach kit B2B coworking.
-- `social/casos/` — 3 mini casos.
-- SEO: páginas por distrito × categoría.
-- Programa de referidos host y guest.
+- `scraping/` con scrapers de Compartir Espacios, Ineventos, Roodos, Google Places API.
+- Tabla `scraped_listings` separada de `spaces` en PG.
+- Proceso de "reclamar listing" para hosts.
+- Dashboard interno de reclamos.
+- Página "esta info viene de [fuente] — recláma lo gratis" en cada listing scrapeado.
+
+**Skills**
+- `engineering:debug`, `data:write-query`, `postgresql-table-design`. Posible nueva skill: `web-scraping` (de las disponibles).
+
+**Reglas no negociables**
+- Respetar robots.txt y rate limiting (1 req / 3 seg / dominio).
+- User-Agent identificable: `PlaneaYa-Crawler/1.0`.
+- Solo data pública estructurada.
+- Atribución visible en cada listing.
+- Honor takedown requests <72h.
+- Ver `documentation/scraping-policy.md` para detalles.
+
+**Criterio de cierre**
+- 500+ listings pre-poblados.
+- 30%+ tasa de claim por hosts contactados.
+- 0 takedown requests sin resolver.
+
+**Estimado**: 2-3 semanas.
+
+---
+
+## ⏳ Fase 7 — Social, contenido, outreach
+
+**Objetivo:** activar canales para volumen: tráfico orgánico + outreach a hosts.
+
+**Entregables**
+- `social/` con primer mes de calendario y posts redactados (LinkedIn 8, IG 16, TikTok 12, FB 4).
+- Outreach kit B2B coworkings: deck + email + WhatsApp template.
+- Outreach kit hoteles con salones (Marriott, Hilton, Belmond, Casa Andina, Costa del Sol).
+- 3 mini casos publicados (1 host, 1 guest, 1 evento exitoso).
+- SEO: páginas long-tail por distrito × caso de uso indexadas en Google.
+- Programa de referidos host y guest documentado.
 
 **Agentes/skills**
 - `content-creator`, `host-onboarder`, `reviewer`.
-- Skills: `marketing:draft-content`, `marketing:campaign-plan`, `marketing:seo-audit`, `marketing:email-sequence`, `space-copy-pe`.
-
-**Decisiones que tomas tú**
-- Si pagas ads desde Fase 6 o solo orgánico.
-- Presupuesto outreach.
-- Vocero público.
+- Skills: `marketing:draft-content`, `marketing:campaign-plan`, `marketing:seo-audit`, `marketing:email-sequence`, `copywriting`, `space-copy-pe`.
 
 **Criterio de cierre**
 - 10 hosts activos publicados.
-- Primera reserva pagada externa al círculo cercano.
-- 500+ signups o follower base.
+- Primer cliente concierge cerrado vía la agencia.
+- 500+ visitas únicas/semana orgánicas.
 
-**Estimado:** continuo, primeros 30 días intensivos en paralelo a Fase 5.B.
+**Estimado**: continuo, intensivo primer mes.
 
 ---
 
 ## Visión global
 
 ```
-Fase 1 ─→ Fase 2 ─→ Fase 3 ─→ Fase 4 ──┬──→ Fase 5.A ─→ Fase 5.B
-mercado    PRD MVP    marca    landing │
-                                       └──→ Fase 6 (paralelo desde Fase 4)
-                                              contenido + outreach
+✅ Fase 1: Mercado
+   │
+   ▼
+🟡 Fase 2: Branding básico ─────┐
+   │                            │
+   ▼                            │
+✅ Fase 3: Lean + PRD            │
+   │                            │
+   ▼                            │
+⏳ Fase 4: Landing ──────────────┤
+   │                            │
+   ▼                            │
+⏳ Fase 5: App (5.A → 5.B)       │
+   │                            │
+   ▼                            │
+⏳ Fase 6: Scrape & Claim        │
+                                │
+              ┌─────────────────┘
+              ▼
+⏳ Fase 7: Social + Outreach (paralelo desde Fase 4)
 ```
 
-| Fase | Estimado | Dependencia | Bloquea |
+| Fase | Estimado | Dependencia | Estado |
 |---|---|---|---|
-| 1. Mercado | 3–4 días | — | 2, 3 |
-| 2. PRD MVP | 3–4 días | 1 | 3, 4, 5 |
-| 3. Marca | 1 sem | 1, 2 | 4 |
-| 4. Landing | 2 sem | 3 | 6 (parcial) |
-| 5.A. Arquitectura | 1 sem | 2 | 5.B |
-| 5.B. App | 4–6 sem | 5.A | producción |
-| 6. Contenido | continuo | 3, 4 | crecimiento |
+| 1. Mercado | 3-4 días | — | ✅ |
+| 2. Branding | 2-3 días | 1 | 🟡 |
+| 3. Lean + PRD | hecho con 1 | 1 | ✅ |
+| 4. Landing | 2 sem | 2 | ⏳ |
+| 5.A. Arquitectura | 3-4 días | 3 | ⏳ |
+| 5.B. App | 4-5 sem | 5.A | ⏳ |
+| 6. Scrape & Claim | 2-3 sem | 5 | ⏳ |
+| 7. Social + Outreach | continuo | 4 | ⏳ |
 
-**Total a "primer booking real":** ~9–11 semanas en serie, ~7–8 semanas con paralelización 5↔6.
-
----
-
-## Decisiones críticas (ordenadas por urgencia)
-
-1. **Vertical único del MVP** (Fase 2) — todo cuelga de esto.
-2. **Tagline y wordmark final** (Fase 3).
-3. **Dominio + analítica + email** (Fase 4).
-4. **Stack frontend + auth + pagos** (Fase 5.A).
-5. **Vocero / presencia pública** (Fase 6).
+**Tiempo a primer lead pagado vía agencia**: ~6 semanas desde aprobación de branding.
 
 ---
 
-## Estado actual
-- ✅ Fase 0 completada (estructura repo, DB Railway, agentes, skills, brand inicial).
-- ⏳ Fase 1 — lista para arrancar.
-- ⏳ Fases 2–6 — pendientes.
+## Decisiones pendientes (urgencia descendente)
 
-## Skills disponibles para el plan
-14 skills activas (10 externas + find-skills + 3 locales). Ver `skills/README.md`.
+1. **Nombre final** — ¿`Planea Ya` o cambiar? (Hoy es placeholder.)
+2. **Agencia del owner** — ¿tiene marca? ¿alineamos o separamos?
+3. **Comprar dominio** — `planearya.com` (~US$10/año).
+4. **Stack frontend** — Astro vs Next.js. (Recomendación: Astro.)
+5. **WhatsApp API** — Meta Cloud directa vs Twilio.
 
-Skills clave por fase:
-- **Fase 1**: `customer-research`, `extract-design-system`, `find-skills`
-- **Fase 2**: `lean-canvas`, `business-model`, `startup-metrics-framework`, `startup-financial-modeling`
-- **Fase 3**: `brand-guidelines`, `space-branding`, `extract-design-system`
-- **Fase 4**: `landing-page-design`, `web-design-guidelines`, `space-copy-pe`, `postgresql-table-design`
-- **Fase 5**: `postgresql-table-design`, `claude-api`, `engineering:*` (oficiales)
-- **Fase 6**: `marketing:*` (oficiales), `space-copy-pe`
+---
+
+## Estado de skills
+
+15 skills activas (12 externas vía npx skills + find-skills + 3 locales). Top relevantes para próximas fases:
+
+| Fase | Skills clave |
+|---|---|
+| 2 (branding) | `brand-guidelines`, `extract-design-system`, `space-branding` |
+| 4 (landing) | `landing-page-design`, `web-design-guidelines`, `copywriting`, `space-copy-pe` |
+| 5 (app) | `postgresql-table-design`, `claude-api`, `engineering:architecture` |
+| 6 (scraping) | (instalar `web-scraping` cuando arranque) |
+| 7 (social) | `marketing:*`, `copywriting`, `space-copy-pe` |

@@ -1,48 +1,63 @@
 # Naming
 
 ## Nombre del producto
-**Space-Peru** (con guión). Pronunciado "espace-perú" o "space-perú".
+**Planea Ya** (working name, placeholder). Pronunciado "planea-ya".
+
+> Es un placeholder. Si se cambia, hacer find/replace global excluyendo `analisis-mercado/` (research histórico) y `.git/`.
 
 ### Variantes y reglas de uso
 
 | Forma | Cuándo |
 |---|---|
-| `space-peru` | Wordmark / logotipo. Siempre minúsculas, con guión. |
-| `Space-Peru` | Texto formal, primer mención en docs y prensa. |
-| `Space-Peru.com` | Dominio. (a comprar) |
-| @spaceperu | Handle redes (sin guión por restricciones de plataforma). |
+| `planea ya` | Wordmark / logotipo. Siempre minúsculas, dos palabras separadas. |
+| `Planea Ya` | Texto formal, primer mención en docs, prensa, UI. |
+| `planearya.com` | Dominio canónico (a comprar). |
+| `@planeaya` | Handle redes (sin espacio). |
 
 ### Lo que NO hacemos
-- No **SpacePeru** sin guión — confunde con SpacePal.
-- No **SPACE PERU** en mayúsculas — agresivo, no encaja con la voz.
-- No traducir a "Espacio Perú" en producto ni redes.
+- No **PlaneaYa** pegado en wordmark — separamos las dos palabras visualmente con color.
+- No **PLANEA YA** en mayúsculas — agresivo, no encaja con la voz.
+- No traducir.
 
 ## Nombre legal (a definir con owner)
-- Persona jurídica: **[a definir]**
-- Razón social tentativa: "Space Peru S.A.C." o similar.
+- Persona jurídica: **[a definir]**.
+- Razón social tentativa: "Planea Ya S.A.C." o reutilizar la entidad de la agencia de eventos del owner.
 - RUC: pendiente.
 
 ## Dominios
 
 ### Prioridad
-1. `space-peru.com` (canónico)
-2. `spaceperu.com` (sin guión, redirect 301)
-3. `space-peru.pe` (TLD local, redirect)
-4. `spaceperu.pe`
+1. `planearya.com` ✓ disponible (verificado mayo 2026, vía whois).
+2. `planearya.pe` ✓ disponible (verificado vía DNS, mayo 2026).
+3. Variantes a redirigir si se compran: `planeaya.com`, `planeaya.pe`.
 
 ### Subdominios planeados
-- `app.space-peru.com` — producto
-- `host.space-peru.com` — backoffice host (opcional)
-- `blog.space-peru.com` — blog SEO (opcional)
-- `admin.space-peru.com` — backoffice interno
+- `app.planearya.com` — producto.
+- `host.planearya.com` — backoffice host (opcional).
+- `blog.planearya.com` — blog SEO (opcional).
+- `admin.planearya.com` — backoffice interno equipo.
 
 ## Trademark / disponibilidad
-- [ ] Verificar disponibilidad de `space-peru.com` y `.pe`
-- [ ] INDECOPI — registro de marca en Perú (clases 38, 41, 42 a confirmar)
-- [ ] Validar que no haya conflicto con SpacePal en el mercado peruano
+- [ ] Comprar `planearya.com` (~US$10/año en Namecheap/Cloudflare).
+- [ ] Comprar `planearya.pe` (~US$30-40/año en NIC.PE).
+- [ ] Verificar conflictos en INDECOPI (registro de marca Perú, clases 35, 41, 42).
+- [ ] Validar que no exista conflicto con marca registrada similar en Perú.
+
+## Backups (si Planea Ya se descarta)
+
+Otros `.com` libres verificados en mayo 2026 (orden de preferencia):
+1. `coordinaeventos.com` — descriptivo total, SEO bestia.
+2. `planeaevento.com` — descriptivo, claro.
+3. `coordinarya.com` — variante de coordina.
+4. `encuadralo.com` — peruanismo creativo.
+5. `cuadrarapido.com` — peruanismo + rapidez.
+
+Otros `.pe` libres:
+- `coordina.pe`, `planeo.pe`, `anfitri.pe`, `eventeo.pe`, `reune.pe`.
 
 ## Naming de productos derivados (futuro)
-- `space-peru` (marketplace)
-- `space-peru host` (app/backoffice host)
-- `space-peru pro` (plan premium para hosts profesionales)
-- `space-peru events` (vertical eventos sociales si se separa)
+
+- **Planea Ya** — el marketplace público.
+- **Planea Ya Host** — app/backoffice del host.
+- **Planea Ya Pro** — plan premium para hosts profesionales (post-MVP).
+- **Planea Ya Eventos** — el servicio concierge / agencia (puede usar la marca de la agencia del owner).

@@ -1,9 +1,11 @@
-# Space Peru
+# Planea Ya
 
-Marketplace de espacios alquilables por horas en Perú — alternativa local a Space-Pal, con un branding minimalista, limpio y predominantemente azul.
+> Working name. Dominio placeholder: `planearya.com`. El nombre del repo (`space-peru`) es legacy.
+
+Marketplace de **espacios alquilables por horas en Lima**, con catálogo gratuito + asistente conversacional + concierge humano que enruta leads premium a la **agencia de eventos del owner**.
 
 ## Estado
-MVP en construcción. Hospedaje sobre **GitHub Pages**, base de datos en **Railway (PostgreSQL)**.
+MVP en construcción. Hospedaje temporal en **GitHub Pages**; migrará a hosting propio cuando se compre el dominio. Base de datos en **Railway (PostgreSQL)**.
 
 ## Estructura del repo
 
@@ -46,9 +48,11 @@ python3 scripts/test_db.py
 
 ## Branding (resumen)
 
-- Color principal: azul (paleta a definir en `documentation/branding.md`)
-- Estética: minimalista, limpio, alto contraste, mucho espacio en blanco
-- Diferenciación vs Space-Pal: más intuitivo, menos densidad, foco en la experiencia móvil
+- Nombre: **Planea Ya** (working name).
+- Color principal: azul `#2563EB`.
+- Estética: minimalista, limpio, alto contraste, mucho espacio en blanco.
+- Wordmark: ver `brand/logo/wordmark.svg`.
+- Diferenciación vs Peerspace/SpacePal: asistente IA conectado a inventario real + concierge humano + agencia de eventos propia como vehículo de monetización.
 
 ## Contacto
 

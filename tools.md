@@ -21,7 +21,7 @@ Skills instaladas: ver `skills/README.md`.
 
 | Servicio | Rol | Decisión |
 |---|---|---|
-| Dominio `space-peru.com` | Marca | Por comprar |
+| Dominio `planearya.com` | Marca | Por comprar |
 | Email transaccional | Resend / Postmark | Resend probable |
 | Pagos Perú tarjeta | Culqi vs Niubiz vs MercadoPago | Culqi probable (research/metodos-pago-peru.md) |
 | Yape/Plin | Wallets locales | Investigar APIs (research) |

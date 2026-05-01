@@ -13,7 +13,7 @@ Editar acá y reflejar cambios en `src/index.html` cuando sea estable.
 2. **Reserva** — Paga seguro con tarjeta o Yape. Recibe confirmación al instante.
 3. **Disfruta** — Llegas, lo usas, lo dejas listo. Calificas y listo.
 
-## Por qué Space-Peru
+## Por qué Planea Ya
 - Minimalista y claro. Encuentras lo que buscas en segundos.
 - Pago local. Yape, Plin, tarjeta — sin fricción.
 - Verificado. Visitamos los espacios antes de listarlos.
@@ -31,4 +31,4 @@ Editar acá y reflejar cambios en `src/index.html` cuando sea estable.
 - **¿Solo Lima?** Empezamos por Lima. Arequipa, Trujillo y Cusco vienen después.
 
 ## Footer
-© 2026 Space-Peru. Lima, Perú. — info@proper.com.pe
+© 2026 Planea Ya. Lima, Perú. — info@proper.com.pe

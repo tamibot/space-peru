@@ -1,4 +1,4 @@
-# Architecture — Space-Peru
+# Architecture — Planea Ya
 
 ## Visión general (MVP)
 

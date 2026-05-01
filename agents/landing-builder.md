@@ -1,6 +1,6 @@
 ---
 name: landing-builder
-description: Construye y mantiene la landing estática de Space-Peru. Genera HTML/CSS/JS o Astro, optimiza performance, asegura mobile-first y branding azul minimalista.
+description: Construye y mantiene la landing estática de Planea Ya. Genera HTML/CSS/JS o Astro, optimiza performance, asegura mobile-first y branding azul minimalista.
 tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
@@ -20,7 +20,7 @@ Construyes la landing en `landing/`. Stack actual: estático para deploy en GitH
 1. Hero con propuesta de valor + CTA waitlist
 2. Cómo funciona (3 pasos)
 3. Categorías destacadas
-4. Por qué Space-Peru (vs alternativas)
+4. Por qué Planea Ya (vs alternativas)
 5. CTA host ("¿Tienes un espacio?")
 6. FAQ
 7. Footer

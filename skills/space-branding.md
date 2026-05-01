@@ -1,6 +1,6 @@
 ---
 name: space-branding
-description: Aplica el sistema de branding de Space-Peru a cualquier output visual. Color principal azul, minimalista, mucho espacio en blanco, tipografía limpia.
+description: Aplica el sistema de branding de Planea Ya a cualquier output visual. Color principal azul, minimalista, mucho espacio en blanco, tipografía limpia.
 ---
 
 # space-branding

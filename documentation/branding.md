@@ -1,4 +1,4 @@
-# Branding — Space-Peru
+# Branding — Planea Ya
 
 Documento canónico. Si entra en conflicto con `skills/space-branding.md`, este manda.
 

@@ -1,7 +1,11 @@
 # CLAUDE.md — Contexto persistente para este repo
 
 ## Qué es esto
-Marketplace de **espacios alquilables por horas en Perú** (eventos, coworking, lockers, salones, estudios, etc.). Inspirado en https://space-pal.com pero con **branding minimalista, azul, y UX más intuitiva**. Foco inicial: Lima.
+**Planea Ya** (working name; placeholder en `planearya.com`) — marketplace de **espacios alquilables por horas en Lima**. Catálogo gratuito + asistente conversacional + concierge humano que escala leads premium hacia la **agencia de eventos del owner** (donde realmente se monetiza).
+
+Inspirado en Peerspace (UX) pero con **branding minimalista en español, azul, asistente IA, y agencia propia como vehículo de monetización**. Foco inicial: **solo Lima**.
+
+> El nombre del repo (`space-peru`) es legacy y se mantiene; el producto se llama Planea Ya.
 
 ## Owner
 `info@proper.com.pe` — GitHub: `tamibot`.

@@ -2,7 +2,7 @@
 
 Ideas sin priorizar. Si se mueve a backlog formal, se borra de aquí.
 
-- Verificación de espacios con visita presencial (sello "Verificado por Space-Peru")
+- Verificación de espacios con visita presencial (sello "Verificado por Planea Ya")
 - Categoría "horas muertas": gimnasios y restaurantes que alquilan en horario bajo
 - Bundle "evento llave en mano": espacio + catering + DJ
 - Integración con Calendly para reservas tipo coworking

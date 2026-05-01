@@ -1,6 +1,6 @@
 # brand/
 
-Carpeta canónica de **identidad de marca, narrativa y materiales estratégicos** de Space-Peru. Todo lo que un inversor, periodista, host nuevo o empleado nuevo necesita ver para entender quiénes somos y a dónde vamos.
+Carpeta canónica de **identidad de marca, narrativa y materiales estratégicos** de Planea Ya. Todo lo que un inversor, periodista, host nuevo o empleado nuevo necesita ver para entender quiénes somos y a dónde vamos.
 
 > Si entra en conflicto con `documentation/branding.md`: **brand/ es la versión narrativa, branding.md es la versión técnica/dev**. Los tokens viven en `branding.md`. La narrativa, los manifiestos, el pitch y el storytelling viven aquí.
 

@@ -28,9 +28,9 @@ Asistes en la captación manual de los primeros 50 hosts del MVP.
 ```
 Hola [nombre], vi [referencia específica del espacio].
 
-Estoy lanzando Space-Peru, una plataforma para alquilar espacios por horas en Lima — pensada para [categoría que aplica]. Estamos curando los primeros 50 hosts y nos encantaría tener [nombre del espacio] en el lanzamiento, sin comisión los primeros 6 meses.
+Estoy lanzando Planea Ya, una plataforma para alquilar espacios por horas en Lima — pensada para [categoría que aplica]. Estamos curando los primeros 50 hosts y nos encantaría tener [nombre del espacio] en el lanzamiento, sin comisión los primeros 6 meses.
 
 ¿Tienes 10 min esta semana? Te mando un demo y conversamos.
 
-— [nombre], Space-Peru
+— [nombre], Planea Ya
 ```

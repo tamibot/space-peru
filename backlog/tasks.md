@@ -19,7 +19,7 @@ Tickets sueltos. Formato: `- [ ] [PRIO] [AREA] Desc — owner — ETA`
 - [ ] [P0] [supply] Curar primeros 50 hosts de eventos sociales en Miraflores/Barranco/Surco — visita presencial + foto profesional incluida.
 - [ ] [P0] [producto] Diseñar checkout que acepte **Yape + Plin + tarjeta vía Culqi** (ver `analisis-mercado/research/metodos-pago-peru.md`).
 - [ ] [P0] [producto] **WhatsApp Business** como canal de notificaciones y soporte (no email-first).
-- [ ] [P0] [producto] Verificación humana antes de listar (sello "Verificado por Space-Peru").
+- [ ] [P0] [producto] Verificación humana antes de listar (sello "Verificado por Planea Ya").
 - [ ] [P1] [pricing] Validar take-rate 15% host + 5% guest con 5-10 hosts piloto.
 - [ ] [P1] [legal] Confirmar UIT 2026 y umbrales SUNAT facturación electrónica obligatoria — owner.
 - [ ] [P2] [data] Validar APEIM 2025 (NSE A/B Lima) y empresas activas SUNAT.

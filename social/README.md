@@ -22,7 +22,7 @@ platform: instagram
 date: 2026-05-10
 format: carrusel  # o reel, post, story, video
 status: draft     # draft / approved / published
-cta: "Únete a la waitlist en space-peru.com"
+cta: "Únete a la waitlist en planearya.com"
 hashtags: [eventoslima, espacioseventos, miraflores]
 ---
 ```
@@ -38,4 +38,4 @@ hashtags: [eventoslima, espacioseventos, miraflores]
 1. **Educación** (cómo elegir un espacio, checklist de eventos)
 2. **Inspiración** (espacios destacados, casos)
 3. **Comunidad** (testimonios host y guest)
-4. **Producto** (lo nuevo de Space-Peru)
+4. **Producto** (lo nuevo de Planea Ya)

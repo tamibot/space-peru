@@ -1,6 +1,6 @@
 # Landing
 
-Landing pública estática de Space-Peru. Deploy a GitHub Pages.
+Landing pública estática de Planea Ya. Deploy a GitHub Pages.
 
 ## Estructura
 ```
@@ -16,7 +16,7 @@ landing/
 1. Hero + waitlist
 2. Cómo funciona
 3. Categorías
-4. Por qué Space-Peru
+4. Por qué Planea Ya
 5. Para anfitriones
 6. FAQ
 7. Footer

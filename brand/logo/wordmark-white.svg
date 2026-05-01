@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" role="img" aria-label="Planea Ya">
+  <title>Planea Ya — wordmark sobre fondo oscuro</title>
+  <style>
+    .word { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+    .accent { fill: #93C5FD; }
+    .light { fill: #FFFFFF; }
+  </style>
+  <text x="0" y="56" class="word light" font-size="56">planea</text>
+  <text x="200" y="56" class="word accent" font-size="56">ya</text>
+  <circle cx="296" cy="49" r="6" class="accent"/>
+</svg>
