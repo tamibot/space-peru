@@ -23,8 +23,8 @@
   <div class="nav-inner">
     <a class="brand" href="/">coordina</a>
     <nav class="nav-links">
-      <a href="#que-hacemos">Qué hacemos</a>
-      <a href="#inspiracion">Inspírate</a>
+      <a href="#momento">Para qué</a>
+      <a href="#como-funciona">Cómo funciona</a>
       <a href="#hosts">Para hosts</a>
       <a href="#preguntas">Preguntas</a>
       <a href="#cta-final" class="btn btn-primary btn-sm">Empezar</a>
@@ -38,37 +38,53 @@
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
-      <div>
-        <span class="eyebrow">Espacios para eventos · Lima</span>
-        <h1>El espacio para tu <span>próximo evento.</span></h1>
-        <p class="hero-lead">Te ayudamos a encontrar el lugar ideal para tu cumpleaños, sesión de fotos, reunión o lo que estés organizando. Y si necesitas que coordinemos todo el evento, también lo hacemos.</p>
-        <div class="hero-cta">
+      <div class="hero-text">
+        <span class="eyebrow reveal">Espacios para eventos · Lima</span>
+        <h1 class="reveal" style="--d: 80ms">El espacio para tu <span>próximo evento.</span></h1>
+        <p class="hero-lead reveal" style="--d: 160ms">Te ayudamos a encontrar el lugar ideal para tu cumpleaños, sesión de fotos, reunión o lo que estés organizando. Y si necesitas que coordinemos todo el evento, también lo hacemos.</p>
+        <div class="hero-cta reveal" style="--d: 240ms">
           <a href="#cta-final" class="btn btn-primary">Estoy organizando algo</a>
           <a href="#hosts" class="btn btn-outline">Tengo un espacio</a>
         </div>
-        <div class="hero-trust">
+        <div class="hero-trust reveal" style="--d: 320ms">
           <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Listar es gratis</span>
           <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Sin comisiones</span>
           <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Soporte por WhatsApp</span>
         </div>
       </div>
 
-      <!-- Hero image: real Unsplash photo, full-bleed -->
-      <div class="hero-photo">
+      <div class="hero-photo reveal" style="--d: 400ms">
         <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1600&q=80&auto=format&fit=crop"
-             alt="Mesa decorada para evento social"
+             alt="Mesa decorada para evento social en Lima"
              loading="eager" />
         <div class="hero-photo-tag">
           <strong>Salón eventos</strong>
           <span>Miraflores · S/ 280/h</span>
         </div>
+        <div class="hero-photo-rotated">LIMA · PE</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ Marquee de confianza ============ -->
+<section class="marquee">
+  <div class="marquee-track">
+    <span>Listar es gratis · Para siempre</span><i>●</i>
+    <span>0% de comisión a hosts</span><i>●</i>
+    <span>Cobras directo en Yape</span><i>●</i>
+    <span>Sin contratos, sin exclusividad</span><i>●</i>
+    <span>Coordinamos por WhatsApp</span><i>●</i>
+    <span>Hosts verificados por humanos</span><i>●</i>
+    <span>Listar es gratis · Para siempre</span><i>●</i>
+    <span>0% de comisión a hosts</span><i>●</i>
+    <span>Cobras directo en Yape</span><i>●</i>
+    <span>Sin contratos, sin exclusividad</span><i>●</i>
+  </div>
+</section>
+
 <!-- ============ ¿Qué hacemos? ============ -->
-<section id="que-hacemos" class="section surface">
+<section id="que-hacemos" class="section">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Qué hacemos</span>
@@ -101,77 +117,42 @@
   </div>
 </section>
 
-<!-- ============ INSPIRACIÓN — galería de espacios reales ============ -->
-<section id="inspiracion" class="section">
+<!-- ============ MOMENTO — sección interactiva ============ -->
+<section id="momento" class="section section-momento">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Inspírate</span>
-      <h2>Un espacio para cada momento.</h2>
-      <p>Salones, lofts, terrazas, estudios, salas. Para que veas lo que es posible armar en Lima.</p>
+    <div class="momento-grid">
+      <div class="momento-text">
+        <h2>Un espacio<br>para cada momento.</h2>
+        <p class="momento-sub">Pasa el cursor por cada actividad y mira el lugar ideal.</p>
+
+        <ul class="momento-list" id="momento-list">
+          <li data-img="https://images.unsplash.com/photo-1542665952-14513db15293?w=1400&q=80&auto=format&fit=crop" data-name="Salón eventos · Miraflores" class="active">Cumpleaños</li>
+          <li data-img="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1400&q=80&auto=format&fit=crop" data-name="Salón íntimo · San Isidro">Baby shower</li>
+          <li data-img="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1400&q=80&auto=format&fit=crop" data-name="Loft fotográfico · Barranco">Sesión de fotos</li>
+          <li data-img="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80&auto=format&fit=crop" data-name="Sala de reuniones · San Isidro">Reunión de trabajo</li>
+          <li data-img="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80&auto=format&fit=crop" data-name="Sala de capacitación · San Borja">Capacitación</li>
+          <li data-img="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1400&q=80&auto=format&fit=crop" data-name="Estudio · Magdalena">Yoga · clase</li>
+          <li data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=80&auto=format&fit=crop" data-name="Terraza · Surco">Aniversario</li>
+          <li data-img="https://images.unsplash.com/photo-1519642918688-7e43b19245d8?w=1400&q=80&auto=format&fit=crop" data-name="Espacio creativo · Barranco">Despedida</li>
+          <li data-img="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1400&q=80&auto=format&fit=crop" data-name="Estudio creativo · Barranco">Pop-up</li>
+          <li data-img="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1400&q=80&auto=format&fit=crop" data-name="Estudio audiovisual · La Molina">Grabación de video</li>
+          <li data-img="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&q=80&auto=format&fit=crop" data-name="Coworking · San Isidro">Coworking</li>
+          <li data-img="https://images.unsplash.com/photo-1531058020387-3be344556be6?w=1400&q=80&auto=format&fit=crop" data-name="Showroom · Miraflores">Lanzamiento</li>
+        </ul>
+
+        <a href="#cta-final" class="btn btn-dark momento-cta">Ver todas las actividades</a>
+      </div>
+
+      <div class="momento-photo">
+        <div class="momento-img-stack">
+          <img id="momento-img"
+               src="https://images.unsplash.com/photo-1542665952-14513db15293?w=1400&q=80&auto=format&fit=crop"
+               alt="Salón de eventos en Miraflores" />
+        </div>
+        <div class="momento-img-meta" id="momento-meta">Salón eventos · Miraflores</div>
+        <div class="momento-rotated">LIMA · PE · 2026</div>
+      </div>
     </div>
-    <div class="gallery">
-      <article class="space-card">
-        <div class="img-wrap">
-          <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1200&q=80&auto=format&fit=crop" alt="Loft fotográfico con luz natural" loading="lazy" />
-          <span class="img-tag">Loft fotográfico</span>
-        </div>
-        <div class="meta">
-          <strong>Sesión de fotos · Barranco</strong>
-          <span>Hasta 30 personas</span>
-        </div>
-      </article>
-      <article class="space-card">
-        <div class="img-wrap">
-          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80&auto=format&fit=crop" alt="Terraza con vista para evento" loading="lazy" />
-          <span class="img-tag">Terraza</span>
-        </div>
-        <div class="meta">
-          <strong>Aniversarios · Surco</strong>
-          <span>Hasta 50 personas</span>
-        </div>
-      </article>
-      <article class="space-card">
-        <div class="img-wrap">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80&auto=format&fit=crop" alt="Sala de reuniones moderna" loading="lazy" />
-          <span class="img-tag">Sala de reuniones</span>
-        </div>
-        <div class="meta">
-          <strong>Capacitaciones · San Isidro</strong>
-          <span>Hasta 12 personas</span>
-        </div>
-      </article>
-      <article class="space-card">
-        <div class="img-wrap">
-          <img src="https://images.unsplash.com/photo-1542665952-14513db15293?w=1200&q=80&auto=format&fit=crop" alt="Salón de eventos elegante" loading="lazy" />
-          <span class="img-tag">Salón de eventos</span>
-        </div>
-        <div class="meta">
-          <strong>Cumpleaños · Miraflores</strong>
-          <span>Hasta 80 personas</span>
-        </div>
-      </article>
-      <article class="space-card">
-        <div class="img-wrap">
-          <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1200&q=80&auto=format&fit=crop" alt="Estudio de yoga con luz natural" loading="lazy" />
-          <span class="img-tag">Estudio · clase</span>
-        </div>
-        <div class="meta">
-          <strong>Yoga · Magdalena</strong>
-          <span>Hasta 20 personas</span>
-        </div>
-      </article>
-      <article class="space-card">
-        <div class="img-wrap">
-          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&q=80&auto=format&fit=crop" alt="Estudio creativo con grandes ventanas" loading="lazy" />
-          <span class="img-tag">Estudio creativo</span>
-        </div>
-        <div class="meta">
-          <strong>Pop-up · Barranco</strong>
-          <span>Hasta 25 personas</span>
-        </div>
-      </article>
-    </div>
-    <p class="gallery-disclaimer">Imágenes de referencia. Cada espacio publicado tendrá fotos reales del host, verificadas por nuestro equipo.</p>
   </div>
 </section>
 
@@ -213,7 +194,7 @@
 </section>
 
 <!-- ============ Cómo funciona ============ -->
-<section class="section">
+<section id="como-funciona" class="section">
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">Cómo funciona</span>
@@ -240,33 +221,8 @@
   </div>
 </section>
 
-<!-- ============ Categorías chips ============ -->
-<section class="section surface">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Para lo que sea</span>
-      <h2>Si tu evento existe, hay un espacio.</h2>
-      <p>Estas son algunas de las cosas que la gente está organizando hoy en Lima. Si lo tuyo no está en la lista, también podemos ayudarte.</p>
-    </div>
-    <div class="chip-list">
-      <span class="chip-static">Cumpleaños</span>
-      <span class="chip-static">Baby shower</span>
-      <span class="chip-static">Sesión de fotos</span>
-      <span class="chip-static">Reunión de trabajo</span>
-      <span class="chip-static">Capacitación corporativa</span>
-      <span class="chip-static">Yoga · clase</span>
-      <span class="chip-static">Despedida</span>
-      <span class="chip-static">Pop-up</span>
-      <span class="chip-static">Grabación de video</span>
-      <span class="chip-static">Aniversario</span>
-      <span class="chip-static">Coworking por horas</span>
-      <span class="chip-static">Lanzamiento de producto</span>
-    </div>
-  </div>
-</section>
-
 <!-- ============ Por qué Coordina ============ -->
-<section class="section">
+<section class="section surface">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Por qué Coordina</span>
@@ -396,7 +352,7 @@
       <div class="footer-col">
         <h4>Producto</h4>
         <a href="#que-hacemos">Qué hacemos</a>
-        <a href="#inspiracion">Inspírate</a>
+        <a href="#momento">Para qué</a>
         <a href="#preguntas">Preguntas</a>
       </div>
       <div class="footer-col">

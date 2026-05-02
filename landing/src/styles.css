@@ -629,7 +629,223 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
   gap: 16px;
 }
 
+/* ============================================================
+   REVEAL ANIMATIONS — entrada elegante al cargar
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: revealUp .9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes revealUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* hero photo specific animation */
+.hero-photo.reveal {
+  animation: revealZoom 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d, 0ms);
+  transform: translateY(20px) scale(.98);
+}
+@keyframes revealZoom {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* hero photo rotated label */
+.hero-photo {
+  position: relative;
+}
+.hero-photo-rotated {
+  position: absolute;
+  right: -36px;
+  top: 50%;
+  transform: rotate(-90deg) translateX(50%);
+  transform-origin: right center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  white-space: nowrap;
+  pointer-events: none;
+}
+@media (max-width: 900px) { .hero-photo-rotated { display: none; } }
+
+/* ============================================================
+   MARQUEE — banda de confianza animada
+   ============================================================ */
+.marquee {
+  background: var(--primary);
+  color: white;
+  padding: 18px 0;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+.marquee::before, .marquee::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee::before { left: 0;  background: linear-gradient(to right, var(--primary), transparent); }
+.marquee::after  { right: 0; background: linear-gradient(to left,  var(--primary), transparent); }
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+  animation: marqueeScroll 38s linear infinite;
+}
+.marquee-track span {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: white;
+}
+.marquee-track i {
+  color: var(--accent);
+  font-style: normal;
+  font-size: 8px;
+  line-height: 1;
+}
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   MOMENTO — sección interactiva (hover cambia imagen)
+   ============================================================ */
+.section-momento {
+  padding: 120px 0;
+  position: relative;
+}
+.momento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 80px;
+  align-items: start;
+}
+@media (max-width: 900px) { .momento-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+.momento-text h2 {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: clamp(40px, 5.6vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--primary);
+  margin: 0 0 20px;
+}
+.momento-sub {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0 0 56px;
+  max-width: 40ch;
+}
+@media (max-width: 760px) { .momento-sub { margin-bottom: 32px; } }
+
+.momento-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 48px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 28px;
+  row-gap: 14px;
+  max-width: 580px;
+}
+.momento-list li {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: clamp(20px, 2.2vw, 26px);
+  letter-spacing: -0.025em;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color .15s ease, font-weight .01s linear;
+  position: relative;
+  user-select: none;
+}
+.momento-list li:hover,
+.momento-list li.active {
+  color: var(--primary);
+  font-weight: 700;
+}
+.momento-list li.active::before {
+  content: '→ ';
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.momento-cta {
+  margin-top: 8px;
+}
+
+/* image stack on the right */
+.momento-photo {
+  position: relative;
+  position: sticky;
+  top: 100px;
+}
+@media (max-width: 900px) { .momento-photo { position: static; } }
+
+.momento-img-stack {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+}
+.momento-img-stack img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity .35s ease, transform 8s ease;
+  animation: subtleZoom 18s ease-in-out infinite alternate;
+}
+@keyframes subtleZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+.momento-img-stack img.fading { opacity: 0; }
+
+.momento-img-meta {
+  margin-top: 16px;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--primary);
+  background: var(--surface);
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  transition: opacity .35s ease;
+}
+.momento-img-meta.fading { opacity: 0; }
+
+.momento-rotated {
+  position: absolute;
+  right: -52px;
+  top: 16px;
+  transform: rotate(-90deg);
+  transform-origin: right top;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--muted-light);
+  white-space: nowrap;
+  pointer-events: none;
+}
+@media (max-width: 900px) { .momento-rotated { display: none; } }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
   html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; }
+  .marquee-track { animation: none; }
+  .momento-img-stack img { animation: none; }
 }
