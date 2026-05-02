@@ -1,10 +1,11 @@
 // Coordina — landing logic
-// 1) Smooth scroll para anchors
-// 2) Sección "Para cada momento": hover/click en actividad cambia la imagen
-// 3) IntersectionObserver para reveal animations al entrar en viewport
+// 1) Smooth scroll
+// 2) Sección "Para cada momento": hover/click cambia imagen
+// 3) IntersectionObserver: reveal animations on scroll
+// 4) Disparar animaciones del chat (asistente IA) y SVG steps al entrar viewport
 
 (() => {
-  // ── 1. Smooth scroll para anchors ──────────────────────────────
+  // ── 1. Smooth scroll ────────────────────────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
       const id = a.getAttribute('href');
@@ -16,15 +17,13 @@
     });
   });
 
-  // ── 2. Sección momento: hover cambia imagen + meta ─────────────
+  // ── 2. Sección momento ──────────────────────────────────────────
   const list = document.getElementById('momento-list');
   const img = document.getElementById('momento-img');
   const meta = document.getElementById('momento-meta');
 
   if (list && img && meta) {
     const items = list.querySelectorAll('li');
-
-    // Preload todas las imágenes para que el hover sea instantáneo
     items.forEach((li) => {
       const url = li.dataset.img;
       if (url) { const i = new Image(); i.src = url; }
@@ -36,7 +35,6 @@
       if (!url || !name) return;
       if (img.src === url) return;
 
-      // fade out → cambiar src → fade in
       img.classList.add('fading');
       meta.classList.add('fading');
 
@@ -44,7 +42,6 @@
         img.src = url;
         img.alt = name;
         meta.textContent = name;
-        // wait next frame para que la opacidad cambie
         requestAnimationFrame(() => {
           img.classList.remove('fading');
           meta.classList.remove('fading');
@@ -63,7 +60,7 @@
     });
   }
 
-  // ── 3. Reveal on scroll (para elementos fuera del hero) ────────
+  // ── 3. IntersectionObserver: reveal on scroll ──────────────────
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -74,7 +71,7 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
-    document.querySelectorAll('.section-head, .feat, .step, .why-item, .aud-card, .space-card, .momento-text, .momento-photo')
+    document.querySelectorAll('.section-head, .feat, .step, .why-item, .aud-card, .space-card, .momento-text, .momento-photo, .ai-text, .ai-features li, .chip-static')
       .forEach((el) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -82,20 +79,41 @@
         io.observe(el);
       });
 
-    // CSS injected for reveal-in state
     const style = document.createElement('style');
     style.textContent = `
-      .reveal-in {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-      }
+      .reveal-in { opacity: 1 !important; transform: translateY(0) !important; }
       @media (prefers-reduced-motion: reduce) {
-        .section-head, .feat, .step, .why-item, .aud-card, .space-card, .momento-text, .momento-photo {
-          opacity: 1 !important;
-          transform: none !important;
+        .section-head, .feat, .step, .why-item, .aud-card, .space-card,
+        .momento-text, .momento-photo, .ai-text, .ai-features li, .chip-static {
+          opacity: 1 !important; transform: none !important;
         }
       }
     `;
     document.head.appendChild(style);
+
+    // ── 4a. Chat mock animation ────────────────────────────────
+    const chatBody = document.getElementById('chat-body');
+    if (chatBody) {
+      const chatIO = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            chatBody.querySelectorAll('.anim').forEach((el) => el.classList.add('play'));
+            chatIO.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      chatIO.observe(chatBody);
+    }
+
+    // ── 4b. SVG steps animations ───────────────────────────────
+    const stepIO = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('play');
+          stepIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    document.querySelectorAll('.step-svg').forEach((el) => stepIO.observe(el));
   }
 })();
