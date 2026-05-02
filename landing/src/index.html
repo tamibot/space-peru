@@ -3,168 +3,345 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Coordina Eventos — Donde el evento empieza.</title>
-  <meta name="description" content="Encuentra el espacio para tu evento en Lima. Salones, estudios, salas, terrazas. Y si no lo encuentras, lo armamos contigo." />
-  <meta name="theme-color" content="#0B2A5C" />
-  <meta property="og:title" content="Coordina Eventos — Donde el evento empieza." />
+  <title>Coordina — Donde el evento empieza.</title>
+  <meta name="description" content="Encuentra el espacio para tu evento en Lima. Salones, estudios, terrazas. Y si no lo encuentras, lo armamos contigo." />
+  <meta name="theme-color" content="#FAF8F5" />
+  <meta property="og:title" content="Coordina — Donde el evento empieza." />
   <meta property="og:description" content="Encuentra el espacio para tu evento en Lima. Y si no lo encuentras, lo armamos contigo." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://coordinaeventos.com/" />
   <link rel="icon" href="../../brand/logo/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://rsms.me/" />
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
 
 <header class="nav">
-  <a class="brand" href="/">
-    coordina<span class="dot">·</span><span class="muted">eventos</span>
-  </a>
-  <nav class="nav-links">
-    <a href="#como-funciona">Cómo funciona</a>
-    <a href="#categorias">Para qué</a>
-    <a href="#anfitriones">Para hosts</a>
-    <a href="#preguntas">Preguntas</a>
-    <a href="#waitlist" class="btn btn-primary btn-sm">Empezar</a>
-  </nav>
+  <div class="nav-inner">
+    <a class="brand" href="/">coordina</a>
+    <nav class="nav-links">
+      <a href="#categorias">Categorías</a>
+      <a href="#distritos">Distritos</a>
+      <a href="#hosts">Para hosts</a>
+      <a href="#empezar" class="btn btn-primary btn-sm">Empezar</a>
+    </nav>
+  </div>
 </header>
 
 <main>
 
+<!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="container">
-    <h1>Donde el evento <span class="accent">empieza.</span></h1>
-    <p class="lead">Encuentra el espacio para tu evento en Lima. Y si no lo encuentras, <strong style="color:var(--primary);font-weight:600">lo armamos contigo</strong>.</p>
-    <form id="waitlist-form" class="waitlist" novalidate>
-      <input type="email" name="email" placeholder="tu@correo.com" required aria-label="Tu correo" />
-      <select name="role" aria-label="Soy">
-        <option value="guest">Estoy organizando un evento</option>
-        <option value="host">Tengo un espacio para alquilar</option>
-      </select>
-      <button type="submit" class="btn btn-primary">Empezar</button>
+  <div class="hero-inner">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      <span>Espacios para eventos · Lima</span>
+    </div>
+
+    <h1>Donde el<br>evento <em>empieza.</em></h1>
+
+    <p class="hero-lead">Encuentra el espacio. Coordina la visita. Y si lo tuyo es complicado, <strong style="color:var(--ink)">lo armamos contigo</strong>.</p>
+
+    <form class="search-bar" id="search-form" novalidate>
+      <label class="search-field" for="q-event">
+        <span>Qué planeas</span>
+        <input id="q-event" name="event" type="text" placeholder="Cumpleaños, sesión de fotos, reunión…" />
+      </label>
+      <label class="search-field" for="q-where">
+        <span>Dónde</span>
+        <select id="q-where" name="where">
+          <option value="">Lima Moderna</option>
+          <option>Miraflores</option>
+          <option>Barranco</option>
+          <option>San Isidro</option>
+          <option>Surco</option>
+          <option>San Borja</option>
+          <option>La Molina</option>
+          <option>Magdalena</option>
+          <option>Pueblo Libre</option>
+        </select>
+      </label>
+      <label class="search-field" for="q-when">
+        <span>Cuándo</span>
+        <input id="q-when" name="when" type="text" placeholder="Esta semana, sábado…" />
+      </label>
+      <button type="submit" class="btn-search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+        Buscar
+      </button>
     </form>
-    <p class="micro mute" style="margin-top:12px">Te avisamos cuando abramos. Sin spam, sin promesas vacías.</p>
-  </div>
-</section>
 
-<section id="como-funciona" class="section">
-  <div class="container">
-    <h2>Coordinar es empezar bien.</h2>
-    <p class="section-lead">Tres pasos. Cero pagos a desconocidos. Cero esperar dos días por una cotización.</p>
-    <div class="grid-3">
-      <article class="card">
-        <span class="step">01</span>
-        <h3>Cuéntanos qué buscas</h3>
-        <p style="color:var(--muted)">El asistente te pregunta cinco cosas: qué evento, fecha, capacidad, distrito, presupuesto. Listo.</p>
-      </article>
-      <article class="card">
-        <span class="step">02</span>
-        <h3>Elige entre tres opciones</h3>
-        <p style="color:var(--muted)">Te mostramos tres espacios reales que encajan. Pides visita y el host te responde por WhatsApp en menos de una hora.</p>
-      </article>
-      <article class="card">
-        <span class="step">03</span>
-        <h3>Arma el evento</h3>
-        <p style="color:var(--muted)">Si quieres que coordinemos catering, decoración o lo que necesites, te ponemos en contacto con quien lo hace bien.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="categorias" class="section surface">
-  <div class="container">
-    <h2>Para lo que sea.</h2>
-    <p class="section-lead">Buscas por lo que vas a hacer, no por nombres de lugares que no conoces.</p>
-    <div class="chips" id="cat-chips"></div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container two-col">
-    <div>
-      <h2>Antes del catering, antes del DJ, antes de los invitados — está el lugar.</h2>
-      <ul class="bullets">
-        <li>
-          <strong>Encontrar.</strong>
-          Buscas por lo que vas a hacer, no por nombres de lugares que no conoces.
-        </li>
-        <li>
-          <strong>Visitar.</strong>
-          El host responde por WhatsApp. Coordinas la visita en una conversación.
-        </li>
-        <li>
-          <strong>Decidir.</strong>
-          Sin sorpresas en el precio. Lo que ves es lo que pagas.
-        </li>
-        <li>
-          <strong>Coordinar.</strong>
-          Si quieres que armemos todo el evento, también podemos.
-        </li>
-      </ul>
-    </div>
-    <div class="kpi">
+    <div class="hero-stats">
       <div><b>Lima</b><span>Ciudad de lanzamiento</span></div>
       <div><b>0%</b><span>Comisión a hosts. Para siempre.</span></div>
       <div><b>&lt;1h</b><span>El host responde por WhatsApp</span></div>
+      <div><b>200+</b><span>Espacios curados al lanzamiento</span></div>
     </div>
   </div>
 </section>
 
-<section id="anfitriones" class="section dark">
-  <div class="container two-col">
-    <div>
-      <h2>Publica tu local. Sin pagar nada.</h2>
-      <p class="section-lead">No es promo. No tiene letra chica. Listar tu espacio en coordinaeventos.com es gratis siempre. Cuando alguien quiera visitarlo, te llega su WhatsApp directo.</p>
-    </div>
-    <form class="waitlist on-dark" id="host-form" novalidate>
-      <input type="email" name="email" placeholder="tu@correo.com" required aria-label="Tu correo" />
-      <input type="text" name="space" placeholder="¿Qué espacio tienes? (ej. salón en Surco)" />
-      <button type="submit" class="btn btn-light">Publicar mi local</button>
-    </form>
-  </div>
-</section>
-
-<section id="preguntas" class="section">
+<!-- ============ CATEGORÍAS ============ -->
+<section id="categorias" class="section">
   <div class="container">
-    <h2>Preguntas honestas.</h2>
-    <details>
-      <summary>¿Cuándo lanzan?</summary>
-      <p>Mayo–junio 2026 con los primeros 50 espacios curados en Lima. Estamos visitando uno por uno.</p>
-    </details>
-    <details>
-      <summary>¿Cobran comisión a los hosts?</summary>
-      <p>No. Listar es gratis siempre. Ganamos como agencia cuando una persona quiere que le organicemos el evento completo — eso es opcional.</p>
-    </details>
-    <details>
-      <summary>¿Qué tipo de espacios?</summary>
-      <p>Salones para eventos sociales, salas de reuniones, estudios fotográficos, terrazas, espacios para clases, coworking por horas. Si tu espacio puede alquilarse por horas, encaja.</p>
-    </details>
-    <details>
-      <summary>¿Solo Lima?</summary>
-      <p>Empezamos por Lima Moderna. Otras ciudades cuando Lima esté maduro — primero hacerlo bien, después escalar.</p>
-    </details>
-    <details>
-      <summary>¿Cómo se paga la reserva?</summary>
-      <p>Por ahora, directamente entre tú y el host (Yape, transferencia, efectivo, lo que prefieran). Más adelante integramos pago en plataforma — sin obligar a nadie a usarlo.</p>
-    </details>
-    <details>
-      <summary>¿Y si necesito que organicen todo el evento?</summary>
-      <p>Marcas la opción "ayúdenme a armarlo" en el formulario. Te llamamos por WhatsApp en menos de dos horas con propuesta y cotización.</p>
-    </details>
+    <div class="section-head">
+      <p class="eyebrow">Para lo que sea</p>
+      <h2>Buscas por lo que vas a <em>hacer.</em></h2>
+      <p>No por nombres de lugares que no conoces. Empieza con tu evento y nosotros encontramos el espacio que encaja.</p>
+    </div>
+    <div class="chips">
+      <span class="chip">Cumpleaños</span>
+      <span class="chip">Baby shower</span>
+      <span class="chip">Sesión de fotos</span>
+      <span class="chip">Reunión de trabajo</span>
+      <span class="chip">Capacitación</span>
+      <span class="chip">Yoga · clase</span>
+      <span class="chip">Despedida</span>
+      <span class="chip">Pop-up</span>
+      <span class="chip">Grabación de video</span>
+      <span class="chip">Aniversario</span>
+      <span class="chip">Coworking por horas</span>
+      <span class="chip">Lanzamiento</span>
+    </div>
+    <a class="chips-link" href="#">Ver todas las categorías →</a>
+  </div>
+</section>
+
+<!-- ============ INSPÍRATE (gallery) ============ -->
+<section class="section cream">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Inspírate</p>
+      <h2>Espacios <em>reales</em>, eventos reales.</h2>
+      <p>Una muestra de lo que se puede armar en Lima. Cada espacio es verificado por nuestro equipo antes de publicarse.</p>
+    </div>
+    <div class="gallery">
+      <article class="space-card">
+        <div class="img bg-1"><span class="tag">Loft fotográfico · Barranco</span></div>
+        <div class="meta">
+          <div class="meta-left"><b>Casa Verde</b><span>Hasta 30 personas</span></div>
+          <div class="price">S/ 120/h</div>
+        </div>
+      </article>
+      <article class="space-card">
+        <div class="img bg-2"><span class="tag">Salón eventos · Miraflores</span></div>
+        <div class="meta">
+          <div class="meta-left"><b>El Alto</b><span>Hasta 80 personas</span></div>
+          <div class="price">S/ 280/h</div>
+        </div>
+      </article>
+      <article class="space-card">
+        <div class="img bg-3"><span class="tag">Terraza · Surco</span></div>
+        <div class="meta">
+          <div class="meta-left"><b>Mirador Las Casuarinas</b><span>Hasta 50 personas</span></div>
+          <div class="price">S/ 200/h</div>
+        </div>
+      </article>
+      <article class="space-card">
+        <div class="img bg-4"><span class="tag">Sala de reuniones · San Isidro</span></div>
+        <div class="meta">
+          <div class="meta-left"><b>Estudio Norte</b><span>Hasta 12 personas</span></div>
+          <div class="price">S/ 60/h</div>
+        </div>
+      </article>
+      <article class="space-card">
+        <div class="img bg-5"><span class="tag">Estudio audio · La Molina</span></div>
+        <div class="meta">
+          <div class="meta-left"><b>Sala 14</b><span>Hasta 6 personas</span></div>
+          <div class="price">S/ 90/h</div>
+        </div>
+      </article>
+      <article class="space-card">
+        <div class="img bg-6"><span class="tag">Espacio yoga · Magdalena</span></div>
+        <div class="meta">
+          <div class="meta-left"><b>Casa Sol</b><span>Hasta 20 personas</span></div>
+          <div class="price">S/ 50/h</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POR QUÉ ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Por qué Coordina</p>
+      <h2>Antes del catering, antes del DJ —<br>está el <em>lugar.</em></h2>
+    </div>
+    <div class="why-grid">
+      <div class="pillars">
+        <div class="pillar">
+          <span class="pillar-num">01</span>
+          <div class="pillar-body">
+            <strong>Encontrar.</strong>
+            <p>Buscas por el evento que vas a hacer, no por nombres de lugares que no conoces. El asistente te muestra tres opciones reales que encajan en tu fecha y presupuesto.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">02</span>
+          <div class="pillar-body">
+            <strong>Visitar.</strong>
+            <p>Pides la visita y el host te responde por WhatsApp en menos de una hora. Coordinas en una conversación, sin formularios largos.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">03</span>
+          <div class="pillar-body">
+            <strong>Decidir.</strong>
+            <p>Sin sorpresas en el precio. Lo que ves es lo que pagas. Sin pagos por adelantado a desconocidos.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">04</span>
+          <div class="pillar-body">
+            <strong>Coordinar.</strong>
+            <p>Si quieres que armemos catering, decoración o todo el evento, también podemos. Coordinar es lo que hacemos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual">
+        <div class="quote">"Lima tiene miles de espacios increíbles.<br>Encontrarlos no debería ser un trámite."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DISTRITOS ============ -->
+<section id="distritos" class="section cream">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Lima por dentro</p>
+      <h2>Empieza por tu <em>distrito.</em></h2>
+      <p>Curamos los primeros espacios en Lima Moderna. Si tu zona no está lista, te avisamos cuando lo esté.</p>
+    </div>
+    <div class="distritos">
+      <a class="distrito-card bg-1" href="#"><span class="count">42 espacios</span><span class="name">Miraflores</span></a>
+      <a class="distrito-card bg-3" href="#"><span class="count">28 espacios</span><span class="name">Barranco</span></a>
+      <a class="distrito-card bg-2" href="#"><span class="count">36 espacios</span><span class="name">San Isidro</span></a>
+      <a class="distrito-card bg-5" href="#"><span class="count">31 espacios</span><span class="name">Surco</span></a>
+      <a class="distrito-card bg-4" href="#"><span class="count">18 espacios</span><span class="name">La Molina</span></a>
+      <a class="distrito-card bg-6" href="#"><span class="count">22 espacios</span><span class="name">San Borja</span></a>
+      <a class="distrito-card bg-1" href="#"><span class="count">14 espacios</span><span class="name">Magdalena</span></a>
+      <a class="distrito-card bg-3" href="#"><span class="count">12 espacios</span><span class="name">Pueblo Libre</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOSTS (dark editorial) ============ -->
+<section id="hosts" class="section dark">
+  <div class="container">
+    <div class="host-section">
+      <div>
+        <p class="eyebrow" style="color: var(--terracotta-soft); margin-bottom: 24px;">Para hosts</p>
+        <h2>Tu local, en <em>vitrina.</em></h2>
+        <p>Listar tu espacio en coordina es gratis. Para siempre. Cuando alguien quiera visitarlo, te llega su WhatsApp directo. Sin comisiones, sin letra chica, sin trampas.</p>
+        <ul class="host-bullets">
+          <li>Publicas en cinco minutos. Cinco fotos y tu WhatsApp.</li>
+          <li>Recibes leads filtrados — solo gente seria con fecha definida.</li>
+          <li>Cobras como tú prefieras: Yape, transferencia, efectivo. Tú decides.</li>
+          <li>Sin exclusividad. Tu espacio en otros canales sigue funcionando.</li>
+        </ul>
+        <form class="host-form-inline" id="host-form" novalidate>
+          <input type="email" name="email" placeholder="tu@correo.com" aria-label="Tu correo" required />
+          <button type="submit">Publicar mi local</button>
+        </form>
+      </div>
+      <div class="host-visual"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head" style="margin: 0 auto 48px; align-items: center; text-align: center;">
+      <p class="eyebrow">Preguntas honestas</p>
+      <h2>Lo que <em>sí</em> hay que decir.</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>¿Cuándo lanzan?</summary>
+        <p>Mayo–junio 2026 con los primeros 50 espacios curados en Lima Moderna. Estamos visitando uno por uno antes de publicarlos.</p>
+      </details>
+      <details>
+        <summary>¿Cobran comisión a los hosts?</summary>
+        <p>No. Listar tu espacio es gratis para siempre. Ganamos como agencia cuando una persona quiere que le organicemos el evento completo — eso es opcional y separado de la plataforma.</p>
+      </details>
+      <details>
+        <summary>¿Qué tipo de espacios entran?</summary>
+        <p>Salones para eventos sociales, salas de reuniones, estudios fotográficos, terrazas, espacios para clases, coworking por horas. Si tu espacio puede alquilarse por horas, encaja.</p>
+      </details>
+      <details>
+        <summary>¿Solo Lima?</summary>
+        <p>Empezamos por Lima Moderna — ocho distritos curados. Otras ciudades cuando Lima esté maduro. Primero hacerlo bien, después escalar.</p>
+      </details>
+      <details>
+        <summary>¿Cómo se paga la reserva?</summary>
+        <p>Por ahora, directamente entre tú y el host (Yape, transferencia, efectivo, lo que prefieran). Más adelante integramos pago en plataforma — sin obligar a nadie a usarlo.</p>
+      </details>
+      <details>
+        <summary>¿Y si necesito que organicen todo el evento?</summary>
+        <p>Marcas la opción "ayúdenme a armarlo" en el formulario. Te llamamos por WhatsApp en menos de dos horas con propuesta y cotización.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DUAL CTA ============ -->
+<section id="empezar" class="section cream">
+  <div class="container">
+    <div class="section-head" style="margin: 0 auto 32px; align-items: center; text-align: center;">
+      <p class="eyebrow">Dos caminos</p>
+      <h2>¿Buscas o <em>tienes?</em></h2>
+    </div>
+    <div class="dual-cta">
+      <div class="cta-card">
+        <p class="eyebrow">Para ti que buscas</p>
+        <h3>Encuentra el espacio para tu <em>evento.</em></h3>
+        <p>Cuéntanos qué evento estás organizando y te mostramos tres opciones reales. Sin spam, sin presión.</p>
+        <a href="#search-form" class="btn btn-primary">Empezar a buscar</a>
+      </div>
+      <div class="cta-card dark">
+        <p class="eyebrow">Para ti que tienes</p>
+        <h3>Pon tu local en <em>vitrina.</em></h3>
+        <p>Listar es gratis. Recibes leads filtrados por WhatsApp. Sin comisión, sin contratos.</p>
+        <a href="#hosts" class="btn btn-light">Publicar mi local</a>
+      </div>
+    </div>
   </div>
 </section>
 
 </main>
 
+<!-- ============ FOOTER ============ -->
 <footer class="footer">
-  <div class="container foot">
-    <div>
-      <span class="brand">coordina<span class="dot">·</span><span class="muted">eventos</span></span>
-      <p class="foot-brand">Espacios para eventos en Lima. © 2026 Coordina Eventos.</p>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/">coordina</a>
+        <p>Espacios para eventos en Lima. Encuentra, visita, coordina. Y si lo tuyo es complicado, lo armamos contigo.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <a href="#categorias">Categorías</a>
+        <a href="#distritos">Distritos</a>
+        <a href="#empezar">Empezar</a>
+      </div>
+      <div class="footer-col">
+        <h4>Hosts</h4>
+        <a href="#hosts">Publicar gratis</a>
+        <a href="#hosts">Cómo funciona</a>
+        <a href="#hosts">Comunidad</a>
+      </div>
+      <div class="footer-col">
+        <h4>Coordina</h4>
+        <a href="mailto:info@proper.com.pe">Contacto</a>
+        <a href="#">Términos</a>
+        <a href="#">Privacidad</a>
+      </div>
     </div>
-    <div class="foot-links">
-      <a href="mailto:info@proper.com.pe">info@proper.com.pe</a>
+    <div class="footer-bottom">
+      <span>© 2026 Coordina · Lima, Perú</span>
+      <span>Hecho en Lima.</span>
     </div>
   </div>
 </footer>

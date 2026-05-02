@@ -1,12 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 80" role="img" aria-label="Coordina Eventos">
-  <title>Coordina Eventos — wordmark sobre fondo oscuro</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" role="img" aria-label="Coordina">
+  <title>Coordina — wordmark sobre fondo oscuro</title>
   <style>
-    .word { font-family: 'Inter', system-ui, -apple-system, sans-serif; letter-spacing: -0.025em; }
-    .primary { fill: #FFFFFF; font-weight: 600; }
-    .accent  { fill: #93C5FD; font-weight: 600; }
-    .muted   { fill: #BFD2EE; font-weight: 500; }
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,144,700&display=swap');
+    .word { font-family: 'Fraunces', 'Times New Roman', serif; font-style: italic; font-weight: 700; font-variation-settings: 'opsz' 144; }
+    .light { fill: #FFFFFF; }
+    .accent { fill: #F4B488; }
   </style>
-  <text x="0" y="56" class="word primary" font-size="56">coordina</text>
-  <text x="298" y="56" class="word accent"  font-size="56">·</text>
-  <text x="332" y="56" class="word muted"   font-size="56">eventos</text>
+  <text x="0" y="58" class="word light" font-size="64" letter-spacing="-0.03em">coordina</text>
+  <circle cx="262" cy="52" r="5" class="accent"/>
 </svg>

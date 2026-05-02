@@ -1,7 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Coordina Eventos">
-  <title>Coordina Eventos — isotipo (match)</title>
-  <!-- Concept: dos cuadrados que encajan = espacio que coordina con evento -->
-  <rect x="0" y="0" width="64" height="64" rx="14" fill="#0B2A5C"/>
-  <rect x="14" y="14" width="22" height="22" rx="4" fill="#FFFFFF"/>
-  <rect x="34" y="34" width="16" height="16" rx="3" fill="#2563EB"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Coordina">
+  <title>Coordina — isotipo</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,144,700&display=swap');
+    .letter { font-family: 'Fraunces', 'Times New Roman', serif; font-style: italic; font-weight: 700; font-variation-settings: 'opsz' 144; fill: #FAF8F5; }
+    .accent { fill: #B8451C; }
+  </style>
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="#0F0F0F"/>
+  <text x="32" y="46" text-anchor="middle" class="letter" font-size="48" letter-spacing="-0.03em">c</text>
+  <circle cx="48" cy="44" r="4" class="accent"/>
 </svg>

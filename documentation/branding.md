@@ -1,260 +1,240 @@
-# Branding — Coordina Eventos
+# Branding — Coordina
 
-> Documento canónico. Si entra en conflicto con cualquier otro, **este manda**.
-> **Marca**: Coordina Eventos · **Display corto**: coordina · **Dominio**: coordinaeventos.com
+> Documento canónico. Si entra en conflicto con cualquier otro doc, **este manda**.
+> **Marca**: Coordina · **Marca formal**: Coordina Eventos · **Dominio**: coordinaeventos.com
 
 ---
 
 ## Posicionamiento en una frase
 
-**Coordina Eventos es donde el evento empieza:** la plataforma que conecta gente con espacios, y cuando hace falta, los coordinamos por ti.
+**Coordina es donde el evento empieza:** la plataforma editorial que conecta gente con espacios en Lima, y cuando hace falta, los coordinamos por ti.
+
+---
+
+## Filosofía visual
+
+**Editorial peruvian sunset.**
+La marca se siente como una revista de domingo, no como otro SaaS. La paleta evoca atardecer limeño sin caer en folclore. La tipografía mezcla un serif italic expresivo con un sans geométrico moderno. El resultado: cálido, premium, distintivo, y **claramente no hecho por IA**.
 
 ---
 
 ## Color
 
 ### Filosofía
-La paleta es **navy editorial**, no azul tech genérico. La intención: que el sitio se sienta confiable y profesional como una revista, no como una herramienta SaaS más. El azul vibrante aparece **sólo donde importa**: CTAs, links, accent del separador.
+Cream sobre carbon, con terracotta como acento puntual. Nada de azul tech genérico. Nada de morado wallet. Nada de verde tropical. **Peruvian sunset editorial**.
 
 ### Tokens
 
 | Rol | Token | Hex | Notas de uso |
 |---|---|---|---|
-| **Primary** | `--primary` | `#0B2A5C` | Wordmark, headings, footer |
-| **Accent** | `--accent` | `#2563EB` | CTA principal, links, separador del wordmark |
-| **Accent-strong** | `--accent-strong` | `#1D4ED8` | Hover state de CTA |
-| **Muted** | `--muted` | `#4B6090` | Texto secundario, segunda mitad del wordmark |
-| **Muted-light** | `--muted-light` | `#7A8AAB` | Captions, labels secundarios |
-| **Surface** | `--surface` | `#F4F6FA` | Backgrounds suaves, cards alternas |
-| **Surface-strong** | `--surface-strong` | `#E5EAF2` | Bordes destacados, hover de surface |
-| **Line** | `--line` | `#D8DEEA` | Separadores, bordes de input |
+| **Ink** | `--ink` | `#0F0F0F` | Texto principal, headings, wordmark |
+| **Ink-2** | `--ink-2` | `#2A2A2A` | Texto secundario denso |
+| **Muted** | `--muted` | `#5C5C5C` | Captions, leads, párrafos secundarios |
+| **Muted-light** | `--muted-light` | `#8A8A8A` | Placeholders, labels micro |
 | **Background** | `--bg` | `#FFFFFF` | Background base |
-| **Ink** | `--ink` | `#0B1220` | Texto largo de body |
-| **Ink-2** | `--ink-2` | `#1F2937` | Texto secundario |
+| **Cream** | `--cream` | `#FAF8F5` | Surface cálido — sections alternas, cards |
+| **Cream-2** | `--cream-2` | `#F4EFE6` | Borders cálidos, hover de cream |
+| **Peach** | `--peach` | `#FFF1E5` | Acento muy suave (hover sutil) |
+| **Line** | `--line` | `#E8E2D8` | Bordes default |
+| **Line-soft** | `--line-soft` | `#F2EDE5` | Separadores ultra-sutiles |
+| **Terracotta** | `--terracotta` | `#B8451C` | Accent principal — CTA, links destacados, italics |
+| **Terracotta-strong** | `--terracotta-strong` | `#9A3815` | Hover de CTA terracotta |
+| **Terracotta-soft** | `--terracotta-soft` | `#F4B488` | Sobre fondos oscuros, gradients |
 
 ### Funcionales
-- Éxito: `#10B981`
-- Alerta: `#F59E0B`
-- Error: `#EF4444`
+- Éxito: `#047857` (verde profundo, no neón).
+- Alerta: `#B45309` (ámbar tostado).
+- Error: `#B91C1C` (rojo profundo).
 
 ### Reglas duras
-- El **accent** `#2563EB` aparece **máximo una vez por viewport** (CTA principal). Si aparece más, es ruido.
-- El **primary** `#0B2A5C` es el color de la marca: wordmark, headings, footer. Nunca decorativo.
-- **Cero gradientes**, salvo el sutil `bg → surface` del hero.
+- **Terracotta** `#B8451C` aparece **máximo 2 veces por viewport** (CTA principal + acento decorativo). Si aparece más, es ruido.
+- **Cream** es el fondo natural de secciones alternas. Crea ritmo editorial.
+- **Carbon** es para texto y la sección host (dark contrast).
+- **Cero gradients tech** (purple→pink) — solo gradientes orgánicos peruvian sunset (cream→terracotta→carbon).
 - **Cero glassmorphism, cero neumorphism**.
-- En texto largo, usar `--ink` (no `--primary` — fatiga la vista).
 
 ---
 
 ## Tipografía
 
-### Fuente
-**Inter** — variable, libre, optimizada para pantalla. Usada por GitHub, Stripe, Vercel.
+### Stack dual
+- **Display**: `Fraunces` (Google Fonts, variable, gratis). Serif italic con personalidad. Optical sizing `opsz: 144` para títulos grandes.
+- **Sans**: `Geist` (Vercel, gratis vía Google Fonts). Geométrica precisa. UI, body, micro-copy.
 
-> Razón de elección: rendimiento web óptimo, soporta todo el español sin tweaks, y a peso 600 con tracking cerrado se lee editorial, no "tech default".
+### Por qué este stack
+- **Fraunces** es lo opuesto de Inter genérico. Tiene carácter editorial italic, optical sizing real, y un peso 700 que se siente luxury sin ser pomposo.
+- **Geist** es la respuesta de Vercel a Inter. Más nueva, geométrica precisa, sin estar todavía sobre-usada.
+- La combinación serif italic + sans geométrica dice "revista cuidadosamente diseñada", no "dashboard SaaS más".
 
 ### Pesos canónicos
-- **600**: wordmark, headings, CTAs.
-- **500**: subtítulos, énfasis en body, "eventos" del wordmark.
-- **400**: body default.
+- Display heading: **700 italic** con `opsz: 144`.
+- Display sub: **600** o **500 italic** según contexto.
+- Sans body: **400**.
+- Sans énfasis: **500** o **600**.
 
 ### Tracking
-- Headings: `-0.03em` (más cerrado de lo usual, refinado).
-- Wordmark: `-0.025em`.
-- Body: `0` (neutro).
+- Display headings: `-0.04em` a `-0.045em` (muy cerrado, look editorial).
+- Display body: `-0.025em` a `-0.03em`.
+- Sans UI: `-0.005em` a `0`.
 
 ### Escala canónica
 
-| Token | Tamaño | Line-height | Uso |
+| Token | px | Display típico | Uso |
 |---|---|---|---|
-| `text-xs`  | 12 | 16 | Disclaimers |
-| `text-sm`  | 14 | 20 | Labels, captions |
-| `text-base`| 16 | 24 | Body default |
-| `text-lg`  | 18 | 28 | Lead paragraphs |
-| `text-xl`  | 20 | 28 | Sub-headings menores |
-| `text-2xl` | 24 | 32 | Section titles small |
-| `text-3xl` | 30 | 36 | Section titles |
-| `text-4xl` | 36 | 40 | Page titles mobile |
-| `text-5xl` | 48 | 1.1 | Hero mobile |
-| `text-6xl` | 60 | 1.05 | Hero desktop |
-| `text-7xl` | 76 | 1.0 | Hero XL (OG, statements) |
+| `text-xs` | 12 | sans 500 | Eyebrow, labels micro |
+| `text-sm` | 13–14 | sans 400/500 | Captions, footer |
+| `text-base` | 15–16 | sans 400 | Body default |
+| `text-lg` | 18 | sans 400 | Lead paragraphs |
+| `text-xl` | 22 | display 600 | Sub-titles |
+| `text-2xl` | 28 | display 700 | Section titles small |
+| `text-3xl` | 36–44 | display 700 | Section titles |
+| `text-4xl` | 48–60 | display 700 | Page titles mobile |
+| `text-5xl` | 64–80 | display 700 | Hero mobile / dark sections |
+| `text-6xl` | 96–104 | display 700 italic | Hero desktop |
 
 ### Reglas
-- **Una sola fuente** en producto. Inter en todo.
-- Headings con tracking negativo, body con tracking neutro.
-- Itálica solo para énfasis lingüístico real (no decorativo).
-- **Nunca** all caps salvo en labels muy puntuales (≤4 palabras, `text-xs`, tracking `+0.05em`).
+- **Display** se usa sólo en headings, wordmark, statements. No en body.
+- **Italics terracota** marcan el énfasis emocional del título — solo una palabra clave.
+- **Eyebrows** (kicker antes del heading): sans 500, uppercase, `letter-spacing: 0.12em`. Pequeño, elegante, editorial.
+- **Cero all-caps en headings**. La italics + tracking ya da personalidad.
 
 ---
 
 ## Wordmark
 
+### Concepto
+**"coordina"** en Fraunces italic 700. Una sola palabra, un punto terracotta como acento. La marca formal completa es "Coordina Eventos" pero la identidad visible es **coordina** — más memorable, más distintiva, más Peerspace-style (single mark).
+
 ### Versiones disponibles
-- `brand/logo/wordmark.svg` — color sobre fondo claro.
-- `brand/logo/wordmark-white.svg` — sobre fondos oscuros / navy.
-- `brand/logo/icon.svg` — isotipo cuadrado (IG profile, app icon).
+- `brand/logo/wordmark.svg` — color sobre fondo claro (default).
+- `brand/logo/wordmark-white.svg` — sobre fondos oscuros / carbon.
+- `brand/logo/icon.svg` — isotipo cuadrado (carbon con "c" + punto).
 - `brand/logo/favicon.svg` — favicon 32×32.
 - `brand/logo/og-image.svg` — Open Graph 1200×630.
 
-### Construcción del wordmark
-
+### Construcción
 ```
-coordina  ·  eventos
-   ↑      ↑      ↑
-primary  accent  muted
- 600     600     500
+coordina.
+   ↑     ↑
+ink/700  terracotta dot
+italic
 ```
 
-- "coordina" en `--primary`, peso 600.
-- "·" en `--accent`, peso 600 (es la única chispa de azul vibrante).
-- "eventos" en `--muted`, peso 500.
-- Tracking `-0.025em` en todo.
+- Fraunces italic peso 700, `opsz: 144`.
+- Tracking `-0.03em`.
+- Color: `--ink` `#0F0F0F`.
+- Punto decorativo: círculo de 5px en `--terracotta`, alineado al baseline-ish (vertical-align top + margin).
 
 ### Espacio mínimo y tamaño
 - Espacio de seguridad: equivalente a la altura de la "x" de "coordina".
-- Tamaño mínimo: 120px ancho web, 30mm impreso.
-- Versión sólo "coordina" cuando el espacio aprieta (header móvil estrecho).
+- Tamaño mínimo wordmark: **120px** ancho web, **30mm** impreso.
+- Tamaño mínimo isotipo: **24px** (favicon-grade).
 
 ### Isotipo
-**Concepto**: dos cuadrados desfasados que encajan = el evento y el espacio que se coordinan.
-
-- Cuadrado primario (blanco) representa el espacio.
-- Cuadrado accent (azul vibrante) representa el evento.
-- Su ligera superposición/desfase es la coordinación.
-
-Reglas:
-- Nunca girar el isotipo.
-- Nunca cambiar la proporción de los cuadrados.
-- En tamaños <24px usar la versión favicon (los cuadrados son más sólidos visualmente).
+Carbon `#0F0F0F` con la letra "c" en Fraunces italic en cream + punto terracotta. La "c" italic tiene personalidad propia y funciona como mark independiente.
 
 ---
 
 ## Spacing
 
-Sistema de 4px. Múltiplos canónicos: `4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128`.
+Sistema basado en 4px. Múltiplos canónicos: `4 · 8 · 12 · 16 · 24 · 32 · 48 · 56 · 64 · 80 · 96 · 128`.
 
-- Padding interno de cards: 24-32.
+- Padding interno cards: 16-32.
 - Gap entre cards: 16-24.
-- Padding de section: 72-96 vertical, 24-72 horizontal según viewport.
-- Container max-width: 1080px.
+- Padding section vertical: 80-96.
+- Container max-width: 1080-1200px (más amplio que el típico 720 — look editorial revista).
 
 ---
 
 ## Radios
 
-- Botón: `12px`.
-- Card: `16px`.
-- Input: `10px`.
-- Pill: `9999px`.
+- Botón pill: `999px` (totalmente redondeado — Peerspace-style).
+- Botón rectangular: `12px` (uso secundario).
+- Card: `16-20px`.
+- Input dentro de search-bar: `999px`.
 - Hero / hero-image: `24px`.
 
 ---
 
 ## Sombras
 
-- `shadow-sm`: `0 1px 2px rgba(11,18,32,.04)`.
-- `shadow-md`: `0 4px 16px rgba(11,42,92,.06)` — solo en hover de cards o lifted CTAs.
-- **Cero sombras decorativas**. Una sombra solo aparece cuando comunica elevación funcional.
+- `shadow-sm`: `0 1px 2px rgba(15,15,15,.04)`.
+- `shadow-md`: `0 6px 24px rgba(15,15,15,.06)` — solo en hover de cards o en search bar elevada.
+- **Cero sombras decorativas**. La sombra solo aparece cuando comunica elevación funcional.
 
 ---
 
-## Componentes (resumen)
+## Componentes principales
 
-### Botón primario
-```css
-background: var(--accent);
-color: white;
-padding: 12px 20px;
-border-radius: 12px;
-font-weight: 600;
-letter-spacing: -0.005em;
-hover: background var(--accent-strong);
-```
+### Search bar (hero)
+Caja blanca redondeada (`999px`) con 3 campos divididos por línea + botón terracotta. Inspirada directamente en Peerspace pero adaptada al contexto Lima (campos: qué evento, dónde, cuándo).
 
-Una sola instancia por viewport. La acción más importante.
+### Cards de espacio
+Foto/gradient placeholder dominante (aspect 4:3) con tag flotante abajo a la izquierda. Meta abajo (nombre serif 600, distrito sans, precio serif 600).
 
-### Botón secundario
-```css
-background: white;
-color: var(--primary);
-border: 1px solid var(--line);
-border-radius: 12px;
-hover: background var(--surface);
-```
+### Pillares numerados
+Número grande Fraunces italic terracotta a la izquierda (32px). Texto a la derecha con strong serif 600 + parrafo sans 400.
 
-### Botón ghost
-```css
-color: var(--accent);
-background: transparent;
-hover: background var(--surface);
-```
+### Sección oscura (hosts)
+Fondo carbon `#0F0F0F`, texto cream, terracotta-soft para italics e iconografía. Contraste editorial fuerte.
 
-### Input
-```css
-border: 1px solid var(--line);
-border-radius: 10px;
-padding: 14px 16px;
-font-size: 16px;
-focus:
-  border: 1px solid var(--accent);
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
-```
-
-### Card
-```css
-background: var(--bg);
-border: 1px solid var(--line);
-border-radius: 16px;
-padding: 24px;
-hover (interactive only): shadow-md;
-```
+### CTA dual
+Dos cards lado a lado al final. Una clara (cream + terracotta) para guests, una oscura (carbon + terracotta-soft) para hosts. Visualmente comunican los dos públicos.
 
 ---
 
 ## Iconografía
 
-- **Lucide Icons** (lucide.dev) — outline, stroke 1.5px.
-- Color: `currentColor` salvo casos donde aplique brand color.
-- Tamaños: 16, 20, 24, 32 px.
+- **Lucide Icons** (lucide.dev) — outline, stroke 1.5-2px.
+- Color: hereda de `currentColor` salvo cuando aplique brand color.
+- Tamaños canónicos: 16, 18, 20, 24 px.
 
 ### Excepciones
 - Logos de pago (Yape, Plin, Visa, Mastercard) — color oficial de cada marca.
-- Logos sociales (IG, FB, X, LinkedIn) — monocromo `--muted` en footer, color en CTAs hero.
+- Logos sociales (IG, FB, X, LinkedIn) — monocromo en footer, color en CTAs hero.
 
 ---
 
 ## Fotografía
 
-Filosofía: **real, no stock**. Si no hay foto real, mejor texto + ilustración mínima.
+Filosofía: **real, no stock**. En MVP usamos **gradients sofisticados** como placeholder (peruvian sunset) hasta tener fotos reales de los hosts. Esto se siente premium y evita el "stock corporativo IA-look".
 
-✅ **Aprobada**:
+✅ **Aprobada (cuando llegue)**:
 - Foto real del espacio del host.
-- Iluminación natural o profesional limpia.
-- Personas en escena cuando el caso lo pide (un cumpleaños se ve mejor con humanos).
+- Iluminación natural o profesional.
+- Personas en escena cuando aplique al caso de uso.
 - Composición editorial.
 
 ❌ **Rechazada**:
-- Stock corporativo ("3 personas sonriendo apuntando a un laptop").
+- Stock corporativo genérico.
 - Filtros VSCO / vintage / sepia heavy.
 - Marca de agua de competidor.
 - Render 3D de salones falsos.
 
+### Placeholder gradients
+Hasta tener fotos reales, usar 6 gradient backgrounds peruvian sunset (`bg-1` a `bg-6` en CSS). Cada uno con tag textual de qué espacio representaría. Esto es **mejor que stock**, no peor.
+
 ---
 
-## Voz visual + escrita = una sola voz
+## Voz visual + voz escrita = una sola voz
 
-La marca **se ve** editorial, navy, geométrica.
+La marca **se ve** editorial peruvian sunset.
 La marca **escribe** clara, peruana, honesta, sin clichés.
 
-Ver `brand/messaging/voz.md` para guía de copy.
+Si una pieza visual es minimalista pero el copy es marketing-bullshit, **falla la marca**.
+
+Ver `brand/messaging/voz.md` y `brand/messaging/taglines.md`.
 
 ---
 
 ## Lo que NO somos visualmente
 
-- No somos azul tech genérico (`#3B82F6` puro suelto).
-- No somos morado wallet (Yape territory).
-- No somos coral/rosa Airbnb.
-- No somos el dorado pomposo de salones de eventos tradicionales.
-- No somos folklore peruano (sin elementos andinos cliché).
-- No somos un dashboard B2B SaaS gris.
+- ❌ Azul tech default (`#3B82F6` / `#2563EB`) puro.
+- ❌ Morado wallet (Yape territory).
+- ❌ Coral Airbnb (`#FF385C`).
+- ❌ Naranja chillón (`#F97316`) tipo Substack.
+- ❌ Dorado pomposo de salones de eventos tradicionales.
+- ❌ Folklore peruano (sin elementos andinos cliché — pampas, llamas, flautas).
+- ❌ Dashboard B2B SaaS gris.
+- ❌ Inter peso 700 default.
+- ❌ Stock corporativo "3 personas señalando un laptop".
