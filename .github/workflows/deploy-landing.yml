@@ -1,12 +1,14 @@
-name: Deploy landing to GitHub Pages
+name: Deploy site (landing + app)
 
 on:
   push:
     branches: [main]
     paths:
       - 'landing/**'
-      - 'brand/logo/**'
+      - 'app/web/**'
       - 'data/public/**'
+      - 'brand/logo/**'
+      - 'scripts/build_app_pages.py'
       - '.github/workflows/deploy-landing.yml'
   workflow_dispatch:
 
@@ -28,14 +30,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build app pages from JSON
+        run: python3 scripts/build_app_pages.py
+
       - name: Stage site
         run: |
           mkdir -p _site
+          # landing en raíz
           cp -R landing/src/* _site/
+          # brand assets
           mkdir -p _site/brand/logo
           cp -R brand/logo/* _site/brand/logo/
+          # data pública
           mkdir -p _site/data/public
           cp -R data/public/* _site/data/public/ 2>/dev/null || true
+          # app en /app/
+          mkdir -p _site/app
+          cp -R app/web/* _site/app/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

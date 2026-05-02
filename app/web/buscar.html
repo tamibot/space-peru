@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Buscar espacios — Coordina Eventos</title>
+  <meta name="description" content="Filtra por categoría, distrito y capacidad. Espacios verificados en Lima Moderna." />
+  <meta name="theme-color" content="#0A2540" />
+  <link rel="icon" href="../../brand/logo/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body data-page="search">
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="./index.html">coordina<span class="brand-suffix">eventos</span></a>
+    <nav class="nav-links">
+      <a href="./buscar.html" class="active">Buscar</a>
+      <a href="./asistente.html">Asistente IA</a>
+      <a href="../../" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Landing
+      </a>
+    </nav>
+  </div>
+</header>
+
+<section class="app-hero">
+  <div class="container">
+    <span class="eyebrow">Buscar · Lima</span>
+    <h1>Espacios verificados.</h1>
+    <p>Filtra por lo que necesitas y coordina la visita por WhatsApp con el encargado.</p>
+    <form id="search-form" class="search-bar">
+      <label class="search-field" for="q-event">
+        <span>Qué evento</span>
+        <input id="q-event" name="event" type="text" placeholder="Cumpleaños, sesión, reunión…" />
+      </label>
+      <label class="search-field" for="q-where">
+        <span>Distrito</span>
+        <select id="q-where" name="where">
+          <option value="">Cualquiera</option>
+          <option>Miraflores</option>
+          <option>San Isidro</option>
+          <option>Barranco</option>
+          <option>Surco</option>
+          <option>San Borja</option>
+          <option>La Molina</option>
+          <option>Magdalena del Mar</option>
+          <option>Pueblo Libre</option>
+        </select>
+      </label>
+      <label class="search-field" for="q-cap">
+        <span>Capacidad</span>
+        <input id="q-cap" name="cap" type="number" min="1" placeholder="Personas" />
+      </label>
+      <button type="submit" class="btn-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+        Buscar
+      </button>
+    </form>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <!-- Filtros por caso de uso -->
+    <div class="filters">
+      <button class="filter-chip" data-caso="cumpleanos">Cumpleaños</button>
+      <button class="filter-chip" data-caso="boda">Boda</button>
+      <button class="filter-chip" data-caso="sesion-fotos">Sesión de fotos</button>
+      <button class="filter-chip" data-caso="conferencia">Conferencia</button>
+      <button class="filter-chip" data-caso="reunion">Sala de reunión</button>
+      <button class="filter-chip" data-caso="capacitacion">Capacitación</button>
+      <button class="filter-chip" data-caso="coworking">Coworking</button>
+      <button class="filter-chip" data-caso="pop-up">Pop-up</button>
+      <button class="filter-chip" data-caso="yoga-clase">Yoga · clase</button>
+      <button class="filter-chip" data-caso="grabacion-video">Grabación de video</button>
+    </div>
+
+    <!-- Filtros por distrito -->
+    <div class="filters">
+      <button class="filter-chip" data-distrito="Miraflores">Miraflores</button>
+      <button class="filter-chip" data-distrito="San Isidro">San Isidro</button>
+      <button class="filter-chip" data-distrito="Barranco">Barranco</button>
+      <button class="filter-chip" data-distrito="Surco">Surco</button>
+      <button class="filter-chip" data-distrito="San Borja">San Borja</button>
+      <button class="filter-chip" data-distrito="La Molina">La Molina</button>
+      <button class="filter-chip" data-distrito="Magdalena del Mar">Magdalena</button>
+      <button class="filter-chip" data-distrito="Pueblo Libre">Pueblo Libre</button>
+    </div>
+
+    <div class="results-bar">
+      <span id="count">Cargando…</span>
+      <select id="sort" aria-label="Ordenar por">
+        <option value="rating">Mejor calificados</option>
+        <option value="price-asc">Precio: menor a mayor</option>
+        <option value="price-desc">Precio: mayor a menor</option>
+        <option value="cap">Capacidad</option>
+      </select>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-content">
+    <span>© 2026 Coordina Eventos · Lima, Perú</span>
+    <a href="../../">← Volver a la landing</a>
+  </div>
+</footer>
+
+<script src="./app.js"></script>
+</body>
+</html>
