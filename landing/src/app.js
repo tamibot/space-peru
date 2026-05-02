@@ -126,5 +126,16 @@
       });
     }, { threshold: 0.3 });
     document.querySelectorAll('.benefit').forEach((el) => benIO.observe(el));
+
+    // ── 4d. Soon cards SVG animations ──────────────────────────
+    const soonIO = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          soonIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.soon-card').forEach((el) => soonIO.observe(el));
   }
 })();
