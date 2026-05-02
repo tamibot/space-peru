@@ -49,6 +49,12 @@
       "skillPath": "plugins/database-design/skills/postgresql/SKILL.md",
       "computedHash": "dcace78e5cef7d8dce8ffef7ebee146e6c83a438aa4cf80bf502730e870c02d4"
     },
+    "product-name": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "skillPath": "pm-marketing-growth/skills/product-name/SKILL.md",
+      "computedHash": "37cca037c08948af87728d31b676c2192029fa8ca0a4dd62584ad0839dee55a7"
+    },
     "startup-financial-modeling": {
       "source": "wshobson/agents",
       "sourceType": "github",

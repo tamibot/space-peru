@@ -1,16 +1,24 @@
 # Logo
 
-Espacio para los archivos de marca visual. **Por generar**.
+Archivos de marca visual.
 
-## Versiones requeridas (entregables)
-- `space-peru-wordmark.svg` — wordmark principal en azul `--blue-600`
-- `space-peru-wordmark-white.svg` — sobre fondos oscuros / azul
-- `space-peru-wordmark-black.svg` — solo monocromo
-- `space-peru-icon.svg` — isotipo cuadrado (para favicons, IG profile)
-- `space-peru-icon-white.svg`
-- `favicon.ico` (multi-size 16/32/48)
-- `apple-touch-icon.png` (180×180)
-- `og-image.png` (1200×630, para social previews)
+> ⚠️ **Nombre placeholder**: el wordmark dice "planea ya". Cuando se confirme nombre final, regenerar SVG con find/replace + actualizar este README.
+
+## Archivos disponibles
+
+| Archivo | Tamaño | Uso |
+|---|---|---|
+| `wordmark.svg` | 360×80 | Sobre fondos claros (default) |
+| `wordmark-white.svg` | 360×80 | Sobre fondos oscuros / azul |
+| `icon.svg` | 64×64 | Isotipo cuadrado (IG profile, app icon) |
+| `favicon.svg` | 32×32 | Favicon del sitio |
+| `og-image.svg` | 1200×630 | Open Graph (compartir en redes / WhatsApp) |
+
+## Pendientes de generar (cuando se cierre el nombre)
+- `apple-touch-icon.png` (180×180) — convertir desde `icon.svg`.
+- `favicon.ico` multi-size (16/32/48) — herramienta: realfavicongenerator.net.
+- `og-image.png` (1200×630 PNG) — convertir desde `og-image.svg` para mejor compatibilidad social.
+- Variante negra `wordmark-black.svg` para impreso.
 
 ## Reglas de uso
 - **Espacio mínimo alrededor del wordmark**: altura de la "x" del wordmark.
