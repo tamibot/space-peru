@@ -1,9 +1,9 @@
 # Posicionamiento
 
-> Working name: **Planea Ya** · Dominio placeholder: `planearya.com`
+> Working name: **Coordina Eventos** · Dominio placeholder: `coordinaeventos.com`
 
 ## One-liner
-**Planea Ya: el asistente que encuentra tu espacio en Lima en minutos. Y si no, lo organizamos por ti.**
+**Coordina Eventos: el asistente que encuentra tu espacio en Lima en minutos. Y si no, lo organizamos por ti.**
 
 ## Modelo de negocio (resumen)
 Plataforma 100% gratuita (publicar y buscar). Monetización indirecta vía la **agencia de eventos del owner**: leads premium escalan al servicio concierge donde se cobra el evento completo.
@@ -12,10 +12,10 @@ Plataforma 100% gratuita (publicar y buscar). Monetización indirecta vía la **
 
 > Para **organizadores de eventos, productoras audiovisuales, instructores y equipos corporativos en Lima**
 > que **necesitan espacios por horas y hoy pierden tiempo cotizando por WhatsApp e Instagram**,
-> **Planea Ya** es **un marketplace de alquiler por horas**
+> **Coordina Eventos** es **un marketplace de alquiler por horas**
 > que **permite descubrir, reservar y pagar un espacio verificado en menos de 5 minutos**.
 > A diferencia de **Space-Pal, grupos de Facebook y Mercado Libre**,
-> Planea Ya ofrece **verificación humana, pago 100% local (Yape/Plin/tarjeta) y soporte por WhatsApp**.
+> Coordina Eventos ofrece **verificación humana, pago 100% local (Yape/Plin/tarjeta) y soporte por WhatsApp**.
 
 ## Tres palabras
 **Simple. Confiable. Peruano.**

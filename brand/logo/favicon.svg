@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
-  <title>Favicon</title>
-  <rect x="0" y="0" width="32" height="32" rx="7" fill="#2563EB"/>
-  <text x="16" y="22" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="18" fill="#FFFFFF" letter-spacing="-0.02em">p</text>
-  <circle cx="24" cy="21" r="2" fill="#93C5FD"/>
+  <title>Coordina Eventos — favicon</title>
+  <rect x="0" y="0" width="32" height="32" rx="7" fill="#0B2A5C"/>
+  <rect x="7" y="7" width="11" height="11" rx="2" fill="#FFFFFF"/>
+  <rect x="17" y="17" width="8" height="8" rx="1.5" fill="#2563EB"/>
 </svg>

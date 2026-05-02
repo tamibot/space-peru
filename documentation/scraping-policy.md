@@ -1,16 +1,16 @@
-# Política de scraping — Planea Ya
+# Política de scraping — Coordina Eventos
 
 > **Estado**: borrador. Implementación post-MVP (Fase 6 del plan de trabajo).
 > **Owner**: info@proper.com.pe.
 > **Mantenido por**: agente `librarian`.
 
-Este documento define **qué scrapeamos, cómo, y bajo qué reglas legales/éticas**, para nutrir el catálogo inicial de Planea Ya.
+Este documento define **qué scrapeamos, cómo, y bajo qué reglas legales/éticas**, para nutrir el catálogo inicial de Coordina Eventos.
 
 ---
 
 ## Objetivo
 
-Pre-poblar el catálogo público con 500-2.000 espacios visibles públicamente en otros portales y redes, para acelerar **SEO**, **descubrimiento orgánico** y **outreach a hosts** ("alguien busca tu local en planea ya").
+Pre-poblar el catálogo público con 500-2.000 espacios visibles públicamente en otros portales y redes, para acelerar **SEO**, **descubrimiento orgánico** y **outreach a hosts** ("alguien busca tu local en coordina · eventos").
 
 ---
 
@@ -35,11 +35,11 @@ Pre-poblar el catálogo público con 500-2.000 espacios visibles públicamente e
 2. **Respetar robots.txt** de cada sitio. Si prohíbe `/listings/*`, no scrapeamos esa ruta.
 3. **No copiar texto descriptivo extenso** del listing original. Solo metadata estructurada (nombre, distrito, capacidad, fotos públicas, precio público, contacto público). Las descripciones se reescriben o se piden al host cuando reclama.
 4. **Atribución obligatoria**: cada listing scrapeado tiene un campo `source` con URL al original y badge visual "Datos de [fuente]".
-5. **Honor takedown requests** en <72h. Email de contacto en `legal@planearya.com` (a configurar).
+5. **Honor takedown requests** en <72h. Email de contacto en `legal@coordinaeventos.com` (a configurar).
 
 ### Éticas
 6. **Rate limiting** estricto: máximo 1 request cada 3 segundos por dominio. Sin excepciones.
-7. **User-Agent identificable**: `PlaneaYa-Crawler/1.0 (+https://planearya.com/bot)` con página explicando qué hacemos y cómo opt-out.
+7. **User-Agent identificable**: `PlaneaYa-Crawler/1.0 (+https://coordinaeventos.com/bot)` con página explicando qué hacemos y cómo opt-out.
 8. **No scraping** de fotos protegidas (con marca de agua, bajo copyright explícito). Si la foto tiene marca de agua, mostramos foto placeholder y pedimos al host original que suba sus propias.
 9. **No scraping de datos personales** del host más allá de lo público (nombre comercial sí, número de DNI no, dirección particular del dueño no si no está pública).
 
@@ -68,9 +68,9 @@ Pre-poblar el catálogo público con 500-2.000 espacios visibles públicamente e
               Llega lead de un guest interesado
                        │
                        ▼
-              Equipo Planea Ya contacta al host por WhatsApp:
+              Equipo Coordina Eventos contacta al host por WhatsApp:
               "Hola, alguien busca tu local. Lo tenemos publicado en
-               planearya.com. Recláma lo gratis y recibe más leads."
+               coordinaeventos.com. Recláma lo gratis y recibe más leads."
                        │
                        ▼
               Host se registra → reclama → verifica → status: claimed_verified
@@ -114,7 +114,7 @@ Pre-poblar el catálogo público con 500-2.000 espacios visibles públicamente e
 
 ## Roles humanos
 
-- **Owner / equipo Planea Ya**: revisa listings nuevos, contacta hosts, gestiona reclamos.
+- **Owner / equipo Coordina Eventos**: revisa listings nuevos, contacta hosts, gestiona reclamos.
 - **Librarian agent (Claude)**: monitorea logs, alerta si rate-limit cae bajo, audita compliance mensual.
 - **Reviewer agent (Claude)**: audita esta política trimestral.
 

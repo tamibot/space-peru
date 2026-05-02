@@ -1,6 +1,6 @@
 # App
 
-Producto principal de Planea Ya.
+Producto principal de Coordina Eventos.
 
 ## Estructura
 ```

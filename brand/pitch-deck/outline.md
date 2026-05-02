@@ -38,7 +38,7 @@ Documento fuente del pitch deck. Para exportarlo a `.pptx` usar `anthropic-skill
 - Énfasis en branding minimalista azul
 
 ## Slide 6 — Diferenciadores vs competencia
-| | Space-Pal | FB Groups | Mercado Libre | **Planea Ya** |
+| | Space-Pal | FB Groups | Mercado Libre | **Coordina Eventos** |
 |---|---|---|---|---|
 | Catálogo Lima | ❌ | ✅ informal | △ | ✅ curado |
 | Pago local nativo | ❌ | ❌ | △ | ✅ Yape/Plin |

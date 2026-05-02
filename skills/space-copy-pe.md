@@ -1,6 +1,6 @@
 ---
 name: space-copy-pe
-description: Redacta copy en español Perú con la voz de Planea Ya. Cercana, peruana, honesta, sin clichés de marketing.
+description: Redacta copy en español Perú con la voz de Coordina Eventos. Cercana, peruana, honesta, sin clichés de marketing.
 ---
 
 # space-copy-pe

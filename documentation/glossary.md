@@ -8,7 +8,7 @@
 | **Reserva (Booking)** | Transacción confirmada de un horario en un espacio |
 | **Reseña (Review)** | Calificación post-uso |
 | **Listado (Listing)** | Publicación de un espacio en la plataforma |
-| **Comisión** | % que Planea Ya cobra por reserva (a definir) |
+| **Comisión** | % que Coordina Eventos cobra por reserva (a definir) |
 | **Distrito** | División administrativa de Lima donde está el espacio |
 | **Categoría** | Tipo del espacio (eventos, salas, estudios, etc.) |
 | **Tarifa por hora** | Precio base que el host define |

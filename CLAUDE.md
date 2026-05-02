@@ -1,11 +1,11 @@
 # CLAUDE.md — Contexto persistente para este repo
 
 ## Qué es esto
-**Planea Ya** (working name; placeholder en `planearya.com`) — marketplace de **espacios alquilables por horas en Lima**. Catálogo gratuito + asistente conversacional + concierge humano que escala leads premium hacia la **agencia de eventos del owner** (donde realmente se monetiza).
+**Coordina Eventos** (working name; placeholder en `coordinaeventos.com`) — marketplace de **espacios alquilables por horas en Lima**. Catálogo gratuito + asistente conversacional + concierge humano que escala leads premium hacia la **agencia de eventos del owner** (donde realmente se monetiza).
 
 Inspirado en Peerspace (UX) pero con **branding minimalista en español, azul, asistente IA, y agencia propia como vehículo de monetización**. Foco inicial: **solo Lima**.
 
-> El nombre del repo (`space-peru`) es legacy y se mantiene; el producto se llama Planea Ya.
+> El nombre del repo (`space-peru`) es legacy y se mantiene; el producto se llama Coordina Eventos.
 
 ## Owner
 `info@proper.com.pe` — GitHub: `tamibot`.

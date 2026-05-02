@@ -1,7 +1,7 @@
-# PRD MVP — Planea Ya
+# PRD MVP — Coordina Eventos
 
-> **Producto**: Planea Ya (working name).
-> **Dominio**: planearya.com (placeholder).
+> **Producto**: Coordina Eventos (working name).
+> **Dominio**: coordinaeventos.com (placeholder).
 > **Owner**: info@proper.com.pe.
 > **Estado**: borrador para revisión.
 > **Fecha**: 2026-05-01.
@@ -11,7 +11,7 @@
 
 ## 1. Resumen ejecutivo
 
-**Planea Ya es el marketplace de espacios alquilables por horas en Lima** que combina (a) catálogo gratuito navegable por caso de uso, (b) asistente conversacional que matchea al guest con 3 opciones reales en segundos, y (c) concierge humano fallback que escala los casos no resueltos hacia la agencia de eventos del owner.
+**Coordina Eventos es el marketplace de espacios alquilables por horas en Lima** que combina (a) catálogo gratuito navegable por caso de uso, (b) asistente conversacional que matchea al guest con 3 opciones reales en segundos, y (c) concierge humano fallback que escala los casos no resueltos hacia la agencia de eventos del owner.
 
 El MVP **no procesa pagos**. La transacción ocurre offline (Yape, transferencia, efectivo) entre host y guest. La plataforma monetiza indirectamente: los leads premium (organización completa, eventos grandes) van a la agencia donde el ticket promedio es S/3.000-8.000 con margen 15-25%.
 
@@ -28,7 +28,7 @@ Tiempo a primer lead pagado vía agencia: **4-6 semanas**.
 - **Contexto**: organiza un baby shower para una amiga en 5 semanas. Capacidad 25 personas, sábado tarde, presupuesto S/1.500-3.000 incluido espacio y decoración.
 - **Job to be done**: "Encontrar un espacio bonito en Miraflores o Barranco que se pueda decorar, que tenga sillas y mesas, y que el dueño responda rápido."
 - **Dolor actual**: 3 días buscando en Instagram, pidió cotización a 6 cuentas, recibió respuesta de 2, ninguna le convenció totalmente, considera contratar wedding planner por desespero.
-- **Por qué eligiría Planea Ya**: en 5 minutos ve 5 opciones reales con foto y precio. Pide visita directo. Si no le convencen, "ayúdenme a organizarlo".
+- **Por qué eligiría Coordina Eventos**: en 5 minutos ve 5 opciones reales con foto y precio. Pide visita directo. Si no le convencen, "ayúdenme a organizarlo".
 
 ### Persona 2 — Mario, host fragmentado (segmento secundario)
 
@@ -46,7 +46,7 @@ Tiempo a primer lead pagado vía agencia: **4-6 semanas**.
 - **Contexto**: organiza el aniversario de la empresa (120 invitados) y el cumpleaños de su hija (40 niños) en el mismo trimestre. Presupuesto combinado S/15.000.
 - **Job to be done**: "Que alguien me organice esto sin que tenga que coordinar a 8 proveedores."
 - **Dolor actual**: el wedding planner que conoce está saturado. No quiere meterse a coordinar DJ + catering + decoración + mozos.
-- **Por qué se convierte a la agencia**: entra a Planea Ya buscando espacio, ve "Te organizamos todo" como CTA, pide cotización. La agencia responde en <2h con propuesta full.
+- **Por qué se convierte a la agencia**: entra a Coordina Eventos buscando espacio, ve "Te organizamos todo" como CTA, pide cotización. La agencia responde en <2h con propuesta full.
 
 ---
 
@@ -85,7 +85,7 @@ Tiempo a primer lead pagado vía agencia: **4-6 semanas**.
 - M10. Como host, puedo editar/pausar/despublicar mi espacio.
 
 #### Dashboard interno (sólo equipo)
-- M11. Como equipo Planea Ya, veo todos los leads del concierge en una pantalla con estado (nuevo / contactado / cotizado / cerrado / perdido).
+- M11. Como equipo Coordina Eventos, veo todos los leads del concierge en una pantalla con estado (nuevo / contactado / cotizado / cerrado / perdido).
 - M12. Como equipo, puedo marcar un lead como "calificado para agencia" y exportar sus datos.
 
 ### Should (post-MVP cercano)
@@ -286,7 +286,7 @@ visit_requests (
 | Email transaccional | **Resend** | API limpia, free tier 100 emails/día |
 | Notificaciones host | **WhatsApp Business API (Meta Cloud)** | Default cultural en Perú |
 | Analytics | **Plausible** | Privacy-first, sin cookie banner |
-| Dominio | `planearya.com` (placeholder) | A confirmar |
+| Dominio | `coordinaeventos.com` (placeholder) | A confirmar |
 
 ---
 
@@ -334,10 +334,10 @@ visit_requests (
 ## 11. Lo que el owner debe decidir antes de Fase 5 (app)
 
 1. **Stack frontend**: Astro vs Next.js export. *Recomendación: Astro.*
-2. **Dominio final**: confirmar `planearya.com` o cambiar.
+2. **Dominio final**: confirmar `coordinaeventos.com` o cambiar.
 3. **Email transaccional**: Resend vs SES. *Recomendación: Resend.*
 4. **WhatsApp API provider**: Meta Cloud directa vs Twilio. *Recomendación: Meta Cloud.*
-5. **Estructura legal de la agencia**: ¿quién factura los servicios concierge? ¿el RUC de Proper o uno nuevo "Planea Ya"?
+5. **Estructura legal de la agencia**: ¿quién factura los servicios concierge? ¿el RUC de Proper o uno nuevo "Coordina Eventos"?
 
 ---
 

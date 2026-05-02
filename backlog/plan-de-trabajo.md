@@ -1,4 +1,4 @@
-# Plan de trabajo Planea Ya
+# Plan de trabajo Coordina Eventos
 
 > **Última revisión**: 2026-05-01.
 > **Status global**: Fase 1 ✅ · Fase 2 (branding) en curso · Fase 3 (PRD) ✅ documentos base escritos · Fase 4-7 pendientes.
@@ -30,11 +30,11 @@
 **Objetivo:** cerrar identidad visual base antes de invertir en landing.
 
 **Entregables**
-- `brand/logo/wordmark.svg` ✓ — wordmark "planea ya" tipográfico simple, dos palabras, azul.
+- `brand/logo/wordmark.svg` ✓ — wordmark "coordina · eventos" tipográfico simple, dos palabras, azul.
 - `brand/logo/wordmark-white.svg` ✓ — versión sobre fondos oscuros.
 - `brand/logo/icon.svg` ✓ — isotipo cuadrado para favicon/IG profile.
 - `brand/identity/posicionamiento.md` ✓ — actualizado con modelo lead-gen + agencia.
-- `brand/identity/naming.md` ✓ — Planea Ya con backups.
+- `brand/identity/naming.md` ✓ — Coordina Eventos con backups.
 - `brand/messaging/voz.md` ✓ — voz de marca.
 - `brand/messaging/taglines.md` ✓ — pendiente seleccionar final.
 - `documentation/branding.md` ✓ — tokens (color, tipografía, spacing).
@@ -45,7 +45,7 @@
 - Skills: `brand-guidelines` (anthropics), `extract-design-system`, `web-design-guidelines`, `space-branding`, `copywriting`.
 
 **Decisiones tomadas**
-- Nombre placeholder: **Planea Ya** / `planearya.com`.
+- Nombre placeholder: **Coordina Eventos** / `coordinaeventos.com`.
 - Color principal: `#2563EB`.
 - Wordmark tipográfico simple (Inter 700, dos palabras separadas por color).
 - Sin isotipo elaborado en MVP (un cuadrado azul con la "p" inicial).
@@ -104,7 +104,7 @@
 - Skills: `landing-page-design`, `web-design-guidelines`, `copywriting`, `space-copy-pe`, `postgresql-table-design`.
 
 **Decisiones que tomas tú**
-- Comprar `planearya.com` (~US$10/año).
+- Comprar `coordinaeventos.com` (~US$10/año).
 - Email transaccional: Resend recomendado.
 - Analítica: Plausible (US$9/mes) vs Umami self-host.
 
@@ -255,9 +255,9 @@
 
 ## Decisiones pendientes (urgencia descendente)
 
-1. **Nombre final** — ¿`Planea Ya` o cambiar? (Hoy es placeholder.)
+1. **Nombre final** — ¿`Coordina Eventos` o cambiar? (Hoy es placeholder.)
 2. **Agencia del owner** — ¿tiene marca? ¿alineamos o separamos?
-3. **Comprar dominio** — `planearya.com` (~US$10/año).
+3. **Comprar dominio** — `coordinaeventos.com` (~US$10/año).
 4. **Stack frontend** — Astro vs Next.js. (Recomendación: Astro.)
 5. **WhatsApp API** — Meta Cloud directa vs Twilio.
 

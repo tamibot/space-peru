@@ -1,63 +1,65 @@
 # Naming
 
 ## Nombre del producto
-**Planea Ya** (working name, placeholder). Pronunciado "planea-ya".
+**Coordina Eventos** (nombre confirmado por owner el 2026-05-02). Pronunciado "co-or-di-na e-ven-tos".
 
-> Es un placeholder. Si se cambia, hacer find/replace global excluyendo `analisis-mercado/` (research histórico) y `.git/`.
+> Display corto del día a día: **coordina**. Display largo formal: **Coordina Eventos**.
 
 ### Variantes y reglas de uso
 
 | Forma | Cuándo |
 |---|---|
-| `planea ya` | Wordmark / logotipo. Siempre minúsculas, dos palabras separadas. |
-| `Planea Ya` | Texto formal, primer mención en docs, prensa, UI. |
-| `planearya.com` | Dominio canónico (a comprar). |
-| `@planeaya` | Handle redes (sin espacio). |
+| `coordina · eventos` | Wordmark / logotipo. Siempre minúsculas, dos palabras separadas por punto medio en color accent. |
+| `Coordina Eventos` | Texto formal, primer mención en docs, prensa, UI. |
+| `Coordina` | Display corto en headers móviles estrechos, conversación informal. |
+| `coordinaeventos.com` | Dominio canónico. |
+| `@coordinaeventos` | Handle redes sociales. |
 
 ### Lo que NO hacemos
-- No **PlaneaYa** pegado en wordmark — separamos las dos palabras visualmente con color.
-- No **PLANEA YA** en mayúsculas — agresivo, no encaja con la voz.
-- No traducir.
+- **CoordinaEventos** pegado — siempre dos palabras visualmente.
+- **COORDINA EVENTOS** en mayúsculas — agresivo, no encaja con la voz editorial.
+- No traducir ("Coordinate Events", "Coordonner Événements").
+- No abreviar a "C.E." o "CdE" — pierde la marca.
 
 ## Nombre legal (a definir con owner)
-- Persona jurídica: **[a definir]**.
-- Razón social tentativa: "Planea Ya S.A.C." o reutilizar la entidad de la agencia de eventos del owner.
+- Persona jurídica: **[a definir con owner]**.
+- Razón social posible: "Coordina Eventos S.A.C." o reutilizar la entidad de la agencia de eventos del owner.
 - RUC: pendiente.
 
 ## Dominios
 
-### Prioridad
-1. `planearya.com` ✓ disponible (verificado mayo 2026, vía whois).
-2. `planearya.pe` ✓ disponible (verificado vía DNS, mayo 2026).
-3. Variantes a redirigir si se compran: `planeaya.com`, `planeaya.pe`.
+### Confirmado
+- ✅ `coordinaeventos.com` — disponible (verificado 2026-05-02). **Registro pendiente por owner.**
+- ✅ `coordinaeventos.pe` — disponible (verificado 2026-05-02). Recomendado como redirect.
 
 ### Subdominios planeados
-- `app.planearya.com` — producto.
-- `host.planearya.com` — backoffice host (opcional).
-- `blog.planearya.com` — blog SEO (opcional).
-- `admin.planearya.com` — backoffice interno equipo.
+- `app.coordinaeventos.com` — producto.
+- `host.coordinaeventos.com` — backoffice host (opcional).
+- `blog.coordinaeventos.com` — blog SEO (opcional).
+- `admin.coordinaeventos.com` — backoffice interno equipo.
 
-## Trademark / disponibilidad
-- [ ] Comprar `planearya.com` (~US$10/año en Namecheap/Cloudflare).
-- [ ] Comprar `planearya.pe` (~US$30-40/año en NIC.PE).
+### A registrar también
+- [ ] Registrar `coordinaeventos.com` en Namecheap o Cloudflare Registrar (~US$10/año).
+- [ ] Registrar `coordinaeventos.pe` en NIC.PE (~US$30-40/año).
+- [ ] Configurar redirect `.pe → .com`.
+
+## Trademark
 - [ ] Verificar conflictos en INDECOPI (registro de marca Perú, clases 35, 41, 42).
-- [ ] Validar que no exista conflicto con marca registrada similar en Perú.
-
-## Backups (si Planea Ya se descarta)
-
-Otros `.com` libres verificados en mayo 2026 (orden de preferencia):
-1. `coordinaeventos.com` — descriptivo total, SEO bestia.
-2. `planeaevento.com` — descriptivo, claro.
-3. `coordinarya.com` — variante de coordina.
-4. `encuadralo.com` — peruanismo creativo.
-5. `cuadrarapido.com` — peruanismo + rapidez.
-
-Otros `.pe` libres:
-- `coordina.pe`, `planeo.pe`, `anfitri.pe`, `eventeo.pe`, `reune.pe`.
+- [ ] Validar que no exista marca registrada similar en Perú.
+- [ ] Considerar registro internacional Madrid System cuando crezca.
 
 ## Naming de productos derivados (futuro)
 
-- **Planea Ya** — el marketplace público.
-- **Planea Ya Host** — app/backoffice del host.
-- **Planea Ya Pro** — plan premium para hosts profesionales (post-MVP).
-- **Planea Ya Eventos** — el servicio concierge / agencia (puede usar la marca de la agencia del owner).
+- **Coordina Eventos** — el marketplace público.
+- **Coordina Host** — app/backoffice del host.
+- **Coordina Pro** — plan premium para hosts profesionales (post-MVP).
+- **Coordina Concierge** — el servicio premium / agencia (puede usar la marca de la agencia del owner).
+
+## Backups (si el dominio se pierde o se descarta)
+
+Otros `.com` libres verificados en mayo 2026 (orden de preferencia):
+1. `planeaeventos.com` — descriptivo similar.
+2. `encuentralocal.com` — verbo + objeto, SEO bestia.
+3. `alquilasalon.com` — vertical eventos sociales.
+4. `espaciosperu.com` — geo-targeted.
+5. `localcito.com` — diminutivo cariñoso.

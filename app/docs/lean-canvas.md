@@ -1,6 +1,6 @@
-# Lean Canvas — Planea Ya
+# Lean Canvas — Coordina Eventos
 
-> **Producto**: Planea Ya — `planearya.com` (placeholder; cambiable).
+> **Producto**: Coordina Eventos — `coordinaeventos.com` (placeholder; cambiable).
 > **Fecha**: 2026-05-01.
 > **Owner**: info@proper.com.pe.
 > **Insumo**: `analisis-mercado/06-conclusion-mercado.md`.
@@ -49,7 +49,7 @@ Una página, 9 bloques. Cualquier cambio aquí refleja en el PRD y en el plan de
 
 > **El asistente que encuentra tu espacio en Lima en minutos. Y si no, lo organizamos por ti.**
 
-- "Planea Ya" = encuentra rápido o te ayudamos a organizarlo.
+- "Coordina Eventos" = encuentra rápido o te ayudamos a organizarlo.
 - Diferenciador único en Latam: **asistente conversacional conectado a inventario real + concierge humano fallback**.
 - Listar es **siempre gratis**.
 

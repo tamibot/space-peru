@@ -1,10 +1,10 @@
-# Manifiesto — Planea Ya
+# Manifiesto — Coordina Eventos
 
 > Lima tiene miles de espacios increíbles que casi nadie encuentra a tiempo, y miles de personas que pierden horas cotizando por DM, transfiriendo a desconocidos y cruzando los dedos.
 >
 > Esto pasa porque hoy alquilar un espacio por horas es un trámite — no una experiencia.
 >
-> Planea Ya existe para que reservar un salón, un estudio o una sala sea tan claro como pedir un Uber.
+> Coordina Eventos existe para que reservar un salón, un estudio o una sala sea tan claro como pedir un Uber.
 >
 > Sin sorpresas en el precio.
 > Sin pagos a desconocidos.

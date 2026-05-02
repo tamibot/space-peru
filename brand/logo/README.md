@@ -2,7 +2,7 @@
 
 Archivos de marca visual.
 
-> ⚠️ **Nombre placeholder**: el wordmark dice "planea ya". Cuando se confirme nombre final, regenerar SVG con find/replace + actualizar este README.
+> ⚠️ **Nombre placeholder**: el wordmark dice "coordina · eventos". Cuando se confirme nombre final, regenerar SVG con find/replace + actualizar este README.
 
 ## Archivos disponibles
 

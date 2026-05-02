@@ -1,6 +1,6 @@
-# Planea Ya
+# Coordina Eventos
 
-> Working name. Dominio placeholder: `planearya.com`. El nombre del repo (`space-peru`) es legacy.
+> Working name. Dominio placeholder: `coordinaeventos.com`. El nombre del repo (`space-peru`) es legacy.
 
 Marketplace de **espacios alquilables por horas en Lima**, con catálogo gratuito + asistente conversacional + concierge humano que enruta leads premium a la **agencia de eventos del owner**.
 
@@ -48,7 +48,7 @@ python3 scripts/test_db.py
 
 ## Branding (resumen)
 
-- Nombre: **Planea Ya** (working name).
+- Nombre: **Coordina Eventos** (working name).
 - Color principal: azul `#2563EB`.
 - Estética: minimalista, limpio, alto contraste, mucho espacio en blanco.
 - Wordmark: ver `brand/logo/wordmark.svg`.

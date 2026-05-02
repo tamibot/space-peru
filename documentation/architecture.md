@@ -1,4 +1,4 @@
-# Architecture — Planea Ya
+# Architecture — Coordina Eventos
 
 ## Visión general (MVP)
 

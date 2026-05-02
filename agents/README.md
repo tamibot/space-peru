@@ -1,6 +1,6 @@
 # Agents
 
-Sub-agentes especializados de Claude Code para Planea Ya. Cada agente vive en su propio archivo `.md` con frontmatter.
+Sub-agentes especializados de Claude Code para Coordina Eventos. Cada agente vive en su propio archivo `.md` con frontmatter.
 
 ## Mapa de agentes
 

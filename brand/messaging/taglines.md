@@ -1,87 +1,128 @@
 # Taglines
 
-> Lista de candidatas. Una se vuelve **principal** tras testeo en landing (CTR + survey). Modelo: lead-gen + concierge → agencia.
-
-## Categoría: experiencia de búsqueda
-- **"Encuentra tu espacio. Sin perseguir nadie."** ← favorita actual
-- "Tu próximo evento empieza con un buen lugar."
-- "El espacio ideal, en minutos."
-- "Encuentra. Visita. Reserva. Listo."
-- "Espacios reales para eventos reales."
-
-## Categoría: asistente IA + concierge
-- **"Te ayudamos a encontrarlo. Y si no, lo organizamos contigo."**
-- "Si no lo encuentras, lo armamos por ti."
-- "Búsqueda con asistente. Apoyo humano cuando lo necesitas."
-- "El asistente que sí te entiende."
-
-## Categoría: gratis para hosts
-- **"Publica tu local. Gratis. Para siempre."**
-- "Tu espacio en línea sin pagar nada."
-- "Cero comisión. Cero fricción."
-- "Llena tus horas vacías. Sin pagar comisión."
-
-## Categoría: confianza
-- "Espacios verificados, no fantasmas."
-- "Visitamos antes de listar."
-- "Reseñas reales, gente real."
-
-## Sub-taglines / pillars (apoyan al principal)
-
-- **Gratis** — Publicar y buscar siempre cuesta cero.
-- **Asistente** — Pregunta lo que importa, sugiere lo correcto.
-- **Concierge** — Si no lo encuentras, lo armamos contigo.
-- **Local** — Yape, Plin, WhatsApp. Como tú trabajas hoy.
+> Frases poderosas, no marketing genérico. Cada una se prueba contra el filtro: ¿lo diría una persona en serio, en voz alta, sin sentirse cursi?
 
 ---
 
-## Reglas
+## Tagline principal
 
-- Tagline principal **≤7 palabras**.
-- Funciona en mobile bajo el wordmark, en una sola línea.
-- Funciona dicho en voz alta (no es lema "para leer").
-- **Sin signos de exclamación**.
-- Cero clichés ("tu mejor experiencia", "líder", "innovador", "premium", "transformar").
+> ## **Donde el evento empieza.**
+
+**Por qué funciona**:
+- Cuatro palabras, una idea. Posiciona la marca como **punto de origen** del evento, no como herramienta más.
+- "Donde" implica lugar — y el producto justamente vende espacios. Coherencia semántica.
+- "Empieza" implica acción, futuro, posibilidad. No vende, invita.
+- Cero clichés. Cero exclamación. Cero superlativos.
 
 ---
 
-## Decisión actual (placeholder, a iterar en testing)
+## Tagline secundaria (sub-hero / lead)
 
-### Tagline principal
-> **"Encuentra tu espacio. Sin perseguir nadie."**
+> **Encuentra el espacio. Coordinamos lo demás.**
 
-**Por qué**: dice exactamente lo que el producto hace (búsqueda) + el dolor que resuelve (perseguir gente por DM). 6 palabras. Funciona dicha en voz alta. Diferenciador real vs SpacePal/Peerspace que dicen "rent unique spaces".
+**Por qué funciona**:
+- Promete dos cosas concretas. Una para el guest casual, otra para el cliente concierge.
+- "Lo demás" es deliberadamente abierto: invita a preguntar qué incluye.
+- Conecta el dominio (coordinaeventos.com) con la propuesta de valor.
 
-### Tagline secundaria (CTA host)
-> **"Publica tu local. Gratis. Para siempre."**
+---
 
-**Por qué**: es la única promesa que ningún competidor está haciendo en serio en Lima. Define la oferta a hosts en 6 palabras.
+## Tagline para hosts
 
-### Tagline complementaria (concierge)
-> **"Y si no lo encuentras, te ayudamos a armarlo."**
+> **Publica tu local. Sin pagar nada.**
 
-**Por qué**: cierra el funnel. Activa la conversión a agencia.
+**Por qué funciona**:
+- Promesa concreta (gratis) + acción concreta (publicar).
+- Sin "comisión cero" — eso es jerga de marketplace. "Sin pagar nada" lo entiende cualquiera.
+- Funciona como CTA, headline y pitch de outreach.
+
+---
+
+## Tagline para concierge
+
+> **Si no lo encuentras, lo armamos contigo.**
+
+**Por qué funciona**:
+- Reconoce que el match automático puede fallar. Honestidad gana confianza.
+- "Lo armamos contigo" — colaborativo, no servicio frío.
+- Activa el funnel a la agencia sin gritar "te vendemos un servicio".
+
+---
+
+## Frases de manifiesto (para landing largo, About, redes)
+
+Frases poderosas que comunican filosofía sin gritar.
+
+- *"Lima tiene miles de espacios increíbles. Encontrarlos no debería ser un trámite."*
+- *"Antes del catering, antes del DJ, antes de los invitados — está el lugar."*
+- *"No vendemos espacios. Conectamos personas con lugares donde algo va a pasar."*
+- *"El mejor evento es el que sale bien sin que nadie note el esfuerzo. Eso es coordinar."*
+- *"En Lima, alquilar un espacio toma una semana. Aquí, minutos."*
+
+---
+
+## Sub-statements (pillares del producto)
+
+Cuatro pilares, cuatro líneas. Para usar en sección "por qué" de landing.
+
+| Pilar | Statement |
+|---|---|
+| **Encontrar** | *"Buscas por lo que vas a hacer, no por nombres de lugares que no conoces."* |
+| **Visitar** | *"El host responde por WhatsApp. Coordinas la visita en una conversación."* |
+| **Decidir** | *"Sin sorpresas en el precio. Lo que ves es lo que pagas."* |
+| **Coordinar** | *"Si quieres que armemos todo el evento, también podemos."* |
+
+---
+
+## Microcopy poderoso
+
+Frases para botones, estados, errores, confirmaciones. Tono editorial, peruano, directo.
+
+### CTAs
+- "Buscar espacio"
+- "Pedir visita"
+- "Publicar mi local"
+- "Hablar con un humano"
+- "Empezar"
+
+### Estados
+- Empty state búsqueda: *"Nada por aquí — todavía. ¿Te ayudamos a buscarlo?"*
+- Empty state host sin espacios: *"Tu primer local empieza con una foto. Vamos."*
+- Loading: *"Buscando entre los espacios verificados…"*
+
+### Errores
+- *"Esto se nos cayó. Intenta de nuevo en un momento."*
+- *"No reconocimos ese correo. ¿Lo escribiste bien?"*
+- *"El espacio ya no está disponible para esa fecha. Te mostramos cinco parecidos."*
+
+### Confirmaciones
+- *"Lista tu visita. El anfitrión te contactará por WhatsApp en menos de una hora."*
+- *"Local publicado. Ya empezamos a mostrarlo a la gente que busca."*
+
+---
+
+## Reglas de oro
+
+1. **Una frase, una idea.** Si tiene dos, parte en dos.
+2. **Verbos antes que adjetivos.** "Encuentra" pega más que "ideal".
+3. **Sin signos de exclamación**, salvo en confirmaciones de éxito muy puntuales.
+4. **Sin superlativos:** "el mejor", "el líder", "el primero".
+5. **Sin clichés tech:** "potente", "innovador", "transformamos", "revolucionario".
+6. **Sin "experiencia":** "tu mejor experiencia" es palabra muerta. Concreta.
+7. **Tutea siempre** ("tú"), nunca "usted" salvo en términos legales.
+8. **Honestidad antes que entusiasmo.** Mejor "estamos lanzando con 50 espacios" que "miles de opciones para ti".
 
 ---
 
 ## Mapeo a páginas
 
-| Página | Tagline a usar |
+| Página | Tagline / frase a usar |
 |---|---|
-| Home (hero) | **"Encuentra tu espacio. Sin perseguir nadie."** |
-| Home (sub-hero) | "Búsqueda con asistente. Apoyo humano cuando lo necesitas." |
-| Sección host | **"Publica tu local. Gratis. Para siempre."** |
-| Sección concierge | **"¿No encuentras lo que buscas? Te ayudamos a armarlo."** |
-| Footer | "Espacios para eventos en Lima." |
-| OG / share | "El asistente que encuentra tu espacio en Lima." |
-
----
-
-## Lo que NO usamos
-
-- "¡Reserva ya!" — exclamación gratuita.
-- "La mejor plataforma de…" — vacío.
-- "Revolucionamos el alquiler de espacios" — cliché.
-- "Tecnología de punta" — palabra muerta.
-- "Experiencia premium" — vacío.
-- "Tu plataforma todo-en-uno" — chamuyo.
+| Home (hero) | **"Donde el evento empieza."** |
+| Home (sub-hero) | "Encuentra el espacio. Coordinamos lo demás." |
+| Sección host | **"Publica tu local. Sin pagar nada."** |
+| Sección concierge | **"Si no lo encuentras, lo armamos contigo."** |
+| Sección "por qué" | Los 4 pilares (Encontrar / Visitar / Decidir / Coordinar) |
+| Footer (debajo del wordmark) | "Espacios para eventos en Lima." |
+| OG / share | "Donde el evento empieza." |
+| Email subject de bienvenida | "Empieza tu evento." |

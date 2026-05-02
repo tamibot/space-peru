@@ -3,12 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Planea Ya — Espacios por horas en Lima</title>
-  <meta name="description" content="Encuentra y reserva espacios por horas en Lima: salones, estudios, salas, canchas. Asistente que te ayuda a encontrar el espacio perfecto en minutos." />
-  <meta name="theme-color" content="#2563EB" />
-  <meta property="og:title" content="Planea Ya" />
-  <meta property="og:description" content="El asistente que encuentra tu espacio en Lima en minutos. Y si no, lo organizamos por ti." />
+  <title>Coordina Eventos — Donde el evento empieza.</title>
+  <meta name="description" content="Encuentra el espacio para tu evento en Lima. Salones, estudios, salas, terrazas. Y si no lo encuentras, lo armamos contigo." />
+  <meta name="theme-color" content="#0B2A5C" />
+  <meta property="og:title" content="Coordina Eventos — Donde el evento empieza." />
+  <meta property="og:description" content="Encuentra el espacio para tu evento en Lima. Y si no lo encuentras, lo armamos contigo." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://coordinaeventos.com/" />
+  <link rel="icon" href="../../brand/logo/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="stylesheet" href="./styles.css" />
@@ -16,12 +18,15 @@
 <body>
 
 <header class="nav">
-  <a class="brand" href="/">planea ya</a>
+  <a class="brand" href="/">
+    coordina<span class="dot">·</span><span class="muted">eventos</span>
+  </a>
   <nav class="nav-links">
     <a href="#como-funciona">Cómo funciona</a>
-    <a href="#categorias">Categorías</a>
-    <a href="#anfitriones">Anfitriones</a>
-    <a href="#waitlist" class="btn btn-primary btn-sm">Únete</a>
+    <a href="#categorias">Para qué</a>
+    <a href="#anfitriones">Para hosts</a>
+    <a href="#preguntas">Preguntas</a>
+    <a href="#waitlist" class="btn btn-primary btn-sm">Empezar</a>
   </nav>
 </header>
 
@@ -29,38 +34,39 @@
 
 <section class="hero">
   <div class="container">
-    <h1>Espacios por horas en Lima.<br><span class="ink-2">Sin vueltas, sin sorpresas.</span></h1>
-    <p class="lead">Salones para eventos, estudios, salas, canchas. Reserva claro y rápido. Hosts verificados.</p>
+    <h1>Donde el evento <span class="accent">empieza.</span></h1>
+    <p class="lead">Encuentra el espacio para tu evento en Lima. Y si no lo encuentras, <strong style="color:var(--primary);font-weight:600">lo armamos contigo</strong>.</p>
     <form id="waitlist-form" class="waitlist" novalidate>
       <input type="email" name="email" placeholder="tu@correo.com" required aria-label="Tu correo" />
       <select name="role" aria-label="Soy">
-        <option value="guest">Busco un espacio</option>
-        <option value="host">Tengo un espacio</option>
+        <option value="guest">Estoy organizando un evento</option>
+        <option value="host">Tengo un espacio para alquilar</option>
       </select>
-      <button type="submit" class="btn btn-primary">Únete a la lista</button>
+      <button type="submit" class="btn btn-primary">Empezar</button>
     </form>
-    <p class="micro mute">Te avisamos cuando abramos. Cero spam.</p>
+    <p class="micro mute" style="margin-top:12px">Te avisamos cuando abramos. Sin spam, sin promesas vacías.</p>
   </div>
 </section>
 
 <section id="como-funciona" class="section">
   <div class="container">
-    <h2>Cómo funciona</h2>
+    <h2>Coordinar es empezar bien.</h2>
+    <p class="section-lead">Tres pasos. Cero pagos a desconocidos. Cero esperar dos días por una cotización.</p>
     <div class="grid-3">
       <article class="card">
-        <span class="step">1</span>
-        <h3>Encuentra</h3>
-        <p>Filtra por distrito, categoría y horario. Solo espacios verificados.</p>
+        <span class="step">01</span>
+        <h3>Cuéntanos qué buscas</h3>
+        <p style="color:var(--muted)">El asistente te pregunta cinco cosas: qué evento, fecha, capacidad, distrito, presupuesto. Listo.</p>
       </article>
       <article class="card">
-        <span class="step">2</span>
-        <h3>Reserva</h3>
-        <p>Paga seguro con tarjeta o Yape. Recibe confirmación al instante.</p>
+        <span class="step">02</span>
+        <h3>Elige entre tres opciones</h3>
+        <p style="color:var(--muted)">Te mostramos tres espacios reales que encajan. Pides visita y el host te responde por WhatsApp en menos de una hora.</p>
       </article>
       <article class="card">
-        <span class="step">3</span>
-        <h3>Disfruta</h3>
-        <p>Llegas, lo usas, lo dejas listo. Calificas y listo.</p>
+        <span class="step">03</span>
+        <h3>Arma el evento</h3>
+        <p style="color:var(--muted)">Si quieres que coordinemos catering, decoración o lo que necesites, te ponemos en contacto con quien lo hace bien.</p>
       </article>
     </div>
   </div>
@@ -68,7 +74,8 @@
 
 <section id="categorias" class="section surface">
   <div class="container">
-    <h2>Categorías</h2>
+    <h2>Para lo que sea.</h2>
+    <p class="section-lead">Buscas por lo que vas a hacer, no por nombres de lugares que no conoces.</p>
     <div class="chips" id="cat-chips"></div>
   </div>
 </section>
@@ -76,43 +83,75 @@
 <section class="section">
   <div class="container two-col">
     <div>
-      <h2>¿Por qué Planea Ya?</h2>
+      <h2>Antes del catering, antes del DJ, antes de los invitados — está el lugar.</h2>
       <ul class="bullets">
-        <li><strong>Minimalista y claro.</strong> Encuentras lo que buscas en segundos.</li>
-        <li><strong>Pago local.</strong> Yape, Plin, tarjeta — sin fricción.</li>
-        <li><strong>Verificado.</strong> Visitamos los espacios antes de listarlos.</li>
-        <li><strong>Soporte real.</strong> Por WhatsApp, en horario humano.</li>
+        <li>
+          <strong>Encontrar.</strong>
+          Buscas por lo que vas a hacer, no por nombres de lugares que no conoces.
+        </li>
+        <li>
+          <strong>Visitar.</strong>
+          El host responde por WhatsApp. Coordinas la visita en una conversación.
+        </li>
+        <li>
+          <strong>Decidir.</strong>
+          Sin sorpresas en el precio. Lo que ves es lo que pagas.
+        </li>
+        <li>
+          <strong>Coordinar.</strong>
+          Si quieres que armemos todo el evento, también podemos.
+        </li>
       </ul>
     </div>
     <div class="kpi">
       <div><b>Lima</b><span>Ciudad de lanzamiento</span></div>
-      <div><b>0%</b><span>Comisión a hosts los primeros 6 meses</span></div>
-      <div><b>1h</b><span>Bloque mínimo de reserva</span></div>
+      <div><b>0%</b><span>Comisión a hosts. Para siempre.</span></div>
+      <div><b>&lt;1h</b><span>El host responde por WhatsApp</span></div>
     </div>
   </div>
 </section>
 
-<section id="anfitriones" class="section blue">
+<section id="anfitriones" class="section dark">
   <div class="container two-col">
     <div>
-      <h2 class="white">¿Tienes un espacio?</h2>
-      <p class="white-2">Lánzalo con nosotros sin comisión los primeros 6 meses. Te ayudamos con fotos, descripción y precio.</p>
+      <h2>Publica tu local. Sin pagar nada.</h2>
+      <p class="section-lead">No es promo. No tiene letra chica. Listar tu espacio en coordinaeventos.com es gratis siempre. Cuando alguien quiera visitarlo, te llega su WhatsApp directo.</p>
     </div>
-    <form class="waitlist on-blue" id="host-form" novalidate>
-      <input type="email" name="email" placeholder="tu@correo.com" required />
-      <input type="text" name="space" placeholder="¿Qué espacio tienes?" />
-      <button type="submit" class="btn btn-light">Postular mi espacio</button>
+    <form class="waitlist on-dark" id="host-form" novalidate>
+      <input type="email" name="email" placeholder="tu@correo.com" required aria-label="Tu correo" />
+      <input type="text" name="space" placeholder="¿Qué espacio tienes? (ej. salón en Surco)" />
+      <button type="submit" class="btn btn-light">Publicar mi local</button>
     </form>
   </div>
 </section>
 
-<section class="section">
+<section id="preguntas" class="section">
   <div class="container">
-    <h2>Preguntas</h2>
-    <details><summary>¿Cuándo lanzan?</summary><p>Mayo–junio 2026 con los primeros 50 espacios curados en Lima.</p></details>
-    <details><summary>¿Cuánto cobran de comisión?</summary><p>Cero a hosts los primeros 6 meses. Después, comisión transparente que vamos a publicar acá.</p></details>
-    <details><summary>¿Qué tipo de espacios?</summary><p>Salones para eventos, salas de reuniones, estudios foto/video, canchas, estudios para clases, coworking por horas.</p></details>
-    <details><summary>¿Solo Lima?</summary><p>Empezamos por Lima. Arequipa, Trujillo y Cusco vienen después.</p></details>
+    <h2>Preguntas honestas.</h2>
+    <details>
+      <summary>¿Cuándo lanzan?</summary>
+      <p>Mayo–junio 2026 con los primeros 50 espacios curados en Lima. Estamos visitando uno por uno.</p>
+    </details>
+    <details>
+      <summary>¿Cobran comisión a los hosts?</summary>
+      <p>No. Listar es gratis siempre. Ganamos como agencia cuando una persona quiere que le organicemos el evento completo — eso es opcional.</p>
+    </details>
+    <details>
+      <summary>¿Qué tipo de espacios?</summary>
+      <p>Salones para eventos sociales, salas de reuniones, estudios fotográficos, terrazas, espacios para clases, coworking por horas. Si tu espacio puede alquilarse por horas, encaja.</p>
+    </details>
+    <details>
+      <summary>¿Solo Lima?</summary>
+      <p>Empezamos por Lima Moderna. Otras ciudades cuando Lima esté maduro — primero hacerlo bien, después escalar.</p>
+    </details>
+    <details>
+      <summary>¿Cómo se paga la reserva?</summary>
+      <p>Por ahora, directamente entre tú y el host (Yape, transferencia, efectivo, lo que prefieran). Más adelante integramos pago en plataforma — sin obligar a nadie a usarlo.</p>
+    </details>
+    <details>
+      <summary>¿Y si necesito que organicen todo el evento?</summary>
+      <p>Marcas la opción "ayúdenme a armarlo" en el formulario. Te llamamos por WhatsApp en menos de dos horas con propuesta y cotización.</p>
+    </details>
   </div>
 </section>
 
@@ -121,8 +160,8 @@
 <footer class="footer">
   <div class="container foot">
     <div>
-      <span class="brand">planea ya</span>
-      <p class="micro mute">© 2026 Planea Ya. Lima, Perú.</p>
+      <span class="brand">coordina<span class="dot">·</span><span class="muted">eventos</span></span>
+      <p class="foot-brand">Espacios para eventos en Lima. © 2026 Coordina Eventos.</p>
     </div>
     <div class="foot-links">
       <a href="mailto:info@proper.com.pe">info@proper.com.pe</a>
