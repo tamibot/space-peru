@@ -35,6 +35,31 @@ Geografía MVP: 8 distritos Lima Moderna (Miraflores, San Isidro, Barranco, Surc
 
 Take-rate inicial: 15% host + 5% guest (~19% combinado), 0% host primeros 6 meses.
 
+## Visión a futuro — ecosistema completo (24 meses)
+El producto **arranca como marketplace de espacios** pero la visión es ser un **ecosistema completo de eventos en Lima**:
+
+**Fase 1 (MVP, hoy)** — sólo espacios.
+
+**Fase 2** — proveedores complementarios listados en la misma plataforma:
+- **Catering** (chefs independientes, restaurantes con delivery, dulcería)
+- **Decoración** (decoradores, floristería, mobiliario y mantelería)
+- **Entretenimiento** (DJs, músicos, animadores, shows)
+- **Producción** (fotógrafos, videógrafos, sonido, iluminación)
+- **Servicio** (mozos, anfitriones, seguridad, personal de cocina)
+
+**Fase 3** — agencia full-stack: cliente pide evento, enviamos propuesta integrada con todos los proveedores seleccionados desde nuestra red.
+
+**Posicionamiento**: somos la **ventana** donde los especialistas muestran sus servicios. El cliente final llega a un solo lugar y arma o pide que le armemos su evento ideal de punta a punta.
+
+**Modelo de negocio expandido**: la plataforma sigue siendo gratuita para listing. Monetizamos por:
+1. Comisión sobre eventos organizados end-to-end vía la agencia (donde realmente ganamos).
+2. Listing premium para proveedores top.
+3. Lead-gen pagado para proveedores que pidan ser destacados.
+
+Los especialistas en Fase 2+ se onboardean con el mismo modelo que los hosts: gratis publicar, leads filtrados por WhatsApp, cobran como prefieran.
+
+> **Lo que la landing actual debe transmitir hoy** (sin gritar visión): que somos serios, que el ecosistema crecerá, y que esto recién empieza.
+
 ## Reglas de trabajo (resumen — detalle en `rules.md`)
 1. **Background-first**: tareas largas → sub-agentes background.
 2. **No usar el navegador del owner**: Chromium headless / Chrome MCP siempre.

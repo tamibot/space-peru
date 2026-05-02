@@ -15,8 +15,8 @@
   --line:           #E3E8EE;
   --line-soft:      #EDF1F6;
 
-  --accent:         #3D5AFE;   /* azul vibrante moderno - CTA, links */
-  --accent-strong:  #2841E0;   /* hover */
+  --accent:         #3F66E3;   /* azul oceánico maduro - CTA, links */
+  --accent-strong:  #2A4FCC;   /* hover */
   --accent-soft:    #ECEFFE;   /* tinte muy suave */
 
   /* functional */
@@ -457,7 +457,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
 }
 .why-icon {
   width: 40px; height: 40px;
-  border-radius: 10px;
+  border-radius: 999px;
   background: var(--accent-soft);
   color: var(--accent);
   display: flex; align-items: center; justify-content: center;
@@ -567,7 +567,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
   display: inline-flex; align-items: center; justify-content: center;
   gap: 8px;
   padding: 14px 24px;
-  border-radius: 10px;
+  border-radius: 999px;
   border: 1px solid transparent;
   font-family: var(--sans);
   font-weight: 600; font-size: 15px;
@@ -576,7 +576,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
   transition: background .15s ease, color .15s ease, border-color .15s ease, transform .1s ease;
 }
 .btn:active { transform: translateY(1px); }
-.btn-sm { padding: 10px 18px; font-size: 14px; border-radius: 8px; }
+.btn-sm { padding: 10px 18px; font-size: 14px; border-radius: 999px; }
 .btn-primary { background: var(--accent); color: white; }
 .btn-primary:hover { background: var(--accent-strong); }
 .btn-dark { background: var(--primary); color: white; }
@@ -1364,6 +1364,217 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
   font-weight: 600 !important;
 }
 
+/* ============================================================
+   HERO MOSAICO — 5 fotos asimétricas
+   ============================================================ */
+.hero-mosaic {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 12px;
+  aspect-ratio: 1/1.05;
+}
+@media (max-width: 900px) {
+  .hero-mosaic { aspect-ratio: 1/0.85; }
+}
+
+.m-cell {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--surface);
+  cursor: default;
+  box-shadow: var(--shadow-sm);
+  transition: transform .3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow .3s ease;
+}
+.m-cell:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  z-index: 2;
+}
+.m-cell img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease;
+}
+.m-cell:hover img { transform: scale(1.06); }
+.m-cell::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,.35));
+  pointer-events: none;
+}
+.m-tag {
+  position: absolute;
+  bottom: 12px; left: 12px;
+  z-index: 1;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(8px);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: -0.005em;
+}
+
+/* Mosaico layout (5 cells) */
+.m-cell-1 { grid-column: 1; grid-row: 1 / span 3; }
+.m-cell-2 { grid-column: 2; grid-row: 1; }
+.m-cell-3 { grid-column: 2; grid-row: 2; }
+.m-cell-4 { grid-column: 2; grid-row: 3; }
+.m-cell-5 { display: none; }
+
+@media (min-width: 1100px) {
+  .hero-mosaic {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .m-cell-1 { grid-column: 1; grid-row: 1 / span 2; }
+  .m-cell-2 { grid-column: 2; grid-row: 1; }
+  .m-cell-3 { grid-column: 3; grid-row: 1; }
+  .m-cell-4 { grid-column: 2; grid-row: 2; }
+  .m-cell-5 { grid-column: 3; grid-row: 2; display: block; }
+}
+
+.hero-mosaic-rotated {
+  position: absolute;
+  right: -38px;
+  top: 16px;
+  transform: rotate(-90deg);
+  transform-origin: right top;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--muted-light);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 5;
+}
+@media (max-width: 1100px) { .hero-mosaic-rotated { display: none; } }
+
+/* hero photo old wrapper hides when mosaic is used */
+.hero-photo { display: none; }
+
+/* Reveal staggered en mosaico */
+.m-cell.reveal {
+  opacity: 0;
+  transform: translateY(16px) scale(.97);
+  animation: mosaicIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes mosaicIn {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ============================================================
+   AI BADGE — pill IA destacado
+   ============================================================ */
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-right: 8px;
+  vertical-align: 1px;
+  box-shadow: 0 0 0 0 rgba(63, 102, 227, 0.6);
+  animation: badgeGlow 2.4s ease-in-out infinite;
+}
+@keyframes badgeGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(63, 102, 227, 0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(63, 102, 227, 0); }
+}
+.ai-badge.soon {
+  background: var(--surface-strong, #E5EAF2);
+  color: var(--muted);
+  font-weight: 700;
+  animation: none;
+  box-shadow: none;
+}
+.eyebrow-ai { display: inline-flex; align-items: center; }
+
+/* ============================================================
+   ASISTENTE IA — blob decorativo de fondo
+   ============================================================ */
+.ai-blob {
+  position: absolute;
+  width: 800px; height: 800px;
+  right: -260px; top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: blobFloat 18s ease-in-out infinite alternate;
+}
+@keyframes blobFloat {
+  0% { transform: translateY(-50%) translateX(0) scale(1); }
+  100% { transform: translateY(-46%) translateX(-30px) scale(1.05); }
+}
+.section-ai { position: relative; overflow: hidden; }
+.section-ai > .container { position: relative; z-index: 1; }
+
+.chat-status {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ok);
+  letter-spacing: 0;
+  text-transform: lowercase;
+}
+.chat-title { font-weight: 600; }
+
+/* ============================================================
+   AUDIENCE THREE — 3 cards (organizas / tienes / especialistas pronto)
+   ============================================================ */
+.audience.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1000px) { .audience.three { grid-template-columns: 1fr; } }
+
+.aud-card.future {
+  background: var(--bg);
+  border: 1.5px dashed var(--line);
+  position: relative;
+}
+.aud-card.future::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(63, 102, 227, .04) 0%, transparent 60%);
+  pointer-events: none;
+}
+.aud-card.future:hover {
+  border-color: var(--accent);
+  border-style: solid;
+}
+.aud-card.future h3 { color: var(--primary); }
+.aud-card.future .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* ============================================================
+   FOOTER domain visible
+   ============================================================ */
+.footer-domain {
+  margin-top: 12px !important;
+  font-size: 13px !important;
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.005em;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
   html { scroll-behavior: auto; }
@@ -1372,9 +1583,10 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
   .momento-img-stack img { animation: none; }
   .bubble, .result-cards, .step-svg .typing-text, .step-svg .chip-anim,
   .step-svg .card-anim, .step-svg .msg-anim, .step-svg .check-anim,
-  .hero-bg .draw, .hero-bg .grid-dots,
+  .hero-bg .draw, .hero-bg .grid-dots, .ai-blob,
   .benefit .dash-circle, .benefit .dash-line, .benefit .dash-bubble,
-  .benefit .dash-check, .benefit .dot-1, .benefit .dot-2, .benefit .dot-3 {
+  .benefit .dash-check, .benefit .dot-1, .benefit .dot-2, .benefit .dot-3,
+  .ai-badge, .m-cell.reveal {
     opacity: 1 !important; transform: none !important;
     stroke-dashoffset: 0 !important;
   }
