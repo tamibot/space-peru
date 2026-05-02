@@ -1,46 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Coordina — Donde el evento empieza">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Coordina">
   <title>Coordina — OG image</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,144,700&family=Geist:wght@400;500;600&display=swap');
-    .display { font-family: 'Fraunces', 'Times New Roman', serif; font-weight: 700; font-style: italic; font-variation-settings: 'opsz' 144; }
-    .ui { font-family: 'Geist', system-ui, sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+    .sans { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
   </style>
 
-  <!-- cream background -->
-  <rect width="1200" height="630" fill="#FAF8F5"/>
+  <!-- background -->
+  <rect width="1200" height="630" fill="#FFFFFF"/>
 
-  <!-- editorial vertical rule -->
-  <rect x="72" y="72" width="2" height="486" fill="#0F0F0F"/>
-
-  <!-- top-left wordmark -->
-  <g transform="translate(96, 110)">
-    <text x="0" y="0" class="display" font-size="34" letter-spacing="-0.03em" fill="#0F0F0F">coordina</text>
-    <circle cx="180" cy="-7" r="4" fill="#B8451C"/>
+  <!-- top wordmark -->
+  <g transform="translate(80, 96)">
+    <text x="0" y="0" class="sans" font-weight="700" font-size="32" letter-spacing="-0.035em" fill="#0A2540">coordina</text>
   </g>
 
-  <!-- main statement: italic + roman mix -->
-  <g transform="translate(96, 270)">
-    <text x="0" y="0" class="display" font-size="120" letter-spacing="-0.04em" fill="#0F0F0F">Donde el evento</text>
-    <text x="0" y="130" class="display" font-size="120" letter-spacing="-0.04em" fill="#B8451C">empieza.</text>
+  <!-- main statement -->
+  <g transform="translate(80, 260)">
+    <text x="0" y="0" class="sans" font-weight="700" font-size="92" letter-spacing="-0.04em" fill="#0A2540">El espacio para tu</text>
+    <text x="0" y="106" class="sans" font-weight="700" font-size="92" letter-spacing="-0.04em" fill="#3D5AFE">próximo evento.</text>
   </g>
 
   <!-- subline -->
-  <g transform="translate(96, 510)">
-    <text x="0" y="0" class="ui" font-weight="400" font-size="22" fill="#5C5C5C">Espacios para eventos en Lima · coordinaeventos.com</text>
+  <g transform="translate(80, 500)">
+    <text x="0" y="0" class="sans" font-weight="500" font-size="24" fill="#697386">Encontramos el lugar. Coordinamos lo demás. Lima.</text>
   </g>
 
-  <!-- right side decorative shapes (peruvian sunset) -->
-  <g opacity="0.85">
-    <rect x="940" y="100" width="180" height="240" rx="8" fill="#0F0F0F"/>
-    <rect x="900" y="200" width="180" height="240" rx="8" fill="#B8451C"/>
-    <rect x="940" y="300" width="180" height="240" rx="8" fill="#F4B488"/>
+  <!-- bottom URL -->
+  <g transform="translate(80, 558)">
+    <text x="0" y="0" class="sans" font-weight="600" font-size="20" fill="#3D5AFE">coordinaeventos.com</text>
   </g>
 
-  <!-- subtle grain dots -->
-  <g opacity="0.3" fill="#0F0F0F">
-    <circle cx="200" cy="160" r="1"/>
-    <circle cx="320" cy="200" r="1"/>
-    <circle cx="450" cy="170" r="1"/>
-    <circle cx="600" cy="220" r="1"/>
+  <!-- right side: subtle geometric accent (no peruvian sunset, just clean blocks) -->
+  <g transform="translate(880, 180)">
+    <rect x="0"   y="0"   width="240" height="120" rx="16" fill="#F6F9FC" stroke="#E3E8EE" stroke-width="1"/>
+    <rect x="40"  y="140" width="240" height="120" rx="16" fill="#0A2540"/>
+    <rect x="0"   y="280" width="240" height="120" rx="16" fill="#3D5AFE"/>
   </g>
 </svg>

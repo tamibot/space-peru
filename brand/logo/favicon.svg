@@ -1,10 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
   <title>Coordina — favicon</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,144,700&display=swap');
-    .letter { font-family: 'Fraunces', 'Times New Roman', serif; font-style: italic; font-weight: 700; font-variation-settings: 'opsz' 144; fill: #FAF8F5; }
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap');
+    .letter { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 700; }
   </style>
-  <rect x="0" y="0" width="32" height="32" rx="7" fill="#0F0F0F"/>
-  <text x="16" y="23" text-anchor="middle" class="letter" font-size="22" letter-spacing="-0.03em">c</text>
-  <circle cx="24" cy="22" r="2" fill="#B8451C"/>
+  <rect x="0" y="0" width="32" height="32" rx="7" fill="#0A2540"/>
+  <text x="16" y="22" text-anchor="middle" class="letter" font-size="18" letter-spacing="-0.035em" fill="#FFFFFF">c</text>
 </svg>

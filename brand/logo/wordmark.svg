@@ -1,11 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" role="img" aria-label="Coordina">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" role="img" aria-label="Coordina">
   <title>Coordina — wordmark</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,144,700&display=swap');
-    .word { font-family: 'Fraunces', 'Times New Roman', serif; font-style: italic; font-weight: 700; font-variation-settings: 'opsz' 144; }
-    .ink { fill: #0F0F0F; }
-    .accent { fill: #B8451C; }
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap');
+    .word { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 700; }
   </style>
-  <text x="0" y="58" class="word ink" font-size="64" letter-spacing="-0.03em">coordina</text>
-  <circle cx="262" cy="52" r="5" class="accent"/>
+  <text x="0" y="46" class="word" font-size="44" letter-spacing="-0.035em" fill="#0A2540">coordina</text>
 </svg>
