@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'landing/**'
+      - 'brand/logo/**'
       - 'data/public/**'
       - '.github/workflows/deploy-landing.yml'
   workflow_dispatch:
@@ -31,8 +32,10 @@ jobs:
         run: |
           mkdir -p _site
           cp -R landing/src/* _site/
+          mkdir -p _site/brand/logo
+          cp -R brand/logo/* _site/brand/logo/
           mkdir -p _site/data/public
-          cp -R data/public/* _site/data/public/ || true
+          cp -R data/public/* _site/data/public/ 2>/dev/null || true
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
