@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Coordina — El asistente que encuentra tu espacio en Lima.</title>
-  <meta name="description" content="El asistente que encuentra tu espacio en Lima en minutos. Y si no, lo organizamos por ti. Plataforma 100% gratuita para hosts." />
+  <title>Coordina Eventos — El asistente que encuentra tu espacio en Lima.</title>
+  <meta name="description" content="El asistente que encuentra tu espacio en Lima en 5 minutos. Y si no, lo organizamos por ti. Listar es gratis para hosts." />
   <meta name="theme-color" content="#0A2540" />
-  <meta property="og:title" content="Coordina — El asistente que encuentra tu espacio en Lima." />
-  <meta property="og:description" content="El asistente que encuentra tu espacio en Lima en minutos. Y si no, lo organizamos por ti." />
+  <meta property="og:title" content="Coordina Eventos — El asistente que encuentra tu espacio en Lima." />
+  <meta property="og:description" content="El asistente que encuentra tu espacio en Lima en 5 minutos. Y si no, lo organizamos por ti." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://coordinaeventos.com/" />
   <meta property="og:image" content="./brand/logo/og-image.svg" />
@@ -21,12 +21,12 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="/">coordina</a>
+    <a class="brand" href="/">coordina<span class="brand-suffix">eventos</span></a>
     <nav class="nav-links">
       <a href="#asistente">Asistente</a>
       <a href="#momento">Para qué</a>
+      <a href="#beneficios">Beneficios</a>
       <a href="#hosts">Para hosts</a>
-      <a href="#preguntas">Preguntas</a>
       <a href="#cta-final" class="btn btn-primary btn-sm">Empezar</a>
     </nav>
   </div>
@@ -36,12 +36,28 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <!-- decorative SVG corner brackets, animadas -->
-  <svg class="hero-corners" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true">
-    <path class="draw" d="M 24 60 L 24 24 L 60 24" stroke="#0A2540" stroke-width="1.5" fill="none" stroke-linecap="square"/>
-    <path class="draw" d="M 1140 24 L 1176 24 L 1176 60" stroke="#0A2540" stroke-width="1.5" fill="none" stroke-linecap="square"/>
-    <path class="draw" d="M 24 540 L 24 576 L 60 576" stroke="#0A2540" stroke-width="1.5" fill="none" stroke-linecap="square"/>
-    <path class="draw" d="M 1176 540 L 1176 576 L 1140 576" stroke="#0A2540" stroke-width="1.5" fill="none" stroke-linecap="square"/>
+  <!-- Decorative SVG: floating geometric shapes -->
+  <svg class="hero-bg" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#3D5AFE" stop-opacity="0.04"/>
+        <stop offset="100%" stop-color="#0A2540" stop-opacity="0.02"/>
+      </linearGradient>
+    </defs>
+    <!-- floating circles -->
+    <circle class="float-1" cx="200" cy="180" r="140" fill="url(#heroGrad)"/>
+    <circle class="float-2" cx="1180" cy="620" r="180" fill="url(#heroGrad)"/>
+    <!-- grid dots -->
+    <g class="grid-dots" fill="#0A2540" opacity="0.06">
+      <circle cx="100" cy="100" r="1.5"/><circle cx="200" cy="100" r="1.5"/><circle cx="300" cy="100" r="1.5"/><circle cx="400" cy="100" r="1.5"/>
+      <circle cx="100" cy="200" r="1.5"/><circle cx="200" cy="200" r="1.5"/><circle cx="300" cy="200" r="1.5"/><circle cx="400" cy="200" r="1.5"/>
+      <circle cx="100" cy="300" r="1.5"/><circle cx="200" cy="300" r="1.5"/><circle cx="300" cy="300" r="1.5"/><circle cx="400" cy="300" r="1.5"/>
+    </g>
+    <!-- corner brackets -->
+    <path class="draw" d="M 24 60 L 24 24 L 60 24" stroke="#0A2540" stroke-width="1.2" fill="none" stroke-linecap="square"/>
+    <path class="draw" d="M 1340 24 L 1376 24 L 1376 60" stroke="#0A2540" stroke-width="1.2" fill="none" stroke-linecap="square"/>
+    <path class="draw" d="M 24 740 L 24 776 L 60 776" stroke="#0A2540" stroke-width="1.2" fill="none" stroke-linecap="square"/>
+    <path class="draw" d="M 1376 740 L 1376 776 L 1340 776" stroke="#0A2540" stroke-width="1.2" fill="none" stroke-linecap="square"/>
   </svg>
 
   <div class="container">
@@ -49,9 +65,12 @@
       <div class="hero-text">
         <span class="eyebrow reveal">Espacios para eventos · Lima</span>
         <h1 class="reveal" style="--d: 80ms">Donde el <span>evento empieza.</span></h1>
-        <p class="hero-lead reveal" style="--d: 160ms">El asistente que encuentra tu espacio en Lima en minutos. Y si no, lo organizamos por ti.</p>
+        <p class="hero-lead reveal" style="--d: 160ms">El asistente que encuentra tu espacio en Lima en <strong>5 minutos</strong>. Y si nada te convence, <strong>lo organizamos por ti</strong>.</p>
         <div class="hero-cta reveal" style="--d: 240ms">
-          <a href="#cta-final" class="btn btn-primary">Estoy organizando algo</a>
+          <a href="#cta-final" class="btn btn-primary">
+            <span>Estoy organizando algo</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
           <a href="#hosts" class="btn btn-outline">Tengo un espacio</a>
         </div>
         <div class="hero-trust reveal" style="--d: 320ms">
@@ -91,28 +110,39 @@
   </div>
 </section>
 
-<!-- ============ Para lo que sea (chips, AHORA ARRIBA) ============ -->
-<section class="section section-tight">
+<!-- ============ MOMENTO — sección unificada (chips + foto interactiva) ============ -->
+<section id="momento" class="section section-momento">
   <div class="container">
-    <div class="section-head">
+    <div class="momento-head">
       <span class="eyebrow">Para lo que sea</span>
-      <h2>Si tu evento existe, hay un espacio.</h2>
-      <p>Estas son algunas de las cosas que la gente está organizando hoy en Lima. Si lo tuyo no está en la lista, también podemos ayudarte.</p>
+      <h2>Si tu evento existe,<br><span class="head-em">hay un espacio.</span></h2>
+      <p class="momento-sub">Pasa el cursor por cada actividad y mira el lugar ideal en Lima.</p>
     </div>
-    <div class="chip-list">
-      <span class="chip-static">Cumpleaños</span>
-      <span class="chip-static">Baby shower</span>
-      <span class="chip-static">Sesión de fotos</span>
-      <span class="chip-static">Reunión de trabajo</span>
-      <span class="chip-static">Capacitación corporativa</span>
-      <span class="chip-static">Yoga · clase</span>
-      <span class="chip-static">Despedida</span>
-      <span class="chip-static">Pop-up</span>
-      <span class="chip-static">Grabación de video</span>
-      <span class="chip-static">Aniversario</span>
-      <span class="chip-static">Coworking por horas</span>
-      <span class="chip-static">Lanzamiento de producto</span>
+
+    <div class="momento-grid">
+      <ul class="momento-list" id="momento-list">
+        <li data-img="https://images.unsplash.com/photo-1542665952-14513db15293?w=1400&q=80&auto=format&fit=crop" data-name="Salón eventos · Miraflores" class="active">Cumpleaños</li>
+        <li data-img="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1400&q=80&auto=format&fit=crop" data-name="Salón nupcial · San Isidro">Boda</li>
+        <li data-img="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1400&q=80&auto=format&fit=crop" data-name="Loft fotográfico · Barranco">Sesión de fotos</li>
+        <li data-img="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80&auto=format&fit=crop" data-name="Auditorio · San Borja">Conferencia</li>
+        <li data-img="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80&auto=format&fit=crop" data-name="Sala de reuniones · San Isidro">Sala de reunión</li>
+        <li data-img="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&q=80&auto=format&fit=crop" data-name="Coworking · San Isidro">Coworking</li>
+        <li data-img="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1400&q=80&auto=format&fit=crop" data-name="Estudio creativo · Barranco">Pop-up</li>
+        <li data-img="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1400&q=80&auto=format&fit=crop" data-name="Estudio · Magdalena">Yoga · clase</li>
+      </ul>
+
+      <div class="momento-photo">
+        <div class="momento-img-stack">
+          <img id="momento-img"
+               src="https://images.unsplash.com/photo-1542665952-14513db15293?w=1400&q=80&auto=format&fit=crop"
+               alt="Salón de eventos en Miraflores" />
+        </div>
+        <div class="momento-img-meta" id="momento-meta">Salón eventos · Miraflores</div>
+        <div class="momento-rotated">LIMA · PE · 2026</div>
+      </div>
     </div>
+
+    <a href="#cta-final" class="btn btn-dark momento-cta">Ver todas las actividades →</a>
   </div>
 </section>
 
@@ -121,7 +151,7 @@
   <div class="container ai-grid">
     <div class="ai-text">
       <span class="eyebrow">Nuestro asistente</span>
-      <h2>El asistente que entiende lo que quieres.</h2>
+      <h2>El asistente que <span class="head-em">entiende</span><br>lo que quieres.</h2>
       <p class="ai-lead">Cinco preguntas. Tres opciones reales. Cero pérdida de tiempo. Y si nada te convence, escalamos al equipo humano que arma tu evento contigo.</p>
 
       <ul class="ai-features">
@@ -151,7 +181,6 @@
       <a href="#cta-final" class="btn btn-primary">Probar el asistente</a>
     </div>
 
-    <!-- Chat mock animado -->
     <div class="ai-visual">
       <div class="chat-frame">
         <div class="chat-header">
@@ -196,67 +225,105 @@
   </div>
 </section>
 
-<!-- ============ MOMENTO — sección interactiva ============ -->
-<section id="momento" class="section section-momento">
+<!-- ============ BENEFICIOS — sección NUEVA con stats ============ -->
+<section id="beneficios" class="section section-beneficios">
   <div class="container">
-    <div class="momento-grid">
-      <div class="momento-text">
-        <span class="eyebrow">Inspírate</span>
-        <h2>Un espacio<br>para cada momento.</h2>
-        <p class="momento-sub">Pasa el cursor por cada actividad y mira el lugar ideal.</p>
+    <div class="section-head center">
+      <span class="eyebrow">Beneficios</span>
+      <h2>Lo que ganas con <span class="head-em">Coordina</span>.</h2>
+      <p>Seis razones concretas, no promesas vacías.</p>
+    </div>
 
-        <ul class="momento-list" id="momento-list">
-          <li data-img="https://images.unsplash.com/photo-1542665952-14513db15293?w=1400&q=80&auto=format&fit=crop" data-name="Salón eventos · Miraflores" class="active">Cumpleaños</li>
-          <li data-img="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1400&q=80&auto=format&fit=crop" data-name="Salón íntimo · San Isidro">Baby shower</li>
-          <li data-img="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1400&q=80&auto=format&fit=crop" data-name="Loft fotográfico · Barranco">Sesión de fotos</li>
-          <li data-img="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80&auto=format&fit=crop" data-name="Sala de reuniones · San Isidro">Reunión de trabajo</li>
-          <li data-img="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80&auto=format&fit=crop" data-name="Sala de capacitación · San Borja">Capacitación</li>
-          <li data-img="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1400&q=80&auto=format&fit=crop" data-name="Estudio · Magdalena">Yoga · clase</li>
-          <li data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=80&auto=format&fit=crop" data-name="Terraza · Surco">Aniversario</li>
-          <li data-img="https://images.unsplash.com/photo-1519642918688-7e43b19245d8?w=1400&q=80&auto=format&fit=crop" data-name="Espacio creativo · Barranco">Despedida</li>
-          <li data-img="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1400&q=80&auto=format&fit=crop" data-name="Estudio creativo · Barranco">Pop-up</li>
-          <li data-img="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1400&q=80&auto=format&fit=crop" data-name="Estudio audiovisual · La Molina">Grabación de video</li>
-          <li data-img="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&q=80&auto=format&fit=crop" data-name="Coworking · San Isidro">Coworking</li>
-          <li data-img="https://images.unsplash.com/photo-1531058020387-3be344556be6?w=1400&q=80&auto=format&fit=crop" data-name="Showroom · Miraflores">Lanzamiento</li>
-        </ul>
-
-        <a href="#cta-final" class="btn btn-dark momento-cta">Ver todas las actividades</a>
-      </div>
-
-      <div class="momento-photo">
-        <div class="momento-img-stack">
-          <img id="momento-img"
-               src="https://images.unsplash.com/photo-1542665952-14513db15293?w=1400&q=80&auto=format&fit=crop"
-               alt="Salón de eventos en Miraflores" />
+    <div class="benefits-grid">
+      <article class="benefit">
+        <div class="benefit-svg">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="26" fill="none" stroke="#3D5AFE" stroke-width="1.5" class="dash-circle"/>
+            <text x="32" y="38" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="18" fill="#0A2540">5'</text>
+          </svg>
         </div>
-        <div class="momento-img-meta" id="momento-meta">Salón eventos · Miraflores</div>
-        <div class="momento-rotated">LIMA · PE · 2026</div>
-      </div>
+        <strong>5 minutos</strong>
+        <p>Lo que tarda el asistente. Antes te tomaba siete días por DM e Instagram.</p>
+      </article>
+
+      <article class="benefit">
+        <div class="benefit-svg">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <text x="32" y="40" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="22" fill="#0A2540">0%</text>
+            <path d="M 16 50 L 48 50" stroke="#3D5AFE" stroke-width="2" class="dash-line"/>
+          </svg>
+        </div>
+        <strong>Cero comisión</strong>
+        <p>Listar tu local es gratis para siempre. Sin trampa, sin letra chica.</p>
+      </article>
+
+      <article class="benefit">
+        <div class="benefit-svg">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M 14 28 Q 14 16, 26 16 L 38 16 Q 50 16, 50 28 L 50 36 Q 50 44, 42 44 L 28 44 L 20 50 L 22 44 Q 14 44, 14 36 Z" fill="none" stroke="#3D5AFE" stroke-width="1.5" class="dash-bubble"/>
+            <circle cx="26" cy="32" r="2" fill="#3D5AFE" class="dot-1"/>
+            <circle cx="32" cy="32" r="2" fill="#3D5AFE" class="dot-2"/>
+            <circle cx="38" cy="32" r="2" fill="#3D5AFE" class="dot-3"/>
+          </svg>
+        </div>
+        <strong>WhatsApp directo</strong>
+        <p>Hablas con el host en una conversación normal. No formularios, no esperas.</p>
+      </article>
+
+      <article class="benefit">
+        <div class="benefit-svg">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="22" fill="none" stroke="#3D5AFE" stroke-width="1.5" class="dash-circle"/>
+            <path d="M 22 32 L 30 40 L 44 26" fill="none" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="dash-check"/>
+          </svg>
+        </div>
+        <strong>Verificado</strong>
+        <p>Cada espacio premium pasa por una visita real de nuestro equipo antes de listarse.</p>
+      </article>
+
+      <article class="benefit">
+        <div class="benefit-svg">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="26" r="8" fill="none" stroke="#3D5AFE" stroke-width="1.5"/>
+            <path d="M 16 50 Q 16 38, 32 38 Q 48 38, 48 50" fill="none" stroke="#3D5AFE" stroke-width="1.5"/>
+            <circle cx="48" cy="22" r="5" fill="#3D5AFE" class="pulse-dot"/>
+          </svg>
+        </div>
+        <strong>Concierge humano</strong>
+        <p>Si nada te convence, nuestro equipo arma el evento contigo. Catering, decoración, todo.</p>
+      </article>
+
+      <article class="benefit">
+        <div class="benefit-svg">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="14" y="22" width="36" height="22" rx="3" fill="none" stroke="#3D5AFE" stroke-width="1.5"/>
+            <path d="M 14 28 L 50 28" stroke="#3D5AFE" stroke-width="1.5"/>
+            <circle cx="32" cy="36" r="3" fill="#0A2540" class="bounce-dot"/>
+          </svg>
+        </div>
+        <strong>Cero adelantos a ciegas</strong>
+        <p>El pago lo coordinas tú con el host. Sin Yape adelantado a desconocidos.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ============ Cómo funciona — con SVG animados ============ -->
+<!-- ============ Cómo funciona ============ -->
 <section id="como-funciona" class="section surface">
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">Cómo funciona</span>
-      <h2>Tres pasos. Sin trampas.</h2>
+      <h2>Tres pasos. <span class="head-em">Sin trampas.</span></h2>
       <p>Lo más complejo que vas a hacer es elegir entre las opciones que te mostramos.</p>
     </div>
     <div class="steps">
       <div class="step">
         <div class="step-svg" data-step="1">
           <svg viewBox="0 0 200 140" aria-hidden="true">
-            <!-- input field -->
             <rect x="20" y="50" width="160" height="40" rx="8" fill="#FFFFFF" stroke="#E3E8EE" stroke-width="1.5"/>
-            <!-- typing text simulation (revealing chars) -->
             <text x="36" y="76" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#0A2540" class="typing-text">Baby shower 25 pers...</text>
-            <!-- cursor blink -->
             <line x1="36" y1="62" x2="36" y2="78" stroke="#3D5AFE" stroke-width="2" class="cursor-blink"/>
-            <!-- label above -->
             <text x="20" y="38" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="600" fill="#697386" letter-spacing="0.06em">QUÉ EVENTO</text>
-            <!-- chip suggestions below -->
             <rect x="20" y="100" width="50" height="24" rx="12" fill="#ECEFFE" class="chip-anim" style="--d: 1200ms"/>
             <text x="45" y="116" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="600" fill="#3D5AFE" class="chip-anim" style="--d: 1200ms">Social</text>
             <rect x="76" y="100" width="58" height="24" rx="12" fill="#F6F9FC" stroke="#E3E8EE" class="chip-anim" style="--d: 1400ms"/>
@@ -273,7 +340,6 @@
       <div class="step">
         <div class="step-svg" data-step="2">
           <svg viewBox="0 0 200 140" aria-hidden="true">
-            <!-- 3 cards stacked -->
             <g class="card-anim" style="--d: 200ms">
               <rect x="14" y="20" width="172" height="36" rx="6" fill="#FFFFFF" stroke="#E3E8EE" stroke-width="1.5"/>
               <rect x="22" y="28" width="20" height="20" rx="3" fill="#E3E8EE"/>
@@ -308,20 +374,17 @@
       <div class="step">
         <div class="step-svg" data-step="3">
           <svg viewBox="0 0 200 140" aria-hidden="true">
-            <!-- WhatsApp-like message -->
             <rect x="20" y="35" width="120" height="30" rx="14" fill="#0A2540" class="msg-anim" style="--d: 200ms"/>
             <text x="32" y="54" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#FFFFFF" class="msg-anim" style="--d: 200ms">Hola, me interesa visitar...</text>
-            <!-- response bubble -->
             <rect x="60" y="75" width="120" height="30" rx="14" fill="#ECEFFE" class="msg-anim" style="--d: 1200ms"/>
             <text x="72" y="94" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="500" fill="#0A2540" class="msg-anim" style="--d: 1200ms">¡Sí! ¿Te queda el sábado 4pm?</text>
-            <!-- check / confirmation -->
             <circle cx="100" cy="120" r="10" fill="#10B981" class="check-anim" style="--d: 2200ms"/>
             <path d="M 95 120 L 99 124 L 106 117" stroke="#FFFFFF" stroke-width="2" fill="none" class="check-anim" style="--d: 2200ms"/>
           </svg>
         </div>
         <span class="step-num">03</span>
         <h3>Coordina tu evento</h3>
-        <p>Te conectamos por WhatsApp con el host. Acuerdan la visita, el precio y los detalles. Sin intermediarios ni fricciones.</p>
+        <p>Te conectamos por WhatsApp con el host. Acuerdan la visita, el precio y los detalles. Sin intermediarios.</p>
       </div>
     </div>
   </div>
@@ -332,7 +395,7 @@
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">Para quién</span>
-      <h2>Coordina sirve a los dos lados.</h2>
+      <h2>Coordina sirve a <span class="head-em">los dos lados.</span></h2>
       <p>Si organizas eventos o si tienes un espacio para alquilar, esto es para ti.</p>
     </div>
     <div class="audience">
@@ -393,7 +456,7 @@
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">Preguntas honestas</span>
-      <h2>Lo que sí hay que decir.</h2>
+      <h2>Lo que <span class="head-em">sí</span> hay que decir.</h2>
     </div>
     <div class="faq">
       <details>
@@ -453,14 +516,15 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="brand" href="/">coordina</a>
+        <a class="brand" href="/">coordina<span class="brand-suffix">eventos</span></a>
         <p>Espacios para eventos en Lima. Encontramos el lugar, coordinamos los detalles, organizamos lo que haga falta.</p>
+        <p class="footer-domain">coordinaeventos.com</p>
       </div>
       <div class="footer-col">
         <h4>Producto</h4>
         <a href="#asistente">Asistente</a>
         <a href="#momento">Para qué</a>
-        <a href="#preguntas">Preguntas</a>
+        <a href="#beneficios">Beneficios</a>
       </div>
       <div class="footer-col">
         <h4>Hosts</h4>
@@ -471,12 +535,12 @@
       <div class="footer-col">
         <h4>Coordina</h4>
         <a href="mailto:info@proper.com.pe">Contacto</a>
-        <a href="#">Términos</a>
+        <a href="#preguntas">Preguntas</a>
         <a href="#">Privacidad</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Coordina · Lima, Perú</span>
+      <span>© 2026 Coordina Eventos · Lima, Perú</span>
       <span class="credits">Imágenes de referencia: <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a></span>
     </div>
   </div>

@@ -115,5 +115,16 @@
       });
     }, { threshold: 0.4 });
     document.querySelectorAll('.step-svg').forEach((el) => stepIO.observe(el));
+
+    // ── 4c. Benefits SVG animations (path-draw + dots) ─────────
+    const benIO = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          benIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.benefit').forEach((el) => benIO.observe(el));
   }
 })();
