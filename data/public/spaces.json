@@ -1,19 +1,28 @@
 {
   "version": 1,
   "updated": "2026-05-02",
-  "note": "Dataset de demostración — 15 espacios reales referenciados con datos plausibles construidos a partir del research de mercado. Imágenes vía Unsplash (licencia comercial libre). Cuando se publiquen hosts reales, este dataset se reemplaza con sus datos verificados.",
+  "note": "Dataset de demostración — 15 espacios reales referenciados con datos plausibles construidos a partir del research de mercado. Coordenadas, reseñas, teléfonos y bloques mínimos son sintéticos. Imágenes vía Unsplash (licencia comercial libre). Cuando se publiquen hosts reales, este dataset se reemplaza con sus datos verificados.",
   "spaces": [
     {
       "id": 1,
       "slug": "casa-verde-barranco",
       "name": "Casa Verde",
       "tipo": "Casa con jardín",
-      "casos_uso": ["baby-shower", "cumpleanos", "aniversario"],
+      "casos_uso": [
+        "baby-shower",
+        "cumpleanos",
+        "aniversario"
+      ],
       "distrito": "Barranco",
       "direccion": "Avenida San Martín, Barranco",
       "capacidad_max": 30,
       "precio_hora_pen": 140,
-      "amenities": ["wifi", "estacionamiento", "cocina", "terraza"],
+      "amenities": [
+        "wifi",
+        "estacionamiento",
+        "cocina",
+        "terraza"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1400&q=80&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1400&q=80&auto=format&fit=crop",
@@ -22,19 +31,54 @@
       "descripcion": "Casa con jardín en el corazón de Barranco. Espacios interiores cálidos, terraza con vista, ideal para reuniones íntimas y baby showers. Cocina equipada disponible.",
       "rating": 4.9,
       "reviews_count": 27,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.144269,
+      "lng": -77.0296,
+      "host_phone": "+51 945 350 328",
+      "bloque_minimo_horas": 4,
+      "reseñas": [
+        {
+          "name": "Diego R.",
+          "rating": 5,
+          "date": "2026-04-02",
+          "comment": "Casa hermosa y muy bien cuidada. Hicimos el baby shower y fue inolvidable."
+        },
+        {
+          "name": "Sofía A.",
+          "rating": 5,
+          "date": "2025-11-25",
+          "comment": "Casa hermosa y muy bien cuidada. Hicimos el baby shower y fue inolvidable."
+        },
+        {
+          "name": "Valeria T.",
+          "rating": 5,
+          "date": "2025-11-03",
+          "comment": "Casa hermosa y muy bien cuidada. Hicimos el baby shower y fue inolvidable."
+        }
+      ]
     },
     {
       "id": 2,
       "slug": "el-alto-miraflores",
       "name": "El Alto",
       "tipo": "Salón de eventos",
-      "casos_uso": ["cumpleanos", "boda", "aniversario", "lanzamiento"],
+      "casos_uso": [
+        "cumpleanos",
+        "boda",
+        "aniversario",
+        "lanzamiento"
+      ],
       "distrito": "Miraflores",
       "direccion": "Avenida Pardo, Miraflores",
       "capacidad_max": 80,
       "precio_hora_pen": 280,
-      "amenities": ["wifi", "estacionamiento", "sonido", "iluminacion", "aire-acondicionado"],
+      "amenities": [
+        "wifi",
+        "estacionamiento",
+        "sonido",
+        "iluminacion",
+        "aire-acondicionado"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1542665952-14513db15293?w=1400&q=80&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1400&q=80&auto=format&fit=crop"
@@ -42,19 +86,52 @@
       "descripcion": "Salón de eventos premium en Miraflores. Capacidad para 80 personas, sonido e iluminación profesional incluidos. Estacionamiento privado.",
       "rating": 4.8,
       "reviews_count": 42,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.12032,
+      "lng": -77.026244,
+      "host_phone": "+51 999 658 529",
+      "bloque_minimo_horas": 4,
+      "reseñas": [
+        {
+          "name": "Mariana C.",
+          "rating": 5,
+          "date": "2026-02-13",
+          "comment": "El espacio es perfecto. Las fotos no le hacen justicia, en persona se ve aún mejor."
+        },
+        {
+          "name": "Andrés P.",
+          "rating": 5,
+          "date": "2026-01-28",
+          "comment": "Hicimos el cumpleaños de mi hija acá y todos los invitados quedaron encantados. Limpio y bien iluminado."
+        },
+        {
+          "name": "Alejandro V.",
+          "rating": 5,
+          "date": "2025-10-13",
+          "comment": "Excelente ubicación. Estacionamiento amplio. Recomendado para eventos medianos."
+        }
+      ]
     },
     {
       "id": 3,
       "slug": "loft-fotografico-barranco",
       "name": "Loft Estudio Norte",
       "tipo": "Loft fotográfico",
-      "casos_uso": ["sesion-fotos", "grabacion-video", "pop-up"],
+      "casos_uso": [
+        "sesion-fotos",
+        "grabacion-video",
+        "pop-up"
+      ],
       "distrito": "Barranco",
       "direccion": "Calle Sucre, Barranco",
       "capacidad_max": 25,
       "precio_hora_pen": 90,
-      "amenities": ["wifi", "iluminacion", "ciclorama", "vestidor"],
+      "amenities": [
+        "wifi",
+        "iluminacion",
+        "ciclorama",
+        "vestidor"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1400&q=80&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1400&q=80&auto=format&fit=crop"
@@ -62,95 +139,262 @@
       "descripcion": "Loft con luz natural impresionante y ciclorama 3x4m. Equipado con luz continua, fondos lisos. Vestidor disponible. Ideal para sesiones de moda, producto y retrato.",
       "rating": 4.9,
       "reviews_count": 56,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.139185,
+      "lng": -77.024614,
+      "host_phone": "+51 921 489 199",
+      "bloque_minimo_horas": 2,
+      "reseñas": [
+        {
+          "name": "Pamela R.",
+          "rating": 5,
+          "date": "2026-04-05",
+          "comment": "La dueña fue súper atenta. Nos dejó todo el equipo de luz disponible sin costo extra."
+        },
+        {
+          "name": "Adriana B.",
+          "rating": 5,
+          "date": "2026-02-17",
+          "comment": "Para sesiones creativas, perfecto. Buena ventilación, vestidor cómodo."
+        },
+        {
+          "name": "Vanessa C.",
+          "rating": 4,
+          "date": "2025-12-09",
+          "comment": "Para sesiones creativas, perfecto. Buena ventilación, vestidor cómodo."
+        }
+      ]
     },
     {
       "id": 4,
       "slug": "mirador-las-casuarinas",
       "name": "Mirador Las Casuarinas",
       "tipo": "Terraza con vista",
-      "casos_uso": ["aniversario", "cumpleanos", "boda"],
+      "casos_uso": [
+        "aniversario",
+        "cumpleanos",
+        "boda"
+      ],
       "distrito": "Surco",
       "direccion": "Las Casuarinas, Santiago de Surco",
       "capacidad_max": 60,
       "precio_hora_pen": 200,
-      "amenities": ["estacionamiento", "sonido", "cocina", "terraza"],
+      "amenities": [
+        "estacionamiento",
+        "sonido",
+        "cocina",
+        "terraza"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=80&auto=format&fit=crop"
       ],
       "descripcion": "Terraza con vista panorámica de Las Casuarinas. Espacio versátil para eventos al aire libre. Cocina equipada y estacionamiento amplio.",
       "rating": 4.7,
       "reviews_count": 31,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.143662,
+      "lng": -76.991427,
+      "host_phone": "+51 915 777 333",
+      "bloque_minimo_horas": 2,
+      "reseñas": [
+        {
+          "name": "Camila S.",
+          "rating": 5,
+          "date": "2026-03-15",
+          "comment": "Buen espacio para cocktail. La cocina equipada es un plus importante."
+        },
+        {
+          "name": "Patricia G.",
+          "rating": 5,
+          "date": "2026-01-18",
+          "comment": "El anfitrión muy amable, nos dio recomendaciones de catering local."
+        },
+        {
+          "name": "Manuel D.",
+          "rating": 5,
+          "date": "2025-09-19",
+          "comment": "Vista impresionante al atardecer. Hicimos el aniversario y fue una experiencia inolvidable."
+        }
+      ]
     },
     {
       "id": 5,
       "slug": "sala-norte-san-isidro",
       "name": "Sala Norte",
       "tipo": "Sala de reuniones",
-      "casos_uso": ["reunion", "capacitacion", "conferencia"],
+      "casos_uso": [
+        "reunion",
+        "capacitacion",
+        "conferencia"
+      ],
       "distrito": "San Isidro",
       "direccion": "Avenida Javier Prado, San Isidro",
       "capacidad_max": 16,
       "precio_hora_pen": 60,
-      "amenities": ["wifi", "tv", "proyector", "aire-acondicionado", "estacionamiento"],
+      "amenities": [
+        "wifi",
+        "tv",
+        "proyector",
+        "aire-acondicionado",
+        "estacionamiento"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80&auto=format&fit=crop"
       ],
       "descripcion": "Sala de reuniones moderna y funcional. TV 65\", pizarra magnética, proyector HD. Aire acondicionado. Edificio con estacionamiento de visitas.",
       "rating": 4.8,
       "reviews_count": 19,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.095077,
+      "lng": -77.033271,
+      "host_phone": "+51 997 763 173",
+      "bloque_minimo_horas": 1,
+      "reseñas": [
+        {
+          "name": "Sergio E.",
+          "rating": 5,
+          "date": "2025-12-28",
+          "comment": "Wi-Fi rápido y silencio absoluto. Ideal para reuniones serias."
+        },
+        {
+          "name": "Pamela R.",
+          "rating": 5,
+          "date": "2025-12-10",
+          "comment": "Wi-Fi rápido y silencio absoluto. Ideal para reuniones serias."
+        },
+        {
+          "name": "Sebastián L.",
+          "rating": 5,
+          "date": "2025-11-01",
+          "comment": "Sala muy profesional. La pizarra magnética y el TV grande funcionaron sin problemas."
+        }
+      ]
     },
     {
       "id": 6,
       "slug": "auditorio-san-borja",
       "name": "Auditorio San Borja",
       "tipo": "Auditorio",
-      "casos_uso": ["conferencia", "capacitacion", "lanzamiento"],
+      "casos_uso": [
+        "conferencia",
+        "capacitacion",
+        "lanzamiento"
+      ],
       "distrito": "San Borja",
       "direccion": "Avenida San Luis, San Borja",
       "capacidad_max": 120,
       "precio_hora_pen": 350,
-      "amenities": ["wifi", "proyector", "sonido", "microfonos", "aire-acondicionado", "accesible"],
+      "amenities": [
+        "wifi",
+        "proyector",
+        "sonido",
+        "microfonos",
+        "aire-acondicionado",
+        "accesible"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80&auto=format&fit=crop"
       ],
       "descripcion": "Auditorio profesional con butacas para 120 personas. Proyección 4K, sonido envolvente, micrófonos inalámbricos, traducción simultánea opcional. Accesible.",
       "rating": 4.9,
       "reviews_count": 14,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.112335,
+      "lng": -77.005986,
+      "host_phone": "+51 950 510 374",
+      "bloque_minimo_horas": 4,
+      "reseñas": [
+        {
+          "name": "Lucía P.",
+          "rating": 5,
+          "date": "2026-03-02",
+          "comment": "Recomendable para conferencias serias. Accesible para personas con movilidad reducida."
+        },
+        {
+          "name": "Camila S.",
+          "rating": 5,
+          "date": "2025-12-01",
+          "comment": "El operador del sistema fue clave, ayudó con la presentación todo el rato."
+        },
+        {
+          "name": "Stephanie K.",
+          "rating": 5,
+          "date": "2025-09-11",
+          "comment": "Recomendable para conferencias serias. Accesible para personas con movilidad reducida."
+        }
+      ]
     },
     {
       "id": 7,
       "slug": "casa-sol-magdalena",
       "name": "Casa Sol",
       "tipo": "Estudio de yoga",
-      "casos_uso": ["yoga-clase", "talleres"],
+      "casos_uso": [
+        "yoga-clase",
+        "talleres"
+      ],
       "distrito": "Magdalena del Mar",
       "direccion": "Avenida Brasil, Magdalena",
       "capacidad_max": 20,
       "precio_hora_pen": 50,
-      "amenities": ["wifi", "duchas", "vestidor", "sonido"],
+      "amenities": [
+        "wifi",
+        "duchas",
+        "vestidor",
+        "sonido"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1400&q=80&auto=format&fit=crop"
       ],
       "descripcion": "Estudio de yoga con piso de madera y luz natural. Mats y bloques disponibles. Duchas y vestidor. Ideal para clases, talleres y workshops de movimiento.",
       "rating": 5.0,
       "reviews_count": 38,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.096414,
+      "lng": -77.077466,
+      "host_phone": "+51 981 651 369",
+      "bloque_minimo_horas": 2,
+      "reseñas": [
+        {
+          "name": "Andrés P.",
+          "rating": 5,
+          "date": "2026-02-28",
+          "comment": "Espacio limpio, con duchas funcionales. Los talleres salen redondos."
+        },
+        {
+          "name": "Claudia H.",
+          "rating": 5,
+          "date": "2025-12-16",
+          "comment": "Excelente para clases de yoga. El piso de madera es perfecto y los mats están en buen estado."
+        },
+        {
+          "name": "Sofía A.",
+          "rating": 5,
+          "date": "2025-09-08",
+          "comment": "Luz natural espectacular en la mañana. Recomendado para sesiones tempranas."
+        }
+      ]
     },
     {
       "id": 8,
       "slug": "estudio-creativo-barranco",
       "name": "Estudio Creativo",
       "tipo": "Espacio multipropósito",
-      "casos_uso": ["pop-up", "lanzamiento", "sesion-fotos"],
+      "casos_uso": [
+        "pop-up",
+        "lanzamiento",
+        "sesion-fotos"
+      ],
       "distrito": "Barranco",
       "direccion": "Avenida Grau, Barranco",
       "capacidad_max": 40,
       "precio_hora_pen": 120,
-      "amenities": ["wifi", "sonido", "cocina", "iluminacion"],
+      "amenities": [
+        "wifi",
+        "sonido",
+        "cocina",
+        "iluminacion"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1400&q=80&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1519642918688-7e43b19245d8?w=1400&q=80&auto=format&fit=crop"
@@ -158,57 +402,158 @@
       "descripcion": "Espacio creativo con techos altos y paredes blancas. Configurable para pop-ups, lanzamientos de marca o sesiones. Sonido y luz incluidos.",
       "rating": 4.8,
       "reviews_count": 24,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.140722,
+      "lng": -77.027555,
+      "host_phone": "+51 930 911 796",
+      "bloque_minimo_horas": 2,
+      "reseñas": [
+        {
+          "name": "Claudia H.",
+          "rating": 5,
+          "date": "2026-01-17",
+          "comment": "Excelente ubicación. Estacionamiento amplio. Recomendado para eventos medianos."
+        },
+        {
+          "name": "Pamela R.",
+          "rating": 5,
+          "date": "2025-12-11",
+          "comment": "El precio es justo para todo lo que incluye. Sonido y luces ya armados, eso ahorra mucho."
+        },
+        {
+          "name": "Camila S.",
+          "rating": 5,
+          "date": "2025-09-17",
+          "comment": "El espacio es perfecto. Las fotos no le hacen justicia, en persona se ve aún mejor."
+        }
+      ]
     },
     {
       "id": 9,
       "slug": "coworking-san-isidro",
       "name": "Hub San Isidro",
       "tipo": "Coworking",
-      "casos_uso": ["coworking", "reunion", "capacitacion"],
+      "casos_uso": [
+        "coworking",
+        "reunion",
+        "capacitacion"
+      ],
       "distrito": "San Isidro",
       "direccion": "Avenida Aramburú, San Isidro",
       "capacidad_max": 8,
       "precio_hora_pen": 35,
-      "amenities": ["wifi", "tv", "aire-acondicionado", "cafe"],
+      "amenities": [
+        "wifi",
+        "tv",
+        "aire-acondicionado",
+        "cafe"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&q=80&auto=format&fit=crop"
       ],
       "descripcion": "Sala privada en coworking premium de San Isidro. Wi-Fi enterprise, TV 55\", café y agua incluidos. Recepción profesional. Ideal para reuniones de hasta 8 personas.",
       "rating": 4.7,
       "reviews_count": 89,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.094893,
+      "lng": -77.035908,
+      "host_phone": "+51 944 887 756",
+      "bloque_minimo_horas": 1,
+      "reseñas": [
+        {
+          "name": "Luis Fernando R.",
+          "rating": 4,
+          "date": "2026-01-04",
+          "comment": "Wi-Fi enterprise, café incluido y recepción profesional. La sala se ve mejor que en las fotos."
+        },
+        {
+          "name": "Patricia G.",
+          "rating": 5,
+          "date": "2025-12-18",
+          "comment": "Por hora es muy razonable. Lo usamos varias veces ya."
+        },
+        {
+          "name": "Diego R.",
+          "rating": 5,
+          "date": "2025-10-23",
+          "comment": "Reunión de trabajo perfecta. El ambiente del coworking suma seriedad."
+        }
+      ]
     },
     {
       "id": 10,
       "slug": "estudio-audiovisual-la-molina",
       "name": "Sala 14",
       "tipo": "Estudio audiovisual",
-      "casos_uso": ["grabacion-video", "podcast"],
+      "casos_uso": [
+        "grabacion-video",
+        "podcast"
+      ],
       "distrito": "La Molina",
       "direccion": "Avenida Javier Prado Este, La Molina",
       "capacidad_max": 6,
       "precio_hora_pen": 90,
-      "amenities": ["wifi", "iluminacion", "sonido", "microfonos", "estacionamiento"],
+      "amenities": [
+        "wifi",
+        "iluminacion",
+        "sonido",
+        "microfonos",
+        "estacionamiento"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1400&q=80&auto=format&fit=crop"
       ],
       "descripcion": "Estudio audiovisual insonorizado con cabina de podcast 4 micrófonos, set de video con luz continua y greenscreen. Edición disponible aparte.",
       "rating": 4.9,
       "reviews_count": 17,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.080098,
+      "lng": -76.945172,
+      "host_phone": "+51 948 961 754",
+      "bloque_minimo_horas": 2,
+      "reseñas": [
+        {
+          "name": "Joaquín N.",
+          "rating": 5,
+          "date": "2026-03-17",
+          "comment": "Espacio limpio, con duchas funcionales. Los talleres salen redondos."
+        },
+        {
+          "name": "Pamela R.",
+          "rating": 5,
+          "date": "2025-12-08",
+          "comment": "Excelente para clases de yoga. El piso de madera es perfecto y los mats están en buen estado."
+        },
+        {
+          "name": "Lucía P.",
+          "rating": 5,
+          "date": "2025-11-23",
+          "comment": "Excelente para clases de yoga. El piso de madera es perfecto y los mats están en buen estado."
+        }
+      ]
     },
     {
       "id": 11,
       "slug": "salon-nupcial-san-isidro",
       "name": "Quinta Real",
       "tipo": "Salón nupcial",
-      "casos_uso": ["boda", "aniversario", "lanzamiento"],
+      "casos_uso": [
+        "boda",
+        "aniversario",
+        "lanzamiento"
+      ],
       "distrito": "San Isidro",
       "direccion": "Calle Los Eucaliptos, San Isidro",
       "capacidad_max": 200,
       "precio_hora_pen": 480,
-      "amenities": ["estacionamiento", "sonido", "iluminacion", "cocina", "terraza", "aire-acondicionado"],
+      "amenities": [
+        "estacionamiento",
+        "sonido",
+        "iluminacion",
+        "cocina",
+        "terraza",
+        "aire-acondicionado"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1400&q=80&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1400&q=80&auto=format&fit=crop"
@@ -216,83 +561,241 @@
       "descripcion": "Salón nupcial de lujo en San Isidro. Capacidad 200 personas, jardín, cocina industrial, sonido e iluminación. Estacionamiento para 80 vehículos.",
       "rating": 4.8,
       "reviews_count": 47,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.10401,
+      "lng": -77.038692,
+      "host_phone": "+51 949 345 159",
+      "bloque_minimo_horas": 4,
+      "reseñas": [
+        {
+          "name": "Mariana C.",
+          "rating": 4,
+          "date": "2026-04-05",
+          "comment": "Excelente ubicación. Estacionamiento amplio. Recomendado para eventos medianos."
+        },
+        {
+          "name": "Andrés P.",
+          "rating": 4,
+          "date": "2025-10-11",
+          "comment": "Excelente ubicación. Estacionamiento amplio. Recomendado para eventos medianos."
+        },
+        {
+          "name": "Iván R.",
+          "rating": 4,
+          "date": "2025-09-29",
+          "comment": "El precio es justo para todo lo que incluye. Sonido y luces ya armados, eso ahorra mucho."
+        }
+      ]
     },
     {
       "id": 12,
       "slug": "showroom-miraflores",
       "name": "Showroom Linea",
       "tipo": "Showroom",
-      "casos_uso": ["lanzamiento", "pop-up", "sesion-fotos"],
+      "casos_uso": [
+        "lanzamiento",
+        "pop-up",
+        "sesion-fotos"
+      ],
       "distrito": "Miraflores",
       "direccion": "Avenida Larco, Miraflores",
       "capacidad_max": 50,
       "precio_hora_pen": 220,
-      "amenities": ["wifi", "iluminacion", "sonido", "aire-acondicionado", "vidriera"],
+      "amenities": [
+        "wifi",
+        "iluminacion",
+        "sonido",
+        "aire-acondicionado",
+        "vidriera"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=1400&q=80&auto=format&fit=crop"
       ],
       "descripcion": "Showroom con vitrina a la calle en Miraflores. Diseño minimalista, iluminación profesional. Ideal para lanzamientos de marca y pop-ups premium.",
       "rating": 4.7,
       "reviews_count": 12,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.11415,
+      "lng": -77.035058,
+      "host_phone": "+51 977 993 721",
+      "bloque_minimo_horas": 2,
+      "reseñas": [
+        {
+          "name": "Lucía P.",
+          "rating": 5,
+          "date": "2026-03-05",
+          "comment": "Diseño minimalista. Quedó perfecto para nuestra marca."
+        },
+        {
+          "name": "Claudia H.",
+          "rating": 5,
+          "date": "2025-12-08",
+          "comment": "El equipo nos ayudó a montar el escaparate. Buena atención."
+        },
+        {
+          "name": "Stephanie K.",
+          "rating": 5,
+          "date": "2025-11-05",
+          "comment": "Diseño minimalista. Quedó perfecto para nuestra marca."
+        }
+      ]
     },
     {
       "id": 13,
       "slug": "salon-intimo-san-isidro",
       "name": "Casa Aurora",
       "tipo": "Salón íntimo",
-      "casos_uso": ["baby-shower", "cumpleanos", "despedida"],
+      "casos_uso": [
+        "baby-shower",
+        "cumpleanos",
+        "despedida"
+      ],
       "distrito": "San Isidro",
       "direccion": "Calle Burgos, San Isidro",
       "capacidad_max": 35,
       "precio_hora_pen": 180,
-      "amenities": ["estacionamiento", "cocina", "aire-acondicionado", "terraza"],
+      "amenities": [
+        "estacionamiento",
+        "cocina",
+        "aire-acondicionado",
+        "terraza"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1400&q=80&auto=format&fit=crop"
       ],
       "descripcion": "Casa íntima con jardín interior. Decoración elegante, cocina equipada. Ideal para celebraciones íntimas: baby showers, despedidas, cumpleaños familiares.",
       "rating": 4.9,
       "reviews_count": 33,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.091406,
+      "lng": -77.037276,
+      "host_phone": "+51 941 330 165",
+      "bloque_minimo_horas": 4,
+      "reseñas": [
+        {
+          "name": "Andrea M.",
+          "rating": 4,
+          "date": "2026-04-24",
+          "comment": "El espacio es perfecto. Las fotos no le hacen justicia, en persona se ve aún mejor."
+        },
+        {
+          "name": "Andrés P.",
+          "rating": 4,
+          "date": "2026-02-26",
+          "comment": "El espacio es perfecto. Las fotos no le hacen justicia, en persona se ve aún mejor."
+        },
+        {
+          "name": "Luis Fernando R.",
+          "rating": 5,
+          "date": "2025-12-05",
+          "comment": "Hicimos el cumpleaños de mi hija acá y todos los invitados quedaron encantados. Limpio y bien iluminado."
+        }
+      ]
     },
     {
       "id": 14,
       "slug": "sala-capacitacion-san-borja",
       "name": "Aula Premium",
       "tipo": "Sala de capacitación",
-      "casos_uso": ["capacitacion", "conferencia", "reunion"],
+      "casos_uso": [
+        "capacitacion",
+        "conferencia",
+        "reunion"
+      ],
       "distrito": "San Borja",
       "direccion": "Avenida San Borja Sur, San Borja",
       "capacidad_max": 30,
       "precio_hora_pen": 110,
-      "amenities": ["wifi", "tv", "proyector", "microfonos", "aire-acondicionado", "estacionamiento"],
+      "amenities": [
+        "wifi",
+        "tv",
+        "proyector",
+        "microfonos",
+        "aire-acondicionado",
+        "estacionamiento"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80&auto=format&fit=crop"
       ],
       "descripcion": "Sala formato capacitación con sillas modulares. Proyector 4K, TV adicional 75\", micrófonos inalámbricos. Catering disponible aparte.",
       "rating": 4.8,
       "reviews_count": 22,
-      "verificado": true
+      "verificado": true,
+      "lat": -12.102246,
+      "lng": -77.005366,
+      "host_phone": "+51 940 385 785",
+      "bloque_minimo_horas": 1,
+      "reseñas": [
+        {
+          "name": "Daniela O.",
+          "rating": 5,
+          "date": "2026-03-23",
+          "comment": "Buena relación calidad-precio para reuniones de hasta 12 personas."
+        },
+        {
+          "name": "Carolina G.",
+          "rating": 4,
+          "date": "2026-03-08",
+          "comment": "Buena relación calidad-precio para reuniones de hasta 12 personas."
+        },
+        {
+          "name": "Lucía P.",
+          "rating": 5,
+          "date": "2026-02-22",
+          "comment": "Buena relación calidad-precio para reuniones de hasta 12 personas."
+        }
+      ]
     },
     {
       "id": 15,
       "slug": "loft-creativo-pueblo-libre",
       "name": "Loft Federico",
       "tipo": "Loft creativo",
-      "casos_uso": ["sesion-fotos", "talleres", "pop-up"],
+      "casos_uso": [
+        "sesion-fotos",
+        "talleres",
+        "pop-up"
+      ],
       "distrito": "Pueblo Libre",
       "direccion": "Avenida La Marina, Pueblo Libre",
       "capacidad_max": 22,
       "precio_hora_pen": 75,
-      "amenities": ["wifi", "iluminacion", "vestidor"],
+      "amenities": [
+        "wifi",
+        "iluminacion",
+        "vestidor"
+      ],
       "fotos": [
         "https://images.unsplash.com/photo-1519642918688-7e43b19245d8?w=1400&q=80&auto=format&fit=crop"
       ],
       "descripcion": "Loft creativo con piso de madera y vigas a la vista. Excelente luz natural por la mañana. Ideal para talleres, sesiones y eventos creativos pequeños.",
       "rating": 4.6,
       "reviews_count": 9,
-      "verificado": false
+      "verificado": false,
+      "lat": -12.078531,
+      "lng": -77.064522,
+      "host_phone": "+51 916 789 769",
+      "bloque_minimo_horas": 2,
+      "reseñas": [
+        {
+          "name": "Rodrigo V.",
+          "rating": 5,
+          "date": "2026-03-21",
+          "comment": "La dueña fue súper atenta. Nos dejó todo el equipo de luz disponible sin costo extra."
+        },
+        {
+          "name": "Diego R.",
+          "rating": 4,
+          "date": "2026-02-21",
+          "comment": "Para sesiones creativas, perfecto. Buena ventilación, vestidor cómodo."
+        },
+        {
+          "name": "Sergio E.",
+          "rating": 5,
+          "date": "2026-01-12",
+          "comment": "El loft tiene una luz natural increíble. Hicimos sesión de producto y las fotos quedaron espectaculares."
+        }
+      ]
     }
   ]
 }
