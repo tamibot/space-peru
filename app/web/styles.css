@@ -12,9 +12,9 @@
   --bg:             #FFFFFF;
   --surface:        #F6F9FC;
   --surface-2:      #F0F4F9;
-  --accent:         #3F66E3;
-  --accent-strong:  #2A4FCC;
-  --accent-soft:    #ECEFFE;
+  --accent:         #0A0A0A;
+  --accent-strong:  #1F1F1F;
+  --accent-soft:    #F5F5F5;
   --ok:             #10B981;
   --warn:           #F59E0B;
   --error:          #EF4444;
@@ -705,7 +705,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
 }
 .quote-field input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(63, 102, 227, 0.12);
+  box-shadow: 0 0 0 4px rgba(10, 10, 10, 0.08);
 }
 .quote-summary {
   margin-top: 16px;

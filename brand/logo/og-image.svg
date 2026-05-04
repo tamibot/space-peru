@@ -16,7 +16,7 @@
   <!-- main statement -->
   <g transform="translate(80, 260)">
     <text x="0" y="0" class="sans" font-weight="700" font-size="92" letter-spacing="-0.04em" fill="#0A0A0A">El espacio para tu</text>
-    <text x="0" y="106" class="sans" font-weight="700" font-size="92" letter-spacing="-0.04em" fill="#3F66E3">próximo evento.</text>
+    <text x="0" y="106" class="sans" font-weight="700" font-size="92" letter-spacing="-0.04em" fill="#0A0A0A">próximo evento.</text>
   </g>
 
   <!-- subline -->
@@ -26,13 +26,13 @@
 
   <!-- bottom URL -->
   <g transform="translate(80, 558)">
-    <text x="0" y="0" class="sans" font-weight="600" font-size="20" fill="#3F66E3">coordinaeventos.com</text>
+    <text x="0" y="0" class="sans" font-weight="600" font-size="20" fill="#0A0A0A">coordinaeventos.com</text>
   </g>
 
   <!-- right side: subtle geometric accent (no peruvian sunset, just clean blocks) -->
   <g transform="translate(880, 180)">
     <rect x="0"   y="0"   width="240" height="120" rx="16" fill="#F6F9FC" stroke="#E3E8EE" stroke-width="1"/>
     <rect x="40"  y="140" width="240" height="120" rx="16" fill="#0A0A0A"/>
-    <rect x="0"   y="280" width="240" height="120" rx="16" fill="#3F66E3"/>
+    <rect x="0"   y="280" width="240" height="120" rx="16" fill="#0A0A0A"/>
   </g>
 </svg>
