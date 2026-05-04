@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-05-02",
+  "updated": "2026-05-04",
   "note": "Dataset de demostración — 15 espacios reales referenciados con datos plausibles construidos a partir del research de mercado. Coordenadas, reseñas, teléfonos y bloques mínimos son sintéticos. Imágenes vía Unsplash (licencia comercial libre). Cuando se publiquen hosts reales, este dataset se reemplaza con sus datos verificados.",
   "spaces": [
     {
@@ -24,11 +24,13 @@
         "terraza"
       ],
       "fotos": [
+        "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1542665952-14513db15293?w=1400&q=80&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1400&q=80&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1400&q=80&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1400&q=80&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Casa con jardín en el corazón de Barranco. Espacios interiores cálidos, terraza con vista, ideal para reuniones íntimas y baby showers. Cocina equipada disponible.",
+      "descripcion": "Casa republicana restaurada en el corazón de Barranco, a pocas cuadras del puente de los suspiros. Patio interior con árbol y sala con techos altos de seis metros. La cocina conserva mayólica original. Ideal para baby showers, cumpleaños íntimos y sesiones de marca. Llegada en taxi recomendada por el tráfico de fines de semana; estacionamiento para tres vehículos.",
       "rating": 4.9,
       "reviews_count": 27,
       "verificado": true,
@@ -55,6 +57,12 @@
           "date": "2025-11-03",
           "comment": "Casa hermosa y muy bien cuidada. Hicimos el baby shower y fue inolvidable."
         }
+      ],
+      "highlights": [
+        "Casa republicana restaurada",
+        "Patio interior con árbol",
+        "Mayólica original en cocina",
+        "A 5 min del Puente de los Suspiros"
       ]
     },
     {
@@ -80,10 +88,13 @@
         "aire-acondicionado"
       ],
       "fotos": [
-        "https://images.unsplash.com/photo-1542665952-14513db15293?w=1400&q=80&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1400&q=80&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563911302283-d2bc129e7570?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Salón de eventos premium en Miraflores. Capacidad para 80 personas, sonido e iluminación profesional incluidos. Estacionamiento privado.",
+      "descripcion": "Salón de eventos en el segundo piso de un edificio sobre la avenida Pardo. Pisos de madera oscura, cortinas blackout y zona lounge separada de la pista. Sonido empotrado calibrado, iluminación DMX programable. Ascensor directo desde estacionamiento. El staff del edificio coordina ingreso de proveedores; apertura desde las 15:00.",
       "rating": 4.8,
       "reviews_count": 42,
       "verificado": true,
@@ -110,6 +121,12 @@
           "date": "2025-10-13",
           "comment": "Excelente ubicación. Estacionamiento amplio. Recomendado para eventos medianos."
         }
+      ],
+      "highlights": [
+        "Sonido DMX programable",
+        "Zona lounge separada",
+        "Ascensor directo desde parking",
+        "Sobre Av. Pardo"
       ]
     },
     {
@@ -133,10 +150,13 @@
         "vestidor"
       ],
       "fotos": [
+        "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=1400&q=80&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1400&q=80&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1400&q=80&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1519642918688-7e43b19245d8?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Loft con luz natural impresionante y ciclorama 3x4m. Equipado con luz continua, fondos lisos. Vestidor disponible. Ideal para sesiones de moda, producto y retrato.",
+      "descripcion": "Loft de planta abierta en una casa adaptada en Barranco. Ventanal sur de seis metros que da luz natural difusa todo el día — ideal para piel y producto. Ciclorama blanco 4 metros, fondos de papel disponibles. Vestidor con espejo de cuerpo completo y enchufes para planchas. Cocina pequeña para snacks de equipo.",
       "rating": 4.9,
       "reviews_count": 56,
       "verificado": true,
@@ -163,6 +183,12 @@
           "date": "2025-12-09",
           "comment": "Para sesiones creativas, perfecto. Buena ventilación, vestidor cómodo."
         }
+      ],
+      "highlights": [
+        "Luz natural sur 6m",
+        "Ciclorama blanco 4m",
+        "Vestidor con espejo completo",
+        "Cocina para crew"
       ]
     },
     {
@@ -186,9 +212,11 @@
         "terraza"
       ],
       "fotos": [
-        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=80&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Terraza con vista panorámica de Las Casuarinas. Espacio versátil para eventos al aire libre. Cocina equipada y estacionamiento amplio.",
+      "descripcion": "Terraza privada en lo alto de Las Casuarinas con vista a Lima desde el cerro. Capacidad para 60 sentados o 90 cocktail. Pérgola cubierta para protección de neblina, calefactores exteriores en invierno. Cocina equipada para catering propio. Acceso restringido por urbanización privada — coordinar lista de invitados con 48h de anticipación.",
       "rating": 4.7,
       "reviews_count": 31,
       "verificado": true,
@@ -215,6 +243,12 @@
           "date": "2025-09-19",
           "comment": "Vista impresionante al atardecer. Hicimos el aniversario y fue una experiencia inolvidable."
         }
+      ],
+      "highlights": [
+        "Vista panorámica de Lima",
+        "Pérgola cubierta",
+        "Calefactores para invierno",
+        "Acceso por urbanización privada"
       ]
     },
     {
@@ -239,9 +273,13 @@
         "estacionamiento"
       ],
       "fotos": [
+        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1400&q=80&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Sala de reuniones moderna y funcional. TV 65\", pizarra magnética, proyector HD. Aire acondicionado. Edificio con estacionamiento de visitas.",
+      "descripcion": "Sala de reuniones en piso 14 del edificio empresarial sobre Javier Prado. TV 65 pulgadas con AirPlay y Miracast, pizarra de vidrio de 3 metros, mesa para 12 con sillas Aeron. Internet enterprise simétrico 500 Mbps. Recepción del edificio recibe a tus invitados; estacionamiento de visita validable.",
       "rating": 4.8,
       "reviews_count": 19,
       "verificado": true,
@@ -268,6 +306,12 @@
           "date": "2025-11-01",
           "comment": "Sala muy profesional. La pizarra magnética y el TV grande funcionaron sin problemas."
         }
+      ],
+      "highlights": [
+        "TV 65\" AirPlay/Miracast",
+        "Pizarra de vidrio 3m",
+        "Wi-Fi enterprise 500 Mbps",
+        "Sillas Aeron"
       ]
     },
     {
@@ -293,9 +337,10 @@
         "accesible"
       ],
       "fotos": [
-        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Auditorio profesional con butacas para 120 personas. Proyección 4K, sonido envolvente, micrófonos inalámbricos, traducción simultánea opcional. Accesible.",
+      "descripcion": "Auditorio profesional en el Centro Empresarial San Luis. Butacas reclinables con escritorio plegable, cabina de proyección con operador incluido. Pantalla 4K de 4 metros, sistema de sonido Bose con 8 micrófonos inalámbricos Sennheiser. Cabina de traducción simultánea aparte. Foyer para coffee break con 25 m².",
       "rating": 4.9,
       "reviews_count": 14,
       "verificado": true,
@@ -322,6 +367,12 @@
           "date": "2025-09-11",
           "comment": "Recomendable para conferencias serias. Accesible para personas con movilidad reducida."
         }
+      ],
+      "highlights": [
+        "Butacas con escritorio plegable",
+        "Pantalla 4K · 4m",
+        "8 micrófonos Sennheiser",
+        "Foyer para coffee break"
       ]
     },
     {
@@ -344,9 +395,11 @@
         "sonido"
       ],
       "fotos": [
-        "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1400&q=80&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Estudio de yoga con piso de madera y luz natural. Mats y bloques disponibles. Duchas y vestidor. Ideal para clases, talleres y workshops de movimiento.",
+      "descripcion": "Estudio de yoga en casa familiar adaptada en Magdalena. Piso de madera maple flotante, climatización mediante ventilación cruzada (sin aire acondicionado para mantener prana). Mats Manduka y bloques disponibles. Duchas con agua caliente solar; vestidor unisex. Ventanas que dan al jardín del barrio.",
       "rating": 5.0,
       "reviews_count": 38,
       "verificado": true,
@@ -373,6 +426,12 @@
           "date": "2025-09-08",
           "comment": "Luz natural espectacular en la mañana. Recomendado para sesiones tempranas."
         }
+      ],
+      "highlights": [
+        "Piso de madera maple",
+        "Mats Manduka incluidos",
+        "Agua caliente solar",
+        "Ventilación cruzada natural"
       ]
     },
     {
@@ -396,10 +455,13 @@
         "iluminacion"
       ],
       "fotos": [
-        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1400&q=80&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1519642918688-7e43b19245d8?w=1400&q=80&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Espacio creativo con techos altos y paredes blancas. Configurable para pop-ups, lanzamientos de marca o sesiones. Sonido y luz incluidos.",
+      "descripcion": "Espacio multipropósito en una galería de arte de Barranco. Paredes blancas de seis metros, piso de cemento pulido. Riel de iluminación profesional sobre toda la planta, sonido empotrado JBL. Configurable como pista de baile, set fotográfico o pasarela. La galería deja sus obras durante el evento — los muros son del espacio.",
       "rating": 4.8,
       "reviews_count": 24,
       "verificado": true,
@@ -426,6 +488,12 @@
           "date": "2025-09-17",
           "comment": "El espacio es perfecto. Las fotos no le hacen justicia, en persona se ve aún mejor."
         }
+      ],
+      "highlights": [
+        "Galería de arte adaptable",
+        "Riel de luz profesional",
+        "Sonido JBL empotrado",
+        "Cemento pulido + paredes 6m"
       ]
     },
     {
@@ -449,9 +517,11 @@
         "cafe"
       ],
       "fotos": [
+        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1400&q=80&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Sala privada en coworking premium de San Isidro. Wi-Fi enterprise, TV 55\", café y agua incluidos. Recepción profesional. Ideal para reuniones de hasta 8 personas.",
+      "descripcion": "Sala privada dentro de coworking premium sobre Aramburú. Mesa redonda para 8 con sillas ergonómicas, TV 55 pulgadas con HDMI y conexión inalámbrica. Acceso a la cafetería del coworking incluido (café de origen, té, agua, infusiones). Recepción profesional bilingüe. Edificio con seguridad 24/7.",
       "rating": 4.7,
       "reviews_count": 89,
       "verificado": true,
@@ -478,6 +548,12 @@
           "date": "2025-10-23",
           "comment": "Reunión de trabajo perfecta. El ambiente del coworking suma seriedad."
         }
+      ],
+      "highlights": [
+        "Mesa redonda para 8",
+        "Café de origen incluido",
+        "Recepción bilingüe",
+        "Edificio seguro 24/7"
       ]
     },
     {
@@ -501,9 +577,10 @@
         "estacionamiento"
       ],
       "fotos": [
+        "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1400&q=80&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Estudio audiovisual insonorizado con cabina de podcast 4 micrófonos, set de video con luz continua y greenscreen. Edición disponible aparte.",
+      "descripcion": "Estudio audiovisual insonorizado en La Molina. Cabina de podcast con 4 micrófonos Shure SM7B sobre brazos, mezcladora Rodecaster Pro 2 lista. Set de video con luz continua Aputure y greenscreen retráctil. Operador con 8 años de experiencia disponible aparte. Estacionamiento dentro del edificio para descargar equipo grande.",
       "rating": 4.9,
       "reviews_count": 17,
       "verificado": true,
@@ -530,6 +607,12 @@
           "date": "2025-11-23",
           "comment": "Excelente para clases de yoga. El piso de madera es perfecto y los mats están en buen estado."
         }
+      ],
+      "highlights": [
+        "4 micrófonos Shure SM7B",
+        "Rodecaster Pro 2",
+        "Greenscreen retráctil",
+        "Operador 8 años exp."
       ]
     },
     {
@@ -555,10 +638,13 @@
         "aire-acondicionado"
       ],
       "fotos": [
-        "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1400&q=80&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1400&q=80&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1563911302283-d2bc129e7570?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Salón nupcial de lujo en San Isidro. Capacidad 200 personas, jardín, cocina industrial, sonido e iluminación. Estacionamiento para 80 vehículos.",
+      "descripcion": "Quinta nupcial en una calle residencial de San Isidro. Jardín principal de 800 m² con árboles maduros, salón cubierto adyacente para emergencia de lluvia. Cocina industrial con plancha, hornos y cámaras frías para catering propio. Vestidores de novios separados con espejo, baño y mini bar. Estacionamiento para 80 vehículos en lote propio.",
       "rating": 4.8,
       "reviews_count": 47,
       "verificado": true,
@@ -585,6 +671,12 @@
           "date": "2025-09-29",
           "comment": "El precio es justo para todo lo que incluye. Sonido y luces ya armados, eso ahorra mucho."
         }
+      ],
+      "highlights": [
+        "Jardín 800 m² con árboles",
+        "Cocina industrial completa",
+        "Vestidores de novios",
+        "Parking para 80 autos"
       ]
     },
     {
@@ -609,9 +701,11 @@
         "vidriera"
       ],
       "fotos": [
-        "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=1400&q=80&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Showroom con vitrina a la calle en Miraflores. Diseño minimalista, iluminación profesional. Ideal para lanzamientos de marca y pop-ups premium.",
+      "descripcion": "Showroom con vitrina a la avenida Larco. Diseño minimalista — piso de cemento, paredes blancas, riel de iluminación galería. La vitrina genera tráfico orgánico durante el evento (Larco tiene 60.000 transeúntes/día). Configurable como tienda pop-up o lounge. Conexión a sistema de música del local incluida.",
       "rating": 4.7,
       "reviews_count": 12,
       "verificado": true,
@@ -638,6 +732,12 @@
           "date": "2025-11-05",
           "comment": "Diseño minimalista. Quedó perfecto para nuestra marca."
         }
+      ],
+      "highlights": [
+        "Vitrina a Av. Larco",
+        "60k transeúntes/día",
+        "Riel galería",
+        "Sistema de música incluido"
       ]
     },
     {
@@ -661,9 +761,13 @@
         "terraza"
       ],
       "fotos": [
-        "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1400&q=80&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1542665952-14513db15293?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Casa íntima con jardín interior. Decoración elegante, cocina equipada. Ideal para celebraciones íntimas: baby showers, despedidas, cumpleaños familiares.",
+      "descripcion": "Casa íntima en zona residencial tranquila de San Isidro. Sala principal con sofás, comedor adyacente con mesa para 24, jardín interior con cobertura cubierta. Cocina equipada con horno doble y vajilla para 35. Decoración base elegante (paredes color crema, lámparas de techo) — necesitas pocos detalles para fiesta lista.",
       "rating": 4.9,
       "reviews_count": 33,
       "verificado": true,
@@ -690,6 +794,12 @@
           "date": "2025-12-05",
           "comment": "Hicimos el cumpleaños de mi hija acá y todos los invitados quedaron encantados. Limpio y bien iluminado."
         }
+      ],
+      "highlights": [
+        "Comedor para 24 sentados",
+        "Cobertura cubierta jardín",
+        "Vajilla para 35 incluida",
+        "Decoración base lista"
       ]
     },
     {
@@ -715,9 +825,13 @@
         "estacionamiento"
       ],
       "fotos": [
+        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Sala formato capacitación con sillas modulares. Proyector 4K, TV adicional 75\", micrófonos inalámbricos. Catering disponible aparte.",
+      "descripcion": "Aula formato capacitación en torre empresarial de San Borja. Sillas con paleta plegable rotables, mesa principal del facilitador. Doble proyección: pantalla principal 100\" + TV auxiliar 75\". 4 micrófonos inalámbricos Shure. Setup de coffee break en zona aparte; el catering se contrata directo con proveedor del edificio.",
       "rating": 4.8,
       "reviews_count": 22,
       "verificado": true,
@@ -744,6 +858,12 @@
           "date": "2026-02-22",
           "comment": "Buena relación calidad-precio para reuniones de hasta 12 personas."
         }
+      ],
+      "highlights": [
+        "Sillas con paleta plegable",
+        "Pantalla 100\" + TV 75\"",
+        "4 micrófonos Shure",
+        "Catering por proveedor edificio"
       ]
     },
     {
@@ -766,9 +886,13 @@
         "vestidor"
       ],
       "fotos": [
-        "https://images.unsplash.com/photo-1519642918688-7e43b19245d8?w=1400&q=80&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1519642918688-7e43b19245d8?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=1400&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1400&q=80&auto=format&fit=crop"
       ],
-      "descripcion": "Loft creativo con piso de madera y vigas a la vista. Excelente luz natural por la mañana. Ideal para talleres, sesiones y eventos creativos pequeños.",
+      "descripcion": "Loft en una casona republicana de Pueblo Libre adaptada. Vigas de madera a la vista, ladrillo expuesto en una pared, piso de pino restaurado. Luz natural por la mañana excelente; tarde más cálida. Ideal para talleres, sesiones de marca pequeñas y eventos creativos íntimos. Wi-Fi rápido. Sin estacionamiento — taxi o caminando desde la avenida La Marina.",
       "rating": 4.6,
       "reviews_count": 9,
       "verificado": false,
@@ -795,6 +919,12 @@
           "date": "2026-01-12",
           "comment": "El loft tiene una luz natural increíble. Hicimos sesión de producto y las fotos quedaron espectaculares."
         }
+      ],
+      "highlights": [
+        "Casona republicana",
+        "Vigas de madera vistas",
+        "Ladrillo expuesto",
+        "Luz natural matinal"
       ]
     }
   ]

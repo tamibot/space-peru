@@ -91,6 +91,21 @@ def render_page(s: dict) -> str:
 
     casos_html = ", ".join(html.escape(CATEGORIA_LABELS.get(c, c)) for c in s["casos_uso"])
 
+    highlights = s.get("highlights") or []
+    highlights_html = ""
+    if highlights:
+        items = "\n".join(
+            f'            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> {html.escape(h)}</li>'
+            for h in highlights
+        )
+        highlights_html = f"""
+        <div class="detail-section">
+          <h2>Lo que destaca</h2>
+          <ul class="highlights">
+{items}
+          </ul>
+        </div>"""
+
     verified_html = (
         '<span class="verified-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Verificado</span>'
         if s["verificado"] else ""
@@ -160,6 +175,11 @@ def render_page(s: dict) -> str:
 </head>
 <body>
 
+<div class="demo-banner">
+  <strong>Catálogo demo</strong> · Los primeros hosts reales se publican en junio 2026 ·
+  <a href="../../../#hosts">¿Tienes un espacio? Publica gratis →</a>
+</div>
+
 <header class="nav">
   <div class="nav-inner">
     <a class="brand" href="../index.html">coordina<span class="brand-suffix">eventos</span></a>
@@ -210,7 +230,7 @@ def render_page(s: dict) -> str:
           <h2>Sobre el espacio</h2>
           <p>{descripcion}</p>
         </div>
-
+{highlights_html}
         <div class="detail-section">
           <h2>Para qué sirve</h2>
           <p>{casos_html}</p>
