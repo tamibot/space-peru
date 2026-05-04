@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --primary:        #0A2540;
-  --primary-2:      #1A2B4A;
+  --primary:        #0A0A0A;
+  --primary-2:      #1F1F1F;
   --body:           #3C4257;
   --muted:          #697386;
   --muted-light:    #8792A2;
@@ -19,9 +19,9 @@
   --warn:           #F59E0B;
   --error:          #EF4444;
   --sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --shadow-sm: 0 1px 2px rgba(10, 37, 64, .04);
-  --shadow-md: 0 4px 16px rgba(10, 37, 64, .06);
-  --shadow-lg: 0 12px 32px rgba(10, 37, 64, .08);
+  --shadow-sm: 0 1px 2px rgba(10, 10, 10, .04);
+  --shadow-md: 0 4px 16px rgba(10, 10, 10, .06);
+  --shadow-lg: 0 12px 32px rgba(10, 10, 10, .08);
 }
 
 * { box-sizing: border-box; }
@@ -41,7 +41,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
 
 /* ===== Demo banner ===== */
 .demo-banner {
-  background: linear-gradient(90deg, #0A2540 0%, #1A2B4A 50%, #0A2540 100%);
+  background: linear-gradient(90deg, #0A0A0A 0%, #1F1F1F 50%, #0A0A0A 100%);
   color: white;
   padding: 10px 24px;
   font-size: 13px;
@@ -49,7 +49,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
   text-align: center;
   letter-spacing: -0.005em;
 }
-.demo-banner strong { font-weight: 700; color: #93B4FF; }
+.demo-banner strong { font-weight: 700; color: #FFFFFF; }
 .demo-banner a {
   color: white;
   font-weight: 700;
@@ -58,7 +58,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
   text-underline-offset: 3px;
   margin-left: 4px;
 }
-.demo-banner a:hover { color: #93B4FF; }
+.demo-banner a:hover { color: #FFFFFF; }
 @media (max-width: 540px) {
   .demo-banner { font-size: 12px; padding: 8px 16px; }
 }
@@ -558,7 +558,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
 /* Lightbox CSS-only via :target */
 .lightbox {
   position: fixed; inset: 0;
-  background: rgba(10, 37, 64, 0.92);
+  background: rgba(10, 10, 10, 0.92);
   display: none;
   z-index: 100;
   align-items: center; justify-content: center;

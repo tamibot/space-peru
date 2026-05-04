@@ -3,8 +3,8 @@
 
 :root {
   /* paleta serious blue (Stripe-inspired) */
-  --primary:        #0A2540;   /* navy profundo - texto principal, brand */
-  --primary-2:      #1A2B4A;   /* navy hover */
+  --primary:        #0A0A0A;   /* navy profundo - texto principal, brand */
+  --primary-2:      #1F1F1F;   /* navy hover */
   --body:           #3C4257;   /* slate medio - body text */
   --muted:          #697386;   /* slate gris - secondary */
   --muted-light:    #8792A2;   /* placeholders */
@@ -28,9 +28,9 @@
   --sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* shadows - sutiles solo */
-  --shadow-sm: 0 1px 2px rgba(10, 37, 64, .04);
-  --shadow-md: 0 4px 16px rgba(10, 37, 64, .06);
-  --shadow-lg: 0 12px 32px rgba(10, 37, 64, .08);
+  --shadow-sm: 0 1px 2px rgba(10, 10, 10, .04);
+  --shadow-md: 0 4px 16px rgba(10, 10, 10, .06);
+  --shadow-lg: 0 12px 32px rgba(10, 10, 10, .08);
 }
 
 * { box-sizing: border-box; }
@@ -356,10 +356,10 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
 }
 .aud-card:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
 .aud-card.primary { background: var(--primary); color: white; border-color: var(--primary); }
-.aud-card.primary:hover { box-shadow: 0 12px 32px rgba(10, 37, 64, .25); border-color: var(--primary); }
+.aud-card.primary:hover { box-shadow: 0 12px 32px rgba(10, 10, 10, .25); border-color: var(--primary); }
 
 .aud-card .eyebrow { color: var(--accent); }
-.aud-card.primary .eyebrow { color: #93B4FF; }
+.aud-card.primary .eyebrow { color: #FFFFFF; }
 
 .aud-card h3 {
   font-family: var(--sans);
@@ -389,7 +389,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
 .aud-list li svg {
   flex-shrink: 0; margin-top: 3px; color: var(--accent);
 }
-.aud-card.primary .aud-list li svg { color: #93B4FF; }
+.aud-card.primary .aud-list li svg { color: #FFFFFF; }
 
 .aud-card .btn { align-self: flex-start; margin-top: 12px; }
 
@@ -491,7 +491,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
   margin: 16px 0 24px;
   max-width: 18ch;
 }
-.host-cta h2 span { color: #93B4FF; }
+.host-cta h2 span { color: #FFFFFF; }
 .host-cta > div:first-child > p {
   font-size: 18px;
   color: rgba(255,255,255,.78);
@@ -499,7 +499,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
   margin: 0 0 32px;
   line-height: 1.55;
 }
-.host-cta .eyebrow { color: #93B4FF; }
+.host-cta .eyebrow { color: #FFFFFF; }
 
 /* ==== FAQ ==== */
 .faq {
@@ -552,7 +552,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
   line-height: 1.1;
   color: white;
 }
-.final-cta h2 span { color: #93B4FF; }
+.final-cta h2 span { color: #FFFFFF; }
 .final-cta p {
   color: rgba(255,255,255,.78);
   max-width: 50ch;
@@ -1226,7 +1226,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
   color: var(--accent);
   font-weight: 700;
 }
-.section.dark .head-em { color: #93B4FF; }
+.section.dark .head-em { color: #FFFFFF; }
 
 /* hero h1 span — keep accent color but no italic to preserve weight */
 .hero h1 span { color: var(--accent); font-style: normal; }
@@ -1245,7 +1245,7 @@ a { color: inherit; text-decoration: none; transition: color .15s ease; }
   inset: 0;
   background:
     radial-gradient(circle at 80% 20%, rgba(61, 90, 254, .04) 0%, transparent 50%),
-    radial-gradient(circle at 20% 80%, rgba(10, 37, 64, .03) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(10, 10, 10, .03) 0%, transparent 50%);
   pointer-events: none;
 }
 .section-beneficios > .container { position: relative; z-index: 1; }

@@ -4,5 +4,5 @@
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap');
     .word { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 700; }
   </style>
-  <text x="0" y="46" class="word" font-size="44" letter-spacing="-0.035em" fill="#0A2540">coordina</text>
+  <text x="0" y="46" class="word" font-size="44" letter-spacing="-0.035em" fill="#0A0A0A">coordina</text>
 </svg>
