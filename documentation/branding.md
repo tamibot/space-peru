@@ -1,271 +1,350 @@
-# Branding — Coordina
+# coordinaeventos — Sistema visual
 
-> Documento canónico. Si entra en conflicto con cualquier otro doc, **este manda**.
-> **Marca**: Coordina · **Marca formal**: Coordina Eventos · **Dominio**: coordinaeventos.com
-
----
-
-## Posicionamiento en una frase
-
-**Coordina es la plataforma que conecta personas con espacios para eventos en Lima**, y cuando hace falta, coordina también todo lo demás.
+> **Documento canónico vigente.** Si entra en conflicto con cualquier otro doc, **este manda**.
+> Marca: `coordinaeventos` · Dominio: `coordinaeventos.com`
+> Última actualización: 2026-05-06
 
 ---
 
 ## Filosofía visual
 
-**Profesional minimalista azul.** Inspirado en Peerspace, Stripe, Linear: navy serio + un acento azul moderno + mucho espacio en blanco. La marca debe sentirse confiable, limpia, contemporánea — sin caer en cliché tech genérico ni folclore peruano.
+**Editorial minimalista en blanco/negro/plomo, inspirado en Peerspace + magazine spreads.**
+Tipografía bold con peso editorial, fotografía documental, abundante whitespace, bordes rectos en todo, animaciones sutiles que comunican (no decoran).
+
+**Lo que NO somos:**
+- ❌ SaaS B2B genérico
+- ❌ Marrón / cream cálido
+- ❌ Gradientes purple-pink, glassmorphism, neumorphism
+- ❌ Stock corporativo "personas señalando laptops"
+- ❌ Pills excesivamente redondeados / radius mayor a 0
+- ❌ Logos de empresas con captions/labels redundantes
 
 ---
 
-## Color
+## Color — Paleta canónica
 
-### Filosofía
-Azul navy como ancla de confianza profesional. Accent azul vibrante moderno (no tech default, no Airbnb coral, no morado wallet). Mucha respiración blanca. Surface muy suave que crea ritmo de secciones.
+### Tokens CSS (`:root` en `landing/src/styles.css`)
 
-### Tokens
-
-| Rol | Token | Hex | Notas de uso |
-|---|---|---|---|
-| **Primary** | `--primary` | `#0A2540` | Wordmark, headings, footer, brand mark |
-| **Primary-2** | `--primary-2` | `#1A2B4A` | Hover de buttons primary navy |
-| **Body** | `--body` | `#3C4257` | Texto largo de body |
-| **Muted** | `--muted` | `#697386` | Captions, labels secundarios |
-| **Muted-light** | `--muted-light` | `#8792A2` | Placeholders |
-| **Background** | `--bg` | `#FFFFFF` | Background base |
-| **Surface** | `--surface` | `#F6F9FC` | Sections alternas, cards de fondo |
-| **Surface-2** | `--surface-2` | `#F0F4F9` | Hover de surface |
-| **Line** | `--line` | `#E3E8EE` | Bordes default |
-| **Line-soft** | `--line-soft` | `#EDF1F6` | Separadores ultra-sutiles |
-| **Accent** | `--accent` | `#3D5AFE` | CTA principal, links, énfasis |
-| **Accent-strong** | `--accent-strong` | `#2841E0` | Hover de CTA accent |
-| **Accent-soft** | `--accent-soft` | `#ECEFFE` | Background de iconos, hover suave |
-
-### Funcionales
-- Éxito: `#10B981`
-- Alerta: `#F59E0B`
-- Error: `#EF4444`
+| Token | Hex | Uso |
+|---|---|---|
+| `--primary` | `#0A0A0A` | Brand mark, headings, footer, sección dark, botón primary |
+| `--primary-2` | `#1F1F1F` | Hover de primary |
+| `--body` | `#2B2B2B` | Body text largo |
+| `--muted` | `#6B6B6B` | Captions, eyebrows, labels secundarios |
+| `--muted-light` | `#C4C4C4` | Placeholders, items inactivos |
+| `--bg` | `#FFFFFF` | Background base |
+| `--soft` | `#F4F4F4` | Plomo claro — testimonials bg, marquee bg |
+| `--soft-2` | `#ECECEC` | Plomo ligeramente más oscuro — bordes marquee |
+| `--surface` | `#F8F8F8` | Hover surface, image background |
+| `--line` | `#E8E8E8` | Bordes default |
+| `--line-soft` | `#F0F0F0` | Separadores ultra sutiles |
+| `--ok` | `#1A8754` | Status indicator (asistente IA "en línea") |
+| `--verified` | `#1D9BF0` | **Excepción**: solo para badge "Espacio verificado" (check + halo). Único color funcional fuera del monocromo. |
 
 ### Reglas duras
-- **Accent** `#3D5AFE` aparece **máximo una vez como CTA principal** por viewport. Si aparece más, es ruido.
-- **Primary navy** `#0A2540` es el color de la marca: wordmark, headings, footer, sección dark de hosts.
-- **Cero gradientes purple-pink**, solo gradientes azules muy sutiles en surfaces.
-- **Cero glassmorphism, neumorphism, sombras decorativas**.
+
+- **NO usar marrón / cream / beige** (#F5EFE0, #EBE3D0). Reemplazado por plomo claro.
+- **NO accent color decorativo**. Todo es monocromo blanco/negro/plomo.
+- **Excepción: `--verified` `#1D9BF0`** se usa SOLO para el badge "Espacio verificado" (check icon + label). Es funcional, no decorativo: comunica que el host envió video y pasó verificación humana. NO usar en headlines, links, botones u otros elementos.
+- **Cero gradientes decorativos**. Solo gradientes funcionales (fade en bordes de carruseles).
+- **Cero sombras decorativas**. Una sombra solo aparece si comunica elevación funcional.
+- Status dots de IA pueden ser circles (semánticos), todo lo demás es recto.
 
 ---
 
 ## Tipografía
 
 ### Fuente única
-**Plus Jakarta Sans** (Google Fonts, variable, libre).
+**Plus Jakarta Sans** (Google Fonts variable). Pesos: 400, 500, 600, 700, 800.
 
-> **Por qué esta fuente**: distintiva sin ser rara, geométrica moderna con proporciones sutilmente más amplias que Inter. No está sobre-usada como Inter ni Roboto. Funciona excelente en headings (700/800) y body (400/500). Variable axis para fine-tuning.
+> Por qué Jakarta y no Manrope/Inter: Jakarta es distintiva sin ser rara, geométrica con proporciones más amables que Inter, no sobre-usada. Funciona en headings 800 sin verse Manrope-cuadrada.
 
 ### Pesos canónicos
-- **800**: hero opcional para enfatizar.
-- **700**: headings, wordmark, sub-headings principales.
-- **600**: CTAs, énfasis en body.
-- **500**: secondary nav, labels, captions.
-- **400**: body default.
 
-### Tracking
-- Headings principales: `-0.038em` a `-0.04em` (cerrado, look limpio).
-- Wordmark: `-0.035em`.
+- **800**: hero h1, section headlines, "Hecho con coordina" gigante, brand wordmark.
+- **700**: brand del nav, sub-headings (h3), eyebrows, items hover/active.
+- **600**: nav links, body emphasis, CTAs.
+- **500**: nav placeholders, captions, marquee items.
+- **400**: body default, lead paragraphs.
+
+### Tracking (letter-spacing)
+
+- Headings principales: `-0.035em` a `-0.04em` (cerrado, look limpio).
+- Brand wordmark: `-0.04em`.
 - Body: `0` (neutro).
-- Eyebrows (kicker): `+0.06em` con `text-transform: uppercase`.
+- Eyebrows / labels: `+0.18em` con `text-transform: uppercase` (Apple-style spacing amplio).
 
 ### Escala canónica
 
-| Token | px | Display típico | Uso |
+| Token | Tamaño aprox | Peso | Uso |
 |---|---|---|---|
-| `text-xs`  | 12-13 | 600 | Eyebrows, labels micro |
-| `text-sm`  | 13-14 | 500 | Captions, footer |
-| `text-base`| 15-16 | 400 | Body default |
-| `text-lg`  | 17-19 | 400 | Lead paragraphs |
-| `text-xl`  | 20-22 | 700 | Sub-headings |
-| `text-2xl` | 28-30 | 700 | Section titles small / feat headings |
-| `text-3xl` | 32-44 | 700 | Section titles |
-| `text-4xl` | 48-56 | 700 | Page titles, host CTA |
-| `text-5xl` | 60-68 | 700 | Hero |
+| Hero h1 | clamp(56px, 9vw, 124px) | 800 | "Espacios para tus eventos. Por horas." |
+| Section h2 | clamp(36px, 5vw, 64px) | 800 | Cuatro razones, Cinco preguntas, etc |
+| Made-in spread | clamp(80px, 16vw, 240px) | 800 | "Hecho con coordina" |
+| h3 | 19-22px | 700 | Cards subtitles |
+| Body lead | 17px | 400 | Sub-headings, hero lead |
+| Body | 14.5-16px | 400 | Párrafos |
+| Eyebrow | 11-12px | 700 | Uppercase + tracking 0.18em |
+| Footer micro | 10-13px | 500 | Footer y captions |
 
-### Reglas
+### Reglas de copy + tipografía
+
 - **Una sola fuente** en todo el producto.
-- Headings con tracking negativo (`-0.03em` a `-0.04em`).
-- Body con tracking neutro.
-- Eyebrows con tracking expandido + uppercase.
-- **Nunca** italic decorativo. Italic solo para énfasis lingüístico real.
-- **Nunca** all caps en headings. Eyebrow sí (kicker pequeño con tracking expandido).
+- **NUNCA italic decorativo**. Italic solo para énfasis lingüístico real.
+- **NUNCA all-caps en headings**. Eyebrow sí (kicker pequeño).
+- **NUNCA exclamation points en marketing copy**.
 
 ---
 
-## Wordmark
-
-### Concepto
-**"coordina"** en Plus Jakarta Sans peso 700, sólido, sin elementos decorativos. Mark sólido tipográfico — Peerspace-style.
-
-La marca formal completa es "Coordina Eventos" pero el display visible es **coordina** — más memorable, más distintivo.
-
-### Versiones disponibles
-- `brand/logo/wordmark.svg` — color sobre fondo claro (default).
-- `brand/logo/wordmark-white.svg` — sobre fondos oscuros / navy.
-- `brand/logo/icon.svg` — isotipo cuadrado (navy con "c" blanca).
-- `brand/logo/favicon.svg` — favicon 32×32.
-- `brand/logo/og-image.svg` — Open Graph 1200×630.
+## Wordmark / Brand
 
 ### Construcción
+**`coordinaeventos`** en lowercase, una sola palabra, sin separadores ni puntos.
+
 ```
-coordina
-   ↑
-primary 700
-sólido, sin punto, sin separador
+coordinaeventos
+   ↑      ↑
+   700    500 (suffix gris)
 ```
 
-- Plus Jakarta Sans peso 700.
-- Tracking `-0.035em`.
-- Color: `--primary` `#0A2540`.
+- "coordina" → peso 700, color `--primary`
+- "eventos" → peso 500, color `--muted` (suffix `--brand-suffix`)
+- En nav transparente sobre foto: "eventos" → `rgba(255,255,255,.62)`
+- Tracking: `-0.04em`
+- Tamaño nav: 21px. Footer: 28px.
 
-### Espacio mínimo y tamaño
-- Espacio de seguridad: equivalente a la altura de la "x" de "coordina".
-- Tamaño mínimo wordmark: **120px** ancho web, **30mm** impreso.
-- Tamaño mínimo isotipo: **24px** (favicon-grade).
+### NO usar
 
-### Isotipo
-Navy `#0A2540` con la letra "c" en Plus Jakarta peso 700 en blanco. Limpio, geométrico, funcional.
+- ❌ `COORDINA` mayúsculas (descartado).
+- ❌ `Coordina Eventos` con espacio (no usar).
+- ❌ Logo separador / punto / slash entre "coordina" y "eventos".
+- ❌ Versión solo "coordina" sin "eventos" en producto público.
+
+---
+
+## Radii — TODO RECTO
+
+```css
+--r-sm: 0;
+--r-md: 0;
+--r-lg: 0;
+```
+
+Buttons, cards, search bar, hero badge, future-tags: **radius: 0**.
+
+Excepciones permitidas (semánticas, no UI containers):
+- Status dots (online indicator): `border-radius: 50%`
+- Nada más.
 
 ---
 
 ## Spacing
 
-Sistema basado en 4px. Múltiplos canónicos: `4 · 8 · 12 · 16 · 24 · 32 · 48 · 56 · 64 · 72 · 80 · 96 · 120`.
+Sistema basado en 4px. Múltiplos canónicos:
+`4 · 8 · 12 · 14 · 16 · 18 · 24 · 28 · 32 · 36 · 48 · 56 · 64 · 72 · 80 · 96 · 120`
 
-- Padding interno cards: 32-48.
-- Gap entre cards: 24-32.
-- Padding section vertical: 96-120.
-- Container max-width: 1140px.
-
----
-
-## Radios
-
-- Botón: `10px` (rectangular suave, no totalmente redondeado).
-- Botón pill (en chip listas): `999px`.
-- Card: `16-20px`.
-- Input: `10px`.
-- Hero visual: `24px`.
-- Icon container small: `10-12px`.
-- Final CTA banner: `24px`.
+- Container max-width: `1240px`, padding horizontal `28px`.
+- Container-wide max-width: `1440px`.
+- Sections: padding-y `96-120px`.
+- Cards: padding `28-36px`.
+- Gap entre cards: `24px`.
 
 ---
 
 ## Sombras
 
-- `shadow-sm`: `0 1px 2px rgba(10, 37, 64, .04)` — cards default.
-- `shadow-md`: `0 4px 16px rgba(10, 37, 64, .06)` — hover, elevated.
-- `shadow-lg`: `0 12px 32px rgba(10, 37, 64, .08)` — final CTA, hero raised.
-- **Cero sombras decorativas**. Una sombra solo aparece cuando comunica elevación funcional.
+```css
+--shadow-sm: 0 1px 2px rgba(0, 0, 0, .03);
+--shadow-md: 0 6px 24px rgba(0, 0, 0, .08);
+```
+
+Casi nunca usadas. Solo para elevación funcional (search bar sobre foto, modals).
 
 ---
 
 ## Componentes principales
 
+### Nav
+- `position: sticky` cuando solid, `position: absolute` cuando transparent (sobre hero photo).
+- Transition: scrollY > 80 → quita clase `.transparent`.
+- Padding 16-18px vertical.
+
+### Search bar (hero)
+- Fondo `rgba(255, 255, 255, .92)` con `backdrop-filter: blur(12px)`.
+- Grid 4 columnas: actividad / distrito / fecha / botón.
+- Separadores verticales de 1px con `rgba(0, 0, 0, .08)`.
+- Botón "Buscar" sólido negro con flecha →.
+
+### Hero
+- Foto fullbleed `clamp(480px, 70vh, 680px)` con search centrada vertical.
+- Bloque negro debajo (no overlay sobre foto) con headline gigante 800.
+- Hero meta: 3-4 stat columns con label uppercase tracking + value bold.
+
+### Sección dark (hosts, AI section)
+- Background `var(--primary)`, texto blanco.
+- Eyebrow color `rgba(255,255,255,.5)`.
+- Cards internas con `rgba(255,255,255,.04)` border `rgba(255,255,255,.08)`.
+
+### Marquee
+- Background plomo `var(--soft)`, padding 18px.
+- Animación 42s linear infinite, dirección `translateX(-50%) → translateX(0)` (right-to-left visual flow).
+- Separadores: línea vertical 1px x 14px alto opacity .35 (no dots circulares).
+
+### Partners carousel
+- Background blanco, eyebrow uppercase "ESPACIOS DISPONIBLES EN".
+- 70-90s linear infinite scroll, pausa on hover.
+- Logos: PNG grayscale 200px alto procesados con PIL (cropped, mode LA).
+- Display: 56px alto x 160px ancho box, `object-fit: contain`.
+- Opacity .6, hover 1.
+- Sin captions/labels redundantes (los logos hablan por sí mismos).
+
+### Categorías (interactive list + photo)
+- Foto arriba widescreen 21/9, vertical labels rotated.
+- Lista flow text inline separada por `·` (middot).
+- Activa: peso 600 negro. Inactivas: peso 600 gris claro.
+- Botón "+ más" con underline 1.5px, sin background.
+
+### Made-in spread (magazine)
+- Sección dark fullbleed.
+- Headline gigante "Hecho con [foto] coordina" — la foto interrumpe el texto.
+- Galería 3 cols con vertical labels editorial rotated.
+
+### Testimonials carousel
+- Background `var(--soft)`.
+- Cards 380px ancho fijo, 60s scroll infinito.
+- Quote mark serif `\201C` 56px decorativo arriba.
+- Footer divider entre quote y autor.
+
 ### Botones
-- **Primary** (CTA principal): bg `--accent` `#3D5AFE`, color blanco, radius 10px, font 600. Hover: `--accent-strong`.
-- **Dark** (CTA secundario alto contraste): bg `--primary` navy, color blanco, radius 10px.
-- **Outline**: border `--primary`, color `--primary`, transparent. Hover: bg `--primary` color blanco.
-- **Outline-light** (sobre fondos oscuros): border blanco semi, color blanco.
-- **Light**: bg blanco, color `--primary`, border `--line`.
 
-### Cards (audience cards)
-- Padding 48×40, radius 20px, border 1px `--line`.
-- Hover: border accent + shadow-md.
-- Variante `primary`: bg navy, color blanco, accent texts en `#93B4FF`.
+| Variante | Background | Color | Border |
+|---|---|---|---|
+| `.btn-primary` | `--primary` | white | none |
+| `.btn-light` | white | `--primary` | none |
+| `.btn-soft` | `--primary-soft` | `--primary` | none |
+| `.btn-outline` | transparent | `--primary` | 1px `--primary` |
+| `.btn-outline-light` | transparent | white | 1px `rgba(255,255,255,.34)` |
 
-### Steps numerados
-- Círculo navy 44×44 con número blanco peso 700, radius 50%.
-- Heading 20px peso 700.
-- Párrafo body 15px.
+Todos `border-radius: 0`, padding `13-15px x 22-28px`, font-weight 700.
 
 ### Eyebrows
-- Font-size 13px, peso 600, uppercase, letter-spacing `+0.06em`, color `--accent`.
-- Margin-bottom 16-24px arriba del heading.
 
-### Hero visual
-- Aspect 1/1.05, bg gradient azul muy suave.
-- 3 cards apiladas con icono + texto, mostrando los 3 pasos del producto.
-- No es funcional — es ilustración del producto.
+```css
+.eyebrow {
+  font-size: 11-12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+```
 
-### Sección dark (hosts)
-- Bg `--primary` navy, texto blanco, accent `#93B4FF`.
-- Card glassmorphism interno: `rgba(255,255,255,0.04)` + border `rgba(255,255,255,0.12)` + backdrop-filter blur.
+Margen-bottom 14-18px arriba del headline.
 
 ---
 
 ## Iconografía
 
-- **Lucide Icons** estilo (lucide.dev) — outline, stroke 2px, color hereda de currentColor.
-- Tamaños canónicos: 16, 18, 20, 22, 24 px.
-- Para feature icons (que llevan bg colored): icon 22px, container 48px.
-- Para inline icons en listas: 18px, color `--accent` o `#93B4FF` en dark.
-
-### Excepciones
-- Logos de pago (Yape, Plin, Visa, Mastercard) — color oficial de cada marca cuando aplique.
-- Logos sociales — monocromo en footer, color en CTAs hero.
+- **SVG line-draw** custom para why-section (4 iconos).
+- Stroke `--primary`, width 1.5, linecap round, linejoin round.
+- Animados con `stroke-dasharray` triggered por IntersectionObserver.
+- Para listas inline (host benefits): SVG checkmark 18px stroke-width 2.5.
+- Decorativos: `aria-hidden="true"`.
 
 ---
 
 ## Fotografía
 
-Filosofía: **real, no stock**. En MVP / landing no usamos fotos de espacios reales aún (no tenemos catálogo). Por eso la landing es **explicativa, no demo de producto**: visuales con icons y cards, no fotos.
+### Filosofía
+**Editorial documental, no stock corporativo.**
 
-Cuando lleguen fotos reales:
-- ✅ Foto real del espacio del host.
-- ✅ Iluminación natural o profesional.
-- ✅ Composición editorial.
-- ❌ Stock corporativo genérico.
+- ✅ Foto real del espacio en uso (gente en el evento).
+- ✅ Iluminación natural cálida, golden hour, indoor warm.
+- ✅ Composición editorial (regla de tercios, foco humano).
+- ❌ Stock corporativo genérico ("3 personas señalando laptop").
 - ❌ Filtros VSCO / sepia heavy.
 - ❌ Render 3D.
+- ❌ Imágenes con marca de agua visible.
+
+Vertical labels rotated 90° en lados de fotos editoriales (magazine pattern):
+- Top right: nombre del espacio (e.g. "SALÓN NUPCIAL").
+- Bottom right: ubicación (e.g. "BARRANCO, LIMA").
+- Font 10-11px, uppercase, tracking 0.18em.
 
 ---
 
-## Voz visual + voz escrita
+## Animaciones
 
-Visual: limpio, profesional, navy/azul, mucho aire blanco.
-Escrita: clara, peruana, honesta, sin clichés de marketing.
+### Reglas
 
-Ver `brand/messaging/voz.md` y `brand/messaging/taglines.md`.
+- Todas respetan `prefers-reduced-motion: reduce`.
+- Solo animar `transform` / `opacity` (GPU compositor). NO `top/left/width/padding`.
+- Easings canónicos: `cubic-bezier(0.22, 1, 0.36, 1)` (ease-out smooth).
+
+### Inventario
+
+| Animación | Trigger | Duración |
+|---|---|---|
+| Hero badge SVG draw | onload | 1s |
+| Marquee scroll | infinite | 42s |
+| Partners carousel | infinite | 70-90s |
+| Testimonials carousel | infinite | 60s |
+| Why icons stroke-draw | IntersectionObserver | 0.9s |
+| AI bubbles staggered fade-in | IO | 200-3500ms delays |
+| Reveal on scroll | IO | 0.8s translateY 12px |
+| Cat photo fade | hover/focus | 0.35s opacity |
+| Arrow slide hover | :hover | 0.4s |
 
 ---
 
-## Lo que NO somos visualmente
+## Voz / Copy
 
-- ❌ Tech default Inter + azul `#3B82F6` puro.
-- ❌ Editorial Fraunces italic + terracotta (era el approach previo, descartado).
-- ❌ Morado wallet (Yape territory).
-- ❌ Coral Airbnb (`#FF385C`).
-- ❌ Naranja chillón (`#F97316`).
-- ❌ Dorado pomposo de salones tradicionales.
-- ❌ Folklore peruano (sin elementos andinos cliché).
-- ❌ Dashboard B2B SaaS gris.
-- ❌ Stock corporativo "3 personas señalando un laptop".
-- ❌ Glassmorphism / neumorphism / shadows decorativas.
+### Reglas
+
+- Español Perú, tuteo (no usted).
+- Slang local: Yape, Plin, "coordinar", "WhatsApp con el host".
+- Cortar 30-40% del copy explicativo. Beneficio antes de feature.
+- Specifics > vagos: `+1,500 reservas` no "muchas reservas".
+- Active voice, verb-first sentences.
+- **NUNCA** usar:
+  - "tecnología de punta", "innovador", "soluciones"
+  - "facilitamos", "optimizamos", "agilizamos"
+  - Exclamation points
+  - Italic decorativo
+  - "ocho categorías" / cifras internas (mejor "+ más")
+
+### Ejemplos canónicos
+
+| Antes | Después |
+|---|---|
+| Cuatro cosas que cambian la conversación | Cuatro razones, sin trampas |
+| Listar tu espacio en Coordina es gratis para siempre. Sin comisión, sin contratos. | Cero comisión. Cero contratos. Cero exclusividad. |
+| Nuestro equipo humano coordina catering, decoración… | ¿Nada encaja? Lo armamos contigo. |
+| Genera ingresos con tu espacio | ¿Tienes un espacio? Lístalo gratis. |
 
 ---
 
-## Estructura canónica de la landing
+## Stack técnico
 
-La landing **NO es un demo de la app**. Es una página explicativa que vende el concepto:
+- **HTML/CSS/JS vanilla**, no framework.
+- Plus Jakarta Sans via Google Fonts (preconnect + preload).
+- Imágenes Unsplash con `?w=X&q=85&auto=format&fit=crop`.
+- Logos de partners: PNG grayscale 200px alto en `landing/src/brand/partners/`.
+- Hero photo preload con `fetchpriority="high"`.
+- Lazy loading en todas las imágenes below-fold.
 
-1. **Hero** — qué somos en una frase + 2 CTAs (guests / hosts) + visual ilustrativo.
-2. **Qué hacemos** — 3 features explicando el modelo.
-3. **Para quién** — 2 audience cards segmentadas (guest / host).
-4. **Cómo funciona** — 3 pasos numerados.
-5. **Categorías** — chips ejemplo (estáticos, no buscador).
-6. **Por qué Coordina** — 4 diferenciadores con icons.
-7. **Hosts CTA** — sección dark dedicada.
-8. **FAQ** — preguntas honestas.
-9. **Final CTA** — banner navy con dos opciones.
-10. **Footer** — multi-columna.
+---
 
-**Lo que NO va en landing**:
-- ❌ Search bar funcional (eso es la app).
-- ❌ Galería de espacios reales con prices (eso es la app).
-- ❌ Filtros, mapa, results.
+## Archivos canónicos
+
+```
+landing/src/
+├── index.html          # Estructura
+├── styles.css          # Sistema visual (~1500 líneas)
+├── app.js              # Carruseles dinámicos + reveal IO + smooth scroll
+└── brand/partners/     # 30+ logos PNG grayscale 200px
+documentation/
+└── branding.md         # ESTE DOCUMENTO
+agents/
+└── brand-keeper.md     # Agente que vigila consistencia visual
+```
