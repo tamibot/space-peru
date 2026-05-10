@@ -339,12 +339,38 @@ Vertical labels rotated 90° en lados de fotos editoriales (magazine pattern):
 
 ```
 landing/src/
-├── index.html          # Estructura
-├── styles.css          # Sistema visual (~1500 líneas)
-├── app.js              # Carruseles dinámicos + reveal IO + smooth scroll
-└── brand/partners/     # 30+ logos PNG grayscale 200px
+├── index.html              # Estructura
+├── styles.css              # Sistema visual (~1500 líneas)
+├── app.js                  # Carruseles dinámicos + reveal IO + smooth scroll
+└── brand/partners/         # 30+ logos PNG grayscale 200px
 documentation/
-└── branding.md         # ESTE DOCUMENTO
+├── branding.md             # ESTE DOCUMENTO — sistema visual
+├── copy-voice.md           # Voz, tono, glosario, frases canónicas
+└── components.md           # Catálogo de componentes con variantes y estados
 agents/
-└── brand-keeper.md     # Agente que vigila consistencia visual
+├── brand-keeper.md         # Vigilante: rechaza cambios fuera del sistema
+├── brand-designer.md       # Creador: diseña nuevo material en el sistema
+└── copy-keeper.md          # Voz: vigila y reescribe copy
 ```
+
+## Cómo usar este sistema
+
+| Necesito | Documento canónico | Agente |
+|---|---|---|
+| Saber qué color usar | `branding.md` | `brand-keeper` |
+| Saber qué fuente / peso / tracking | `branding.md` | `brand-keeper` |
+| Crear un componente nuevo | `components.md` | `brand-designer` |
+| Saber qué decir / cómo decirlo | `copy-voice.md` | `copy-keeper` |
+| Validar un PR antes de mergear | los 3 docs | `brand-keeper` |
+| Escribir un email / social copy | `copy-voice.md` | `copy-keeper` |
+| Reutilizar un patrón existente | `components.md` | `brand-designer` |
+
+## Cómo evolucionar el sistema
+
+1. La decisión la toma el dueño del producto (no los agentes).
+2. Antes de implementar, **actualiza el doc canónico relevante** con la decisión + fecha.
+3. Propaga el cambio: tokens en `styles.css`, ejemplos en componentes, copy en `copy-voice.md`.
+4. Audita archivos que usan el sistema viejo y migra.
+5. Comunica al equipo qué cambió.
+
+**Regla**: cada excepción no documentada es brand-debt futuro.
