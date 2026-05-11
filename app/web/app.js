@@ -149,11 +149,16 @@ async function renderSearch() {
   }
   target.innerHTML = filtered.map(spaceCard).join('');
 
-  // Update active filter chips
+  // Update active filter chips — coerce a boolean para que toggle(force=false) realmente remueva
   document.querySelectorAll('.filter-chip').forEach(chip => {
     const filterCaso = chip.dataset.caso;
     const filterDistrito = chip.dataset.distrito;
-    const isActive = (filterCaso && filterCaso === q.get('caso')) || (filterDistrito && filterDistrito === q.get('distrito'));
+    const filterExtra = chip.dataset.extra;
+    const isActive = Boolean(
+      (filterCaso && filterCaso === q.get('caso')) ||
+      (filterDistrito && filterDistrito === q.get('distrito')) ||
+      (filterExtra && q.get('extras')?.split(',').includes(filterExtra))
+    );
     chip.classList.toggle('active', isActive);
   });
 
@@ -211,6 +216,14 @@ function bindFilters() {
       if (chip.dataset.distrito) {
         if (q.get('distrito') === chip.dataset.distrito) q.delete('distrito');
         else q.set('distrito', chip.dataset.distrito);
+      }
+      if (chip.dataset.extra) {
+        const current = (q.get('extras') || '').split(',').filter(Boolean);
+        const idx = current.indexOf(chip.dataset.extra);
+        if (idx >= 0) current.splice(idx, 1);
+        else current.push(chip.dataset.extra);
+        if (current.length > 0) q.set('extras', current.join(','));
+        else q.delete('extras');
       }
       const url = new URL(location.href);
       url.search = q.toString();
