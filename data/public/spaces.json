@@ -63,7 +63,8 @@
         "Patio interior con árbol",
         "Mayólica original en cocina",
         "A 5 min del Puente de los Suspiros"
-      ]
+      ],
+      "listado_desde": "2025-11-08"
     },
     {
       "id": 2,
@@ -127,7 +128,8 @@
         "Zona lounge separada",
         "Ascensor directo desde parking",
         "Sobre Av. Pardo"
-      ]
+      ],
+      "listado_desde": "2025-11-08"
     },
     {
       "id": 3,
@@ -189,7 +191,8 @@
         "Ciclorama blanco 4m",
         "Vestidor con espejo completo",
         "Cocina para crew"
-      ]
+      ],
+      "listado_desde": "2025-11-08"
     },
     {
       "id": 4,
@@ -249,7 +252,8 @@
         "Pérgola cubierta",
         "Calefactores para invierno",
         "Acceso por urbanización privada"
-      ]
+      ],
+      "listado_desde": "2025-11-08"
     },
     {
       "id": 5,
@@ -312,7 +316,8 @@
         "Pizarra de vidrio 3m",
         "Wi-Fi enterprise 500 Mbps",
         "Sillas Aeron"
-      ]
+      ],
+      "listado_desde": "2025-11-08"
     },
     {
       "id": 6,
@@ -373,7 +378,8 @@
         "Pantalla 4K · 4m",
         "8 micrófonos Sennheiser",
         "Foyer para coffee break"
-      ]
+      ],
+      "listado_desde": "2025-11-08"
     },
     {
       "id": 7,
@@ -402,7 +408,7 @@
       "descripcion": "Estudio de yoga en casa familiar adaptada en Magdalena. Piso de madera maple flotante, climatización mediante ventilación cruzada (sin aire acondicionado para mantener prana). Mats Manduka y bloques disponibles. Duchas con agua caliente solar; vestidor unisex. Ventanas que dan al jardín del barrio.",
       "rating": 5.0,
       "reviews_count": 38,
-      "verificado": true,
+      "verificado": false,
       "lat": -12.096414,
       "lng": -77.077466,
       "host_phone": "+51 981 651 369",
@@ -432,7 +438,8 @@
         "Mats Manduka incluidos",
         "Agua caliente solar",
         "Ventilación cruzada natural"
-      ]
+      ],
+      "listado_desde": "2026-04-15"
     },
     {
       "id": 8,
@@ -464,7 +471,7 @@
       "descripcion": "Espacio multipropósito en una galería de arte de Barranco. Paredes blancas de seis metros, piso de cemento pulido. Riel de iluminación profesional sobre toda la planta, sonido empotrado JBL. Configurable como pista de baile, set fotográfico o pasarela. La galería deja sus obras durante el evento — los muros son del espacio.",
       "rating": 4.8,
       "reviews_count": 24,
-      "verificado": true,
+      "verificado": false,
       "lat": -12.140722,
       "lng": -77.027555,
       "host_phone": "+51 930 911 796",
@@ -494,7 +501,8 @@
         "Riel de luz profesional",
         "Sonido JBL empotrado",
         "Cemento pulido + paredes 6m"
-      ]
+      ],
+      "listado_desde": "2026-04-15"
     },
     {
       "id": 9,
@@ -524,7 +532,7 @@
       "descripcion": "Sala privada dentro de coworking premium sobre Aramburú. Mesa redonda para 8 con sillas ergonómicas, TV 55 pulgadas con HDMI y conexión inalámbrica. Acceso a la cafetería del coworking incluido (café de origen, té, agua, infusiones). Recepción profesional bilingüe. Edificio con seguridad 24/7.",
       "rating": 4.7,
       "reviews_count": 89,
-      "verificado": true,
+      "verificado": false,
       "lat": -12.094893,
       "lng": -77.035908,
       "host_phone": "+51 944 887 756",
@@ -554,7 +562,8 @@
         "Café de origen incluido",
         "Recepción bilingüe",
         "Edificio seguro 24/7"
-      ]
+      ],
+      "listado_desde": "2026-04-15"
     },
     {
       "id": 10,
@@ -613,7 +622,8 @@
         "Rodecaster Pro 2",
         "Greenscreen retráctil",
         "Operador 8 años exp."
-      ]
+      ],
+      "listado_desde": "2025-11-08"
     },
     {
       "id": 11,
@@ -677,7 +687,8 @@
         "Cocina industrial completa",
         "Vestidores de novios",
         "Parking para 80 autos"
-      ]
+      ],
+      "listado_desde": "2025-11-08"
     },
     {
       "id": 12,
@@ -708,7 +719,7 @@
       "descripcion": "Showroom con vitrina a la avenida Larco. Diseño minimalista — piso de cemento, paredes blancas, riel de iluminación galería. La vitrina genera tráfico orgánico durante el evento (Larco tiene 60.000 transeúntes/día). Configurable como tienda pop-up o lounge. Conexión a sistema de música del local incluida.",
       "rating": 4.7,
       "reviews_count": 12,
-      "verificado": true,
+      "verificado": false,
       "lat": -12.11415,
       "lng": -77.035058,
       "host_phone": "+51 977 993 721",
@@ -738,7 +749,8 @@
         "60k transeúntes/día",
         "Riel galería",
         "Sistema de música incluido"
-      ]
+      ],
+      "listado_desde": "2026-04-15"
     },
     {
       "id": 13,
@@ -770,7 +782,7 @@
       "descripcion": "Casa íntima en zona residencial tranquila de San Isidro. Sala principal con sofás, comedor adyacente con mesa para 24, jardín interior con cobertura cubierta. Cocina equipada con horno doble y vajilla para 35. Decoración base elegante (paredes color crema, lámparas de techo) — necesitas pocos detalles para fiesta lista.",
       "rating": 4.9,
       "reviews_count": 33,
-      "verificado": true,
+      "verificado": false,
       "lat": -12.091406,
       "lng": -77.037276,
       "host_phone": "+51 941 330 165",
@@ -800,7 +812,8 @@
         "Cobertura cubierta jardín",
         "Vajilla para 35 incluida",
         "Decoración base lista"
-      ]
+      ],
+      "listado_desde": "2026-04-15"
     },
     {
       "id": 14,
@@ -864,7 +877,8 @@
         "Pantalla 100\" + TV 75\"",
         "4 micrófonos Shure",
         "Catering por proveedor edificio"
-      ]
+      ],
+      "listado_desde": "2025-11-08"
     },
     {
       "id": 15,
@@ -925,7 +939,8 @@
         "Vigas de madera vistas",
         "Ladrillo expuesto",
         "Luz natural matinal"
-      ]
+      ],
+      "listado_desde": "2026-04-15"
     }
   ]
 }

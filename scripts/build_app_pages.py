@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
-"""Genera las páginas estáticas de fichas de espacio desde spaces.json.
+"""Genera páginas estáticas de detalle de espacio. Layout Peerspace-style.
 
-Incluye:
-- Hero con título + meta + verified badge
-- Galería de fotos con lightbox CSS-only
-- Descripción + casos de uso + amenities + ubicación
-- Mapa OpenStreetMap embebido (sin API key)
-- Reseñas
-- Cotizador (fecha + personas + horas) que arma WhatsApp pre-rellenado
-- Aside sticky con precio + WhatsApp directo
+Estructura:
+- Nav con SPA navigation
+- Breadcrumb
+- Title + stats + verified badge inline
+- Galería: hero + 4 thumbnails grid (NO una foto gigante)
+- Layout 2 cols: contenido izquierda + sticky pricing card derecha
+- Sobre el espacio, amenidades agrupadas, host card, reseñas, mapa, similares
+- Botón flotante asistente IA
+- Footer
 
-Output: app/web/espacios/<slug>.html
-Idempotente — sobreescribe.
+Output: app/web/espacios/<slug>.html (sobreescribe).
 """
 from __future__ import annotations
 
 import json
 import html
+from datetime import datetime
 from pathlib import Path
 from urllib.parse import quote
 
@@ -24,362 +25,374 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "public" / "spaces.json"
 OUT_DIR = ROOT / "app" / "web" / "espacios"
 
-AMENITY_LABELS = {
-    "wifi": "Wi-Fi",
-    "estacionamiento": "Estacionamiento",
-    "cocina": "Cocina equipada",
-    "terraza": "Terraza",
-    "sonido": "Sonido profesional",
-    "iluminacion": "Iluminación",
-    "aire-acondicionado": "Aire acondicionado",
-    "tv": "Smart TV",
-    "proyector": "Proyector",
-    "microfonos": "Micrófonos",
-    "ciclorama": "Ciclorama",
-    "vestidor": "Vestidor / camerino",
-    "duchas": "Duchas",
-    "cafe": "Café incluido",
-    "accesible": "Accesible",
-    "vidriera": "Vitrina a la calle",
+AMENITIES_GROUPED = {
+    "Conectividad y AV": {
+        "wifi": "Wi-Fi de alta velocidad",
+        "tv": "Smart TV",
+        "proyector": "Proyector",
+        "sonido": "Sonido profesional",
+        "microfonos": "Micrófonos",
+        "iluminacion": "Iluminación profesional",
+    },
+    "Cocina y servicios": {
+        "cocina": "Cocina equipada",
+        "cafe": "Café incluido",
+    },
+    "Comodidades": {
+        "aire-acondicionado": "Aire acondicionado",
+        "vestidor": "Vestidor / camerino",
+        "duchas": "Duchas",
+        "accesible": "Acceso para movilidad reducida",
+    },
+    "Espacios": {
+        "terraza": "Terraza",
+        "ciclorama": "Ciclorama fotográfico",
+        "vidriera": "Vitrina a la calle",
+    },
+    "Acceso": {
+        "estacionamiento": "Estacionamiento",
+    },
 }
 
 CATEGORIA_LABELS = {
-    "cumpleanos": "Cumpleaños",
-    "baby-shower": "Baby shower",
-    "sesion-fotos": "Sesión de fotos",
-    "reunion": "Reunión de trabajo",
-    "capacitacion": "Capacitación",
-    "conferencia": "Conferencia",
-    "yoga-clase": "Yoga · clase",
-    "despedida": "Despedida",
-    "pop-up": "Pop-up",
-    "aniversario": "Aniversario",
-    "coworking": "Coworking",
-    "lanzamiento": "Lanzamiento",
-    "boda": "Boda",
-    "grabacion-video": "Grabación de video",
-    "podcast": "Podcast",
-    "talleres": "Talleres",
+    "cumpleanos": "Cumpleaños", "baby-shower": "Baby shower",
+    "sesion-fotos": "Sesión de fotos", "reunion": "Reunión de trabajo",
+    "capacitacion": "Capacitación", "conferencia": "Conferencia",
+    "yoga-clase": "Yoga · clase", "despedida": "Despedida",
+    "pop-up": "Pop-up", "aniversario": "Aniversario",
+    "coworking": "Coworking", "lanzamiento": "Lanzamiento",
+    "boda": "Boda", "grabacion-video": "Grabación de video",
+    "podcast": "Podcast", "cena-corporativa": "Cena corporativa",
+    "evento-corporativo": "Evento corporativo", "talleres": "Talleres",
+}
+
+MONTHS_ES = {
+    1: "enero", 2: "febrero", 3: "marzo", 4: "abril",
+    5: "mayo", 6: "junio", 7: "julio", 8: "agosto",
+    9: "septiembre", 10: "octubre", 11: "noviembre", 12: "diciembre",
 }
 
 
-def render_page(s: dict) -> str:
-    name = html.escape(s["name"])
-    tipo = html.escape(s["tipo"])
-    distrito = html.escape(s["distrito"])
-    direccion = html.escape(s["direccion"])
-    descripcion = html.escape(s["descripcion"])
-    rating = s["rating"]
-    reviews_count = s["reviews_count"]
-    precio = s["precio_hora_pen"]
-    cap = s["capacidad_max"]
-    fotos = s["fotos"]
-    lat = s["lat"]
-    lng = s["lng"]
-    bloque_min = s["bloque_minimo_horas"]
+def fmt_date(date_str: str) -> str:
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
+        return f"{dt.day} de {MONTHS_ES[dt.month]}, {dt.year}"
+    except Exception:
+        return date_str
 
-    # Galería: pad a 4 fotos rotando si tiene menos
-    while len(fotos) < 4:
-        fotos = fotos + fotos
-    gallery_fotos = fotos[:4]
-    photo_main = fotos[0]
 
-    amenities_html = "\n".join(
-        f'        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> {html.escape(AMENITY_LABELS.get(a, a))}</li>'
-        for a in s["amenities"]
+def stars(rating: float) -> str:
+    full = int(rating)
+    half = rating - full >= 0.5
+    s = "★" * full
+    if half:
+        s += "★"
+        full += 1
+    s += "☆" * (5 - full)
+    return s
+
+
+def verified_svg(size: int = 16) -> str:
+    return (
+        f'<svg width="{size}" height="{size}" viewBox="0 0 24 24" aria-hidden="true" class="verified-svg">'
+        '<circle cx="12" cy="12" r="11" fill="#1D9BF0"/>'
+        '<path d="M7 12.5 L10.5 16 L17 9" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
+        '</svg>'
     )
 
-    casos_html = ", ".join(html.escape(CATEGORIA_LABELS.get(c, c)) for c in s["casos_uso"])
 
-    highlights = s.get("highlights") or []
+def amenities_html(amenity_slugs: list[str]) -> str:
+    if not amenity_slugs:
+        return ""
+    rendered = []
+    for group_name, items in AMENITIES_GROUPED.items():
+        matched = [(slug, label) for slug, label in items.items() if slug in amenity_slugs]
+        if not matched:
+            continue
+        items_html = "\n".join(
+            f'<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> {label}</li>'
+            for _, label in matched
+        )
+        rendered.append(f'<div class="amenity-group"><h4>{group_name}</h4><ul>{items_html}</ul></div>')
+    return f'<div class="amenities-grid">{"".join(rendered)}</div>'
+
+
+def whatsapp_link(space: dict) -> str:
+    msg = (
+        f"Hola, vi tu espacio *{space['name']}* en coordinaeventos "
+        f"({space['distrito']}, capacidad {space['capacidad_max']} personas). "
+        "Me gustaría coordinar una visita."
+    )
+    phone = space.get('host_phone', '+51999999999').replace('+', '').replace(' ', '')
+    return f"https://wa.me/{phone}?text={quote(msg)}"
+
+
+def render_page(space: dict, all_spaces: list[dict]) -> str:
+    name = space['name']
+    slug = space['slug']
+    distrito = space['distrito']
+    direccion = space.get('direccion', distrito)
+    tipo = space['tipo']
+    capacidad = space['capacidad_max']
+    precio = space['precio_hora_pen']
+    fotos = space.get('fotos', [])[:5]
+    rating = space.get('rating', 0)
+    reviews_count = space.get('reviews_count', 0)
+    verificado = space.get('verificado', False)
+    lat = space.get('lat', -12.046)
+    lng = space.get('lng', -77.043)
+    descripcion = space.get('descripcion', '')
+    highlights = space.get('highlights', [])
+    bloque_min = space.get('bloque_minimo_horas', 2)
+    reseñas = space.get('reseñas', [])
+    casos_uso = space.get('casos_uso', [])
+    listado_desde = space.get('listado_desde', '2026-01-01')
+
+    hero_photo = fotos[0] if fotos else ''
+    thumbnails = fotos[1:5] if len(fotos) > 1 else []
+    casos_tags = " · ".join(CATEGORIA_LABELS.get(c, c) for c in casos_uso[:4])
+
+    map_bbox = f"{lng-0.005},{lat-0.003},{lng+0.005},{lat+0.003}"
+    map_url = f"https://www.openstreetmap.org/export/embed.html?bbox={map_bbox}&layer=mapnik&marker={lat},{lng}"
+
+    reseñas_html = ""
+    if reseñas:
+        reseñas_html = '<div class="reviews-list">'
+        for r in reseñas:
+            author = r.get('autor', 'Cliente')
+            rating_r = r.get('rating', 5)
+            fecha = fmt_date(r.get('fecha', ''))
+            comentario = r.get('comentario', '')
+            initials = ''.join(w[0] for w in author.split()[:2]).upper()
+            reseñas_html += f'<article class="review"><div class="review-head"><div class="review-avatar">{initials}</div><div class="review-meta"><strong>{html.escape(author)}</strong><span class="review-date">{fecha}</span></div><div class="review-rating" aria-label="Rating {rating_r}/5">{stars(rating_r)}</div></div><p class="review-comment">{html.escape(comentario)}</p></article>'
+        reseñas_html += '</div>'
+
+    same_district = [s for s in all_spaces if s['slug'] != slug and s['distrito'] == distrito][:3]
+    if len(same_district) < 3:
+        others = [s for s in all_spaces if s['slug'] != slug and s not in same_district][: 3 - len(same_district)]
+        same_district = same_district + others
+
+    host_more_html = ""
+    if same_district:
+        for s in same_district:
+            host_more_html += f'<a class="host-more-card" href="./{s["slug"]}.html" data-spa-link><div class="host-more-photo"><img src="{s["fotos"][0]}" alt="{s["name"]}" loading="lazy" /></div><div class="host-more-body"><strong>{s["name"]}</strong><span>{s["distrito"]} · Desde S/ {s["precio_hora_pen"]}/h</span></div></a>'
+
+    similares = sorted(
+        [s for s in all_spaces if s['slug'] != slug],
+        key=lambda s: abs(s.get('precio_hora_pen', 0) - precio) + abs(s.get('capacidad_max', 0) - capacidad)
+    )[:4]
+    similares_html = ""
+    for s in similares:
+        v_mark = f'<span class="listing-card-verified">{verified_svg(20)}</span>' if s.get('verificado') else ''
+        similares_html += f'<a class="listing-card" href="./{s["slug"]}.html" data-spa-link><div class="listing-card-photo"><img src="{s["fotos"][0]}" alt="{s["name"]}" loading="lazy" />{v_mark}</div><div class="listing-card-body"><div class="listing-card-head"><h3>{s["name"]}</h3><strong class="listing-card-price">Desde S/ {s["precio_hora_pen"]}<span>/h</span></strong></div><p class="listing-card-meta">{s["distrito"]} · Hasta {s["capacidad_max"]} pers</p></div></a>'
+
+    verified_inline = f'{verified_svg(18)}<span>Espacio verificado</span>' if verificado else ''
+
+    thumb_html = ""
+    for i, t in enumerate(thumbnails):
+        thumb_html += f'<div class="gallery-thumb"><img src="{t}" alt="{name} - foto {i+2}" loading="lazy" /></div>'
+    for _ in range(4 - len(thumbnails)):
+        thumb_html += '<div class="gallery-thumb gallery-thumb-empty"></div>'
+
     highlights_html = ""
     if highlights:
-        items = "\n".join(
-            f'            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> {html.escape(h)}</li>'
-            for h in highlights
-        )
-        highlights_html = f"""
-        <div class="detail-section">
-          <h2>Lo que destaca</h2>
-          <ul class="highlights">
-{items}
-          </ul>
-        </div>"""
+        highlights_html = '<ul class="highlights">'
+        for h in highlights:
+            highlights_html += f'<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>{html.escape(h)}</li>'
+        highlights_html += '</ul>'
 
-    verified_html = (
-        '<span class="verified-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Verificado</span>'
-        if s["verificado"] else ""
-    )
+    stat_verified = f'<span class="detail-stat-sep">·</span><span class="detail-verified">{verified_inline}</span>' if verificado else ''
+    casos_section = f'<section class="detail-section"><h2>Ideal para</h2><p class="detail-tags">{casos_tags}</p></section>' if casos_tags else ''
+    host_more_section = f'<div class="host-more"><h3>Más espacios en {distrito}</h3><div class="host-more-grid">{host_more_html}</div></div>' if host_more_html else ''
+    reseñas_section = f'<section class="detail-section"><h2>Reseñas ({reviews_count})</h2>{reseñas_html}</section>' if reseñas_html else ''
+    verified_in_host = "Verificado · " if verificado else ""
 
-    # WhatsApp (cotización rápida, sin fechas)
-    wa_text_quick = f"Hola, vi {s['name']} en Coordina Eventos y me interesa coordinar una visita. ¿Tienes disponibilidad?"
-    wa_link_quick = f"https://wa.me/?text={quote(wa_text_quick)}"
-
-    # Galería HTML — CSS-only lightbox usando :target
-    gallery_items = []
-    for i, foto in enumerate(gallery_fotos):
-        gallery_items.append(
-            f'      <a href="#ph-{s["id"]}-{i}" class="gal-item gal-item-{i}">'
-            f'<img src="{foto}" alt="{name} foto {i+1}" loading="{"eager" if i == 0 else "lazy"}" />'
-            f'</a>'
-        )
-    gallery_html = "\n".join(gallery_items)
-
-    # Lightbox dialogs
-    lightbox_html = "\n".join(
-        f'  <div id="ph-{s["id"]}-{i}" class="lightbox"><a href="#" class="lightbox-close">×</a>'
-        f'<a href="#ph-{s["id"]}-{(i - 1) % len(gallery_fotos)}" class="lightbox-prev">‹</a>'
-        f'<a href="#ph-{s["id"]}-{(i + 1) % len(gallery_fotos)}" class="lightbox-next">›</a>'
-        f'<img src="{foto}" alt="{name} foto {i+1}" /></div>'
-        for i, foto in enumerate(gallery_fotos)
-    )
-
-    # Reseñas HTML
-    reviews_html = ""
-    if s.get("reseñas"):
-        review_items = []
-        for r in s["reseñas"]:
-            stars = "★" * r["rating"] + "☆" * (5 - r["rating"])
-            d = html.escape(r["date"])
-            n = html.escape(r["name"])
-            c = html.escape(r["comment"])
-            review_items.append(
-                f'        <article class="review">'
-                f'<div class="review-head"><strong>{n}</strong><span class="review-stars">{stars}</span></div>'
-                f'<time>{d}</time>'
-                f'<p>{c}</p>'
-                f'</article>'
-            )
-        reviews_html = "\n".join(review_items)
-
-    # OpenStreetMap embed (sin API key)
-    bbox = f"{lng-0.005},{lat-0.004},{lng+0.005},{lat+0.004}"
-    map_iframe = (
-        f'<iframe class="osm-map" '
-        f'src="https://www.openstreetmap.org/export/embed.html?bbox={bbox}&amp;layer=mapnik&amp;marker={lat},{lng}" '
-        f'title="Ubicación de {name} en {distrito}" loading="lazy"></iframe>'
-        f'<a class="osm-link" href="https://www.openstreetmap.org/?mlat={lat}&amp;mlon={lng}#map=16/{lat}/{lng}" '
-        f'target="_blank" rel="noopener">Ver mapa más grande →</a>'
-    )
-
-    return f"""<!doctype html>
+    return f'''<!doctype html>
 <html lang="es-PE">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>{name} — {tipo} en {distrito} · Coordina Eventos</title>
-  <meta name="description" content="{descripcion[:155]}" />
+  <title>{html.escape(name)} — coordinaeventos</title>
+  <meta name="description" content="{html.escape(name)} en {distrito}. Hasta {capacidad} personas. Desde S/ {precio}/h. {html.escape(descripcion[:120])}" />
   <meta name="theme-color" content="#0A0A0A" />
   <link rel="icon" href="../../../brand/logo/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="preload" as="image" href="{hero_photo}" fetchpriority="high" />
+  <link rel="stylesheet" href="../styles.css?v=2026-05-11" />
 </head>
-<body>
+<body data-page="detail">
 
 <div class="demo-banner">
   <strong>Catálogo demo</strong> · Los primeros hosts reales se publican en junio 2026 ·
   <a href="../../../#hosts">¿Tienes un espacio? Publica gratis →</a>
 </div>
 
-<header class="nav">
+<header class="nav" id="nav">
   <div class="nav-inner">
-    <a class="brand" href="../index.html">coordina<span class="brand-suffix">eventos</span></a>
+    <a class="brand" href="../../../" data-spa-link>coordina<span class="brand-suffix">eventos</span></a>
     <nav class="nav-links">
-      <a href="../buscar.html">← Volver al catálogo</a>
-      <a href="../asistente.html">Asistente IA</a>
-      <a href="../../../" class="nav-back">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Landing
-      </a>
+      <a href="../buscar.html" data-spa-link>Espacios</a>
+      <a href="../../../#concierge">Organización de eventos</a>
+      <a href="../../../#hosts">Para hosts</a>
+      <a href="../../../" class="nav-back" data-spa-link>← Inicio</a>
     </nav>
   </div>
 </header>
 
-<main>
+<main class="detail-page">
   <div class="container">
-    <!-- HERO -->
-    <section class="detail-hero">
-      <div class="detail-breadcrumbs">
-        <a href="../index.html">Catálogo</a>
-        <span>›</span>
-        <a href="../buscar.html?distrito={quote(distrito)}">{distrito}</a>
-        <span>›</span>
-        <span>{name}</span>
+
+    <nav class="breadcrumb" aria-label="Navegación">
+      <a href="../buscar.html" data-spa-link>Catálogo</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="../buscar.html?distrito={quote(distrito)}" data-spa-link>{distrito}</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">{html.escape(name)}</span>
+    </nav>
+
+    <header class="detail-header">
+      <h1>{html.escape(name)}</h1>
+      <div class="detail-stats">
+        <span class="detail-stat"><strong>★ {rating}</strong> · {reviews_count} reseñas</span>
+        <span class="detail-stat-sep">·</span>
+        <span class="detail-stat">{tipo}</span>
+        <span class="detail-stat-sep">·</span>
+        <span class="detail-stat">Hasta {capacidad} personas</span>
+        <span class="detail-stat-sep">·</span>
+        <span class="detail-stat">{distrito}</span>
+        {stat_verified}
       </div>
-      <h1>{name}</h1>
-      <div class="detail-meta">
-        <span class="star">★ {rating}</span>
-        <span>{reviews_count} reseñas</span>
-        <span>·</span>
-        <span>{tipo}</span>
-        <span>·</span>
-        <span>{distrito}</span>
-        {verified_html}
+    </header>
+
+    <section class="gallery" aria-label="Galería de fotos">
+      <div class="gallery-hero">
+        <img src="{hero_photo}" alt="{html.escape(name)} - foto principal" loading="eager" />
+      </div>
+      <div class="gallery-thumbs">
+{thumb_html}
       </div>
     </section>
 
-    <!-- GALERÍA con lightbox -->
-    <section class="gallery-block">
-{gallery_html}
-    </section>
-
-    <!-- DETALLE GRID -->
     <div class="detail-grid">
-      <div class="detail-main">
+      <div class="detail-content">
 
-        <div class="detail-section">
+        <section class="detail-section">
           <h2>Sobre el espacio</h2>
-          <p>{descripcion}</p>
-        </div>
-{highlights_html}
-        <div class="detail-section">
-          <h2>Para qué sirve</h2>
-          <p>{casos_html}</p>
-        </div>
+          <p class="detail-description">{html.escape(descripcion)}</p>
+          {highlights_html}
+        </section>
 
-        <div class="detail-section">
-          <h2>Equipamiento</h2>
-          <ul class="amenities">
-{amenities_html}
-          </ul>
-        </div>
+        {casos_section}
 
-        <div class="detail-section">
+        <section class="detail-section">
+          <h2>Lo que incluye</h2>
+          {amenities_html(space.get('amenities', []))}
+        </section>
+
+        <section class="detail-section">
           <h2>Ubicación</h2>
-          <p style="margin-bottom: 16px;">{direccion}</p>
-          <div class="map-wrap">
-            {map_iframe}
+          <p class="detail-address">{html.escape(direccion)}</p>
+          <p class="detail-address-note">Dirección exacta después de coordinar la visita con el host.</p>
+          <div class="detail-map">
+            <iframe src="{map_url}" loading="lazy" title="Mapa de {html.escape(name)}"></iframe>
           </div>
-        </div>
+        </section>
 
-        <div class="detail-section">
-          <h2>Reseñas <span class="reviews-count-inline">({reviews_count} totales)</span></h2>
-          <div class="reviews-grid">
-{reviews_html}
+        <section class="detail-section">
+          <h2>Sobre el host</h2>
+          <div class="host-card">
+            <div class="host-avatar">{slug[0].upper()}H</div>
+            <div class="host-info">
+              <strong>Host de {html.escape(name)}</strong>
+              <span class="host-meta">{verified_in_host}Responde en 2 horas · Listado desde {fmt_date(listado_desde)}</span>
+            </div>
+            <a href="{whatsapp_link(space)}" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Contactar</a>
           </div>
-        </div>
+          {host_more_section}
+        </section>
+
+        {reseñas_section}
 
       </div>
 
-      <!-- ASIDE: cotizador + WhatsApp -->
-      <aside class="detail-aside">
-        <div class="price-block">
-          <b>S/ {precio}</b>
-          <span>/ hora</span>
-          <span class="price-min">Mínimo {bloque_min} {'horas' if bloque_min > 1 else 'hora'}</span>
-        </div>
-
-        <form class="quote-form" data-precio="{precio}" data-bloque-min="{bloque_min}" data-cap-max="{cap}" data-name="{name}" data-distrito="{distrito}">
-          <h3 class="quote-title">Cotiza tu evento</h3>
-
-          <label class="quote-field">
-            <span>Fecha</span>
-            <input type="date" name="fecha" required />
-          </label>
-
-          <label class="quote-field">
-            <span>Personas</span>
-            <input type="number" name="personas" min="1" max="{cap}" placeholder="Hasta {cap}" required />
-          </label>
-
-          <label class="quote-field">
-            <span>Duración (horas)</span>
-            <input type="number" name="horas" min="{bloque_min}" max="12" value="{bloque_min}" required />
-          </label>
-
-          <div class="quote-summary">
-            <div class="quote-row"><span>Subtotal</span><b id="qf-subtotal">S/ {precio * bloque_min:,}</b></div>
-            <div class="quote-row quote-row-total"><span>Total estimado</span><b id="qf-total">S/ {precio * bloque_min:,}</b></div>
+      <aside class="pricing-card-wrap">
+        <div class="pricing-card">
+          <div class="pricing-card-head">
+            <strong class="pricing-amount">Desde S/ {precio}<span>/hora</span></strong>
+            <span class="pricing-min">Mínimo {bloque_min} horas</span>
           </div>
-
-          <button type="submit" class="btn btn-primary btn-block quote-submit">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
-            Coordinar por WhatsApp
-          </button>
-        </form>
-
-        <ul class="quick">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> Capacidad hasta {cap} personas</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> Coordinas directo con el encargado</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg> Sin pagos por adelantado</li>
-        </ul>
-
-        <a href="../asistente.html" class="btn btn-light btn-block">¿Otras opciones? Probar asistente IA</a>
+          <form class="pricing-form">
+            <label class="pricing-field">
+              <span>Fecha</span>
+              <input type="date" name="fecha" />
+            </label>
+            <label class="pricing-field">
+              <span>Personas</span>
+              <input type="number" name="personas" min="1" max="{capacidad}" placeholder="Hasta {capacidad}" />
+            </label>
+            <label class="pricing-field">
+              <span>Horas</span>
+              <input type="number" name="horas" min="{bloque_min}" placeholder="Mín. {bloque_min}" />
+            </label>
+          </form>
+          <a href="{whatsapp_link(space)}" target="_blank" rel="noopener" class="btn btn-primary btn-full">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+              <path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.9-.4-1.7-1-2.4-1.7-.6-.6-1.2-1.4-1.6-2.2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5 0 1.5 1.1 2.9 1.2 3.1.2.2 2.1 3.2 5.1 4.5 1.2.5 2.1.8 2.8.7.7-.1 1.7-.7 1.9-1.4.2-.6.2-1.2.1-1.4 0-.2-.2-.2-.5-.4z M20.5 3.5C18.3 1.2 15.4 0 12.3 0 5.9 0 .7 5.2.7 11.6c0 2 .5 4 1.5 5.7L.5 24l6.9-1.8c1.7.9 3.5 1.4 5.4 1.4 6.4 0 11.6-5.2 11.6-11.6 0-3.1-1.2-6-3.4-8.2z"/>
+            </svg>
+            Contactar por WhatsApp
+          </a>
+          <p class="pricing-note">Coordinas directo con el host. Sin pago anticipado en plataforma.</p>
+          <div class="pricing-divider"></div>
+          <a href="../../../#concierge" class="btn btn-outline btn-full btn-sm">
+            Pedir al equipo que lo gestione
+          </a>
+        </div>
       </aside>
+
     </div>
+
+    <section class="detail-section detail-similar">
+      <h2>Espacios similares</h2>
+      <div class="grid grid-similares">
+{similares_html}
+      </div>
+    </section>
+
   </div>
 </main>
 
-<!-- LIGHTBOXES (CSS-only) -->
-{lightbox_html}
+<button class="ai-fab" id="ai-fab" aria-label="Abrir asistente IA">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" aria-hidden="true">
+    <path d="M12 2 C6.5 2 2 6.5 2 12 C2 14 2.5 15.8 3.4 17.4 L2 22 L6.6 20.6 C8.2 21.5 10 22 12 22 C17.5 22 22 17.5 22 12 C22 6.5 17.5 2 12 2 Z"/>
+    <circle cx="8" cy="12" r="1" fill="white"/>
+    <circle cx="12" cy="12" r="1" fill="white"/>
+    <circle cx="16" cy="12" r="1" fill="white"/>
+  </svg>
+  <span class="ai-fab-label">Asistente IA</span>
+</button>
 
 <footer class="footer">
   <div class="container footer-content">
-    <span>© 2026 Coordina Eventos · Lima, Perú</span>
-    <a href="../buscar.html">← Ver todos los espacios</a>
+    <span>© 2026 coordinaeventos · Lima, Perú</span>
+    <a href="../buscar.html" data-spa-link>← Volver al catálogo</a>
   </div>
 </footer>
 
-<script>
-// Cotizador inline
-(() => {{
-  const form = document.querySelector('.quote-form');
-  if (!form) return;
-  const precio = parseFloat(form.dataset.precio);
-  const bloqueMin = parseInt(form.dataset.bloqueMin, 10);
-  const capMax = parseInt(form.dataset.capMax, 10);
-  const name = form.dataset.name;
-  const distrito = form.dataset.distrito;
-
-  const fmt = (n) => 'S/ ' + Math.round(n).toLocaleString('es-PE');
-
-  function update() {{
-    const horas = parseInt(form.querySelector('[name=horas]').value, 10) || bloqueMin;
-    const personas = parseInt(form.querySelector('[name=personas]').value, 10) || 0;
-    const fecha = form.querySelector('[name=fecha]').value;
-    const total = precio * horas;
-    document.getElementById('qf-subtotal').textContent = fmt(total);
-    document.getElementById('qf-total').textContent = fmt(total);
-    return {{ horas, personas, fecha, total }};
-  }}
-
-  form.querySelectorAll('input').forEach(inp => inp.addEventListener('input', update));
-
-  form.addEventListener('submit', (e) => {{
-    e.preventDefault();
-    const {{ horas, personas, fecha, total }} = update();
-    if (!fecha || !personas) {{
-      alert('Completa fecha y cantidad de personas para cotizar.');
-      return;
-    }}
-    if (personas > capMax) {{
-      alert(`Capacidad máxima de este espacio: ${{capMax}} personas.`);
-      return;
-    }}
-    const text = `Hola, vi ${{name}} (${{distrito}}) en Coordina Eventos y quiero cotizar:\\n\\n` +
-      `📅 Fecha: ${{fecha}}\\n` +
-      `👥 Personas: ${{personas}}\\n` +
-      `⏱  Duración: ${{horas}} h\\n` +
-      `💰 Estimado: S/ ${{total.toLocaleString('es-PE')}}\\n\\n` +
-      `¿Tienes disponibilidad?`;
-    window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank', 'noopener');
-  }});
-
-  update();
-}})();
-</script>
-
+<script src="../app.js?v=2026-05-11"></script>
 </body>
 </html>
-"""
+'''
 
 
 def main() -> int:
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    data = json.loads(DATA.read_text(encoding="utf-8"))
+    data = json.loads(DATA.read_text())
     spaces = data["spaces"]
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
     for s in spaces:
         out_file = OUT_DIR / f"{s['slug']}.html"
-        out_file.write_text(render_page(s), encoding="utf-8")
+        out_file.write_text(render_page(s, spaces), encoding="utf-8")
         print(f"  ✓ {out_file.relative_to(ROOT)}")
     print(f"\nGeneradas {len(spaces)} fichas en {OUT_DIR.relative_to(ROOT)}/")
     return 0
