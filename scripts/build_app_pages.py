@@ -182,9 +182,32 @@ def render_page(space: dict, all_spaces: list[dict]) -> str:
         key=lambda s: abs(s.get('precio_hora_pen', 0) - precio) + abs(s.get('capacidad_max', 0) - capacidad)
     )[:4]
     similares_html = ""
+    pin_svg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-7-7-12a7 7 0 0 1 14 0c0 5-7 12-7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>'
+    users_svg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3.5"/><path d="M2 20c0-4 3.5-6 7-6s7 2 7 6"/><path d="M16 5a3.5 3.5 0 0 1 0 7M21.5 20c0-2.7-2-4.5-4.5-5"/></svg>'
+    home_svg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>'
+    star_svg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7.5.5-5.7 4.9 1.8 7.3L12 17.8 5.4 21.7l1.8-7.3L1.5 9.5 9 9z"/></svg>'
     for s in similares:
-        v_mark = f'<span class="listing-card-verified">{verified_svg(20)}</span>' if s.get('verificado') else ''
-        similares_html += f'<a class="listing-card" href="./{s["slug"]}.html" data-spa-link><div class="listing-card-photo"><img src="{s["fotos"][0]}" alt="{s["name"]}" loading="lazy" />{v_mark}</div><div class="listing-card-body"><div class="listing-card-head"><h3>{s["name"]}</h3><strong class="listing-card-price">Desde S/ {s["precio_hora_pen"]}<span>/h</span></strong></div><p class="listing-card-meta">{s["distrito"]} · Hasta {s["capacidad_max"]} pers</p></div></a>'
+        v_chip = f'<span class="verified-chip">{verified_svg(14)}<span>Verificado</span></span>' if s.get('verificado') else ''
+        s_rating = f'<span class="listing-card-rating">{star_svg} {s.get("rating",0):.1f} <span>({s.get("reviews_count",0)})</span></span>' if s.get('rating') else ''
+        s_tipo = s.get('tipo', '')
+        s_dir = s.get('direccion', s.get('distrito',''))
+        s_brief = s_dir.split(',')[0]
+        similares_html += (
+            f'<a class="listing-card" href="./{s["slug"]}.html" data-spa-link>'
+            f'<div class="listing-card-photo"><img src="{s["fotos"][0]}" alt="{s["name"]}" loading="lazy" />{v_chip}</div>'
+            f'<div class="listing-card-body">'
+            f'<div class="listing-card-head"><h3>{s["name"]}</h3>{s_rating}</div>'
+            f'<ul class="listing-card-details">'
+            f'<li>{pin_svg} <span>{s_brief}<strong> · {s["distrito"]}</strong></span></li>'
+            f'<li>{users_svg} <span>Hasta <strong>{s["capacidad_max"]}</strong> personas</span></li>'
+            f'<li>{home_svg} <span>{s_tipo}</span></li>'
+            f'</ul>'
+            f'<div class="listing-card-foot">'
+            f'<span class="listing-card-price"><strong>S/ {s["precio_hora_pen"]}</strong><em>por hora</em></span>'
+            f'<span class="listing-card-cta">Ver detalle →</span>'
+            f'</div>'
+            f'</div></a>'
+        )
 
     verified_inline = f'{verified_svg(18)}<span>Espacio verificado</span>' if verificado else ''
 
@@ -220,7 +243,7 @@ def render_page(space: dict, all_spaces: list[dict]) -> str:
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://images.unsplash.com" />
   <link rel="preload" as="image" href="{hero_photo}" fetchpriority="high" />
-  <link rel="stylesheet" href="../styles.css?v=2026-05-11" />
+  <link rel="stylesheet" href="../styles.css?v=2026-05-11-2" />
 </head>
 <body data-page="detail">
 
@@ -418,7 +441,7 @@ def render_page(space: dict, all_spaces: list[dict]) -> str:
   </div>
 </footer>
 
-<script src="../app.js?v=2026-05-11"></script>
+<script src="../app.js?v=2026-05-11-2"></script>
 </body>
 </html>
 '''

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://images.unsplash.com" />
-  <link rel="stylesheet" href="./styles.css?v=2026-05-11" />
+  <link rel="stylesheet" href="./styles.css?v=2026-05-11-2" />
 </head>
 <body data-page="search">
 
@@ -44,6 +44,10 @@
         <span>Para qué</span>
         <input id="q-event" name="event" type="text" placeholder="Cumpleaños, sesión de fotos…" autocomplete="off" />
       </label>
+      <label class="search-field" for="q-date">
+        <span>Fecha</span>
+        <input id="q-date" name="date" type="date" />
+      </label>
       <label class="search-field" for="q-where">
         <span>Distrito</span>
         <select id="q-where" name="where">
@@ -72,63 +76,18 @@
 
 <main>
   <div class="container">
-    <!-- Filtros por tipo de evento (USO) — priorizado -->
-    <div class="filters-group">
-      <span class="filters-label">Por evento</span>
-      <div class="filters" role="group" aria-label="Filtrar por tipo de evento">
-        <button class="filter-chip" data-caso="cumpleanos">Cumpleaños</button>
-        <button class="filter-chip" data-caso="boda">Boda</button>
-        <button class="filter-chip" data-caso="sesion-fotos">Sesión de fotos</button>
-        <button class="filter-chip" data-caso="conferencia">Conferencia</button>
-        <button class="filter-chip" data-caso="reunion">Sala de reunión</button>
-        <button class="filter-chip" data-caso="capacitacion">Capacitación</button>
-        <button class="filter-chip" data-caso="coworking">Coworking</button>
-        <button class="filter-chip" data-caso="pop-up">Pop-up</button>
-        <button class="filter-chip" data-caso="yoga-clase">Yoga · clase</button>
-        <button class="filter-chip" data-caso="grabacion-video">Grabación de video</button>
-        <button class="filter-chip" data-caso="cena-corporativa">Cena corporativa</button>
-        <button class="filter-chip" data-caso="lanzamiento">Lanzamiento</button>
-      </div>
-    </div>
+    <!-- Barra de control: limpia, minimalista. Filtros van detrás del botón. -->
+    <div class="filters-toolbar">
+      <button class="filters-toggle" id="filters-toggle" type="button" aria-expanded="false" aria-controls="filters-panel">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 6h18M6 12h12M10 18h4"/>
+        </svg>
+        <span>Filtros</span>
+        <span class="filters-count" id="filters-count" hidden>0</span>
+      </button>
 
-    <!-- Filtros por características — secundario -->
-    <div class="filters-group">
-      <span class="filters-label">Características</span>
-      <div class="filters" role="group" aria-label="Filtrar por características">
-        <button class="filter-chip filter-chip-verified" data-extra="verificado">
-          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="11" fill="#1D9BF0"/>
-            <path d="M7 12.5 L10.5 16 L17 9" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Verificados
-        </button>
-        <button class="filter-chip" data-extra="instant-book">Disponible inmediatamente</button>
-        <button class="filter-chip" data-extra="sin-reserva">Sin pago anticipado</button>
-        <button class="filter-chip" data-extra="con-parking">Con parking</button>
-        <button class="filter-chip" data-extra="con-cocina">Con cocina</button>
-        <button class="filter-chip" data-extra="con-wifi">Con WiFi</button>
-        <button class="filter-chip" data-extra="con-sonido">Sonido incluido</button>
-        <button class="filter-chip" data-extra="con-proyector">Proyector</button>
-      </div>
-    </div>
+      <div class="filters-active" id="filters-active" aria-live="polite"></div>
 
-    <!-- Filtros por distrito — terciario -->
-    <div class="filters-group">
-      <span class="filters-label">Por distrito</span>
-      <div class="filters" role="group" aria-label="Filtrar por distrito">
-        <button class="filter-chip" data-distrito="Miraflores">Miraflores</button>
-        <button class="filter-chip" data-distrito="San Isidro">San Isidro</button>
-        <button class="filter-chip" data-distrito="Barranco">Barranco</button>
-        <button class="filter-chip" data-distrito="Surco">Surco</button>
-        <button class="filter-chip" data-distrito="San Borja">San Borja</button>
-        <button class="filter-chip" data-distrito="La Molina">La Molina</button>
-        <button class="filter-chip" data-distrito="Magdalena del Mar">Magdalena</button>
-        <button class="filter-chip" data-distrito="Pueblo Libre">Pueblo Libre</button>
-      </div>
-    </div>
-
-    <div class="results-bar">
-      <span id="count" class="results-count">Cargando…</span>
       <label class="sort-label">
         <span>Ordenar</span>
         <select id="sort" aria-label="Ordenar por">
@@ -139,6 +98,69 @@
           <option value="cap">Capacidad</option>
         </select>
       </label>
+    </div>
+
+    <!-- Panel de filtros — colapsable. Por defecto oculto. -->
+    <div class="filters-panel" id="filters-panel" hidden>
+      <div class="filters-group">
+        <span class="filters-label">Por evento</span>
+        <div class="filters" role="group" aria-label="Filtrar por tipo de evento">
+          <button class="filter-chip" data-caso="cumpleanos" type="button">Cumpleaños</button>
+          <button class="filter-chip" data-caso="boda" type="button">Boda</button>
+          <button class="filter-chip" data-caso="sesion-fotos" type="button">Sesión de fotos</button>
+          <button class="filter-chip" data-caso="conferencia" type="button">Conferencia</button>
+          <button class="filter-chip" data-caso="reunion" type="button">Sala de reunión</button>
+          <button class="filter-chip" data-caso="capacitacion" type="button">Capacitación</button>
+          <button class="filter-chip" data-caso="coworking" type="button">Coworking</button>
+          <button class="filter-chip" data-caso="pop-up" type="button">Pop-up</button>
+          <button class="filter-chip" data-caso="yoga-clase" type="button">Yoga · clase</button>
+          <button class="filter-chip" data-caso="grabacion-video" type="button">Grabación de video</button>
+          <button class="filter-chip" data-caso="cena-corporativa" type="button">Cena corporativa</button>
+          <button class="filter-chip" data-caso="lanzamiento" type="button">Lanzamiento</button>
+        </div>
+      </div>
+
+      <div class="filters-group">
+        <span class="filters-label">Características</span>
+        <div class="filters" role="group" aria-label="Filtrar por características">
+          <button class="filter-chip filter-chip-verified" data-extra="verificado" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="11" fill="#1D9BF0"/>
+              <path d="M7 12.5 L10.5 16 L17 9" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Verificados
+          </button>
+          <button class="filter-chip" data-extra="instant-book" type="button">Disponible inmediatamente</button>
+          <button class="filter-chip" data-extra="sin-reserva" type="button">Sin pago anticipado</button>
+          <button class="filter-chip" data-extra="con-parking" type="button">Con parking</button>
+          <button class="filter-chip" data-extra="con-cocina" type="button">Con cocina</button>
+          <button class="filter-chip" data-extra="con-wifi" type="button">Con WiFi</button>
+          <button class="filter-chip" data-extra="con-sonido" type="button">Sonido incluido</button>
+          <button class="filter-chip" data-extra="con-proyector" type="button">Proyector</button>
+        </div>
+      </div>
+
+      <div class="filters-group">
+        <span class="filters-label">Por distrito</span>
+        <div class="filters" role="group" aria-label="Filtrar por distrito">
+          <button class="filter-chip" data-distrito="Miraflores" type="button">Miraflores</button>
+          <button class="filter-chip" data-distrito="San Isidro" type="button">San Isidro</button>
+          <button class="filter-chip" data-distrito="Barranco" type="button">Barranco</button>
+          <button class="filter-chip" data-distrito="Surco" type="button">Surco</button>
+          <button class="filter-chip" data-distrito="San Borja" type="button">San Borja</button>
+          <button class="filter-chip" data-distrito="La Molina" type="button">La Molina</button>
+          <button class="filter-chip" data-distrito="Magdalena del Mar" type="button">Magdalena</button>
+          <button class="filter-chip" data-distrito="Pueblo Libre" type="button">Pueblo Libre</button>
+        </div>
+      </div>
+
+      <div class="filters-panel-foot">
+        <button class="filters-clear" id="filters-clear" type="button">Limpiar filtros</button>
+      </div>
+    </div>
+
+    <div class="results-bar">
+      <span id="count" class="results-count">Cargando…</span>
     </div>
 
     <div class="grid" id="grid"></div>
@@ -188,6 +210,6 @@
   </div>
 </footer>
 
-<script src="./app.js?v=2026-05-11"></script>
+<script src="./app.js?v=2026-05-11-2"></script>
 </body>
 </html>

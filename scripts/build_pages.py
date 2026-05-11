@@ -114,8 +114,8 @@ def render_fab() -> str:
 
 
 def render_page(slug: str, title: str, meta_desc: str, body: str, active: str = "", page_data: str = "page", depth: int = 0) -> str:
-    css_path = "../" * depth + "styles.css?v=2026-05-11"
-    js_path = "../" * depth + "app.js?v=2026-05-11"
+    css_path = "../" * depth + "styles.css?v=2026-05-11-2"
+    js_path = "../" * depth + "app.js?v=2026-05-11-2"
     favicon = "../" * (depth + 2) + "brand/logo/favicon.svg"
 
     return f"""<!doctype html>
