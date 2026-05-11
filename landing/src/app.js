@@ -254,7 +254,7 @@
     }, { threshold: 0.3 });
     document.querySelectorAll('.why-item').forEach((el) => whyIO.observe(el));
 
-    // AI section: trigger chat sequence cuando entra
+    // AI section: trigger chat sequence cuando entra (threshold bajo porque la sección es alta)
     const aiSection = document.querySelector('.ai-section');
     if (aiSection) {
       const aiIO = new IntersectionObserver((entries) => {
@@ -264,7 +264,7 @@
             aiIO.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.25 });
+      }, { rootMargin: '0px 0px -20% 0px', threshold: 0 });
       aiIO.observe(aiSection);
     }
   }
