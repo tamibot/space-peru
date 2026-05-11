@@ -1,6 +1,109 @@
 // Coordina — landing logic.
 
 (() => {
+  // Hero search — typeahead/autocomplete para "Para qué"
+  const actInput = document.getElementById('hs-act');
+  const actList = document.getElementById('hs-act-list');
+  if (actInput && actList) {
+    const suggestions = [
+      'Aniversario', 'Animación infantil', 'Asamblea', 'Auditorio',
+      'Baby shower', 'Bautizo', 'Boda', 'Boda civil',
+      'Brunch', 'Capacitación corporativa',
+      'Casa íntima', 'Catación', 'Cena corporativa', 'Cena privada',
+      'Charla', 'Clase grupal', 'Cocktail', 'Conferencia',
+      'Conversatorio', 'Coworking por horas', 'Cumpleaños',
+      'Demo de producto', 'Despedida', 'Estudio fotográfico',
+      'Estudio para video', 'Evento corporativo', 'Exposición',
+      'Fiesta privada', 'Filmación', 'Graduación',
+      'Junta directiva', 'Lanzamiento de producto', 'Meet and greet',
+      'Networking', 'Pop-up store', 'Presentación',
+      'Quinceañera', 'Reunión de empresa', 'Sala de reuniones',
+      'Seminario', 'Sesión de fotos', 'Showroom', 'Taller',
+      'Team building', 'Terraza con vista', 'Workshop', 'Yoga'
+    ];
+
+    let activeIndex = -1;
+    let currentMatches = [];
+
+    const closeList = () => {
+      actList.hidden = true;
+      actInput.setAttribute('aria-expanded', 'false');
+      activeIndex = -1;
+    };
+
+    const renderList = (matches) => {
+      currentMatches = matches;
+      if (matches.length === 0) { closeList(); return; }
+      actList.innerHTML = matches.map((m, i) =>
+        `<li role="option" data-i="${i}" class="${i === activeIndex ? 'active' : ''}">${m}</li>`
+      ).join('');
+      actList.hidden = false;
+      actInput.setAttribute('aria-expanded', 'true');
+    };
+
+    const filter = (q) => {
+      const norm = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+      const nq = norm(q.trim());
+      if (!nq) return suggestions.slice(0, 8); // top 8 al focus
+      // priorizar matches al inicio del string
+      const starts = [], contains = [];
+      suggestions.forEach((s) => {
+        const ns = norm(s);
+        if (ns.startsWith(nq)) starts.push(s);
+        else if (ns.includes(nq)) contains.push(s);
+      });
+      return [...starts, ...contains].slice(0, 8);
+    };
+
+    actInput.addEventListener('focus', () => {
+      activeIndex = -1;
+      renderList(filter(actInput.value));
+    });
+
+    actInput.addEventListener('input', () => {
+      activeIndex = -1;
+      renderList(filter(actInput.value));
+    });
+
+    actInput.addEventListener('keydown', (e) => {
+      if (actList.hidden && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+        renderList(filter(actInput.value));
+        return;
+      }
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        activeIndex = Math.min(activeIndex + 1, currentMatches.length - 1);
+        renderList(currentMatches);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        activeIndex = Math.max(activeIndex - 1, 0);
+        renderList(currentMatches);
+      } else if (e.key === 'Enter') {
+        if (activeIndex >= 0 && currentMatches[activeIndex]) {
+          e.preventDefault();
+          actInput.value = currentMatches[activeIndex];
+          closeList();
+        }
+      } else if (e.key === 'Escape') {
+        closeList();
+      }
+    });
+
+    actList.addEventListener('mousedown', (e) => {
+      const li = e.target.closest('li');
+      if (!li) return;
+      e.preventDefault();
+      actInput.value = li.textContent;
+      closeList();
+      actInput.focus();
+    });
+
+    actInput.addEventListener('blur', () => {
+      // delay para permitir mousedown en option
+      setTimeout(closeList, 120);
+    });
+  }
+
   // Partners carousel — populate logos dinámicamente
   const partnersTrack = document.getElementById('partners-track');
   if (partnersTrack) {

@@ -38,43 +38,12 @@
 
 <main>
 
-<!-- ============ HERO ============ -->
+<!-- ============ HERO — unificado: foto + texto + search en una sola vista ============ -->
 <section class="hero">
-  <div class="hero-photo" role="img" aria-label="Cena de evento en Lima">
-    <div class="hero-search-wrap">
-      <form class="hero-search" id="hero-search" action="./app/buscar.html" method="get">
-        <div class="hero-search-field">
-          <label for="hs-act">Para qué</label>
-          <input id="hs-act" name="actividad" type="text" placeholder="Cumpleaños, sesión de fotos…" autocomplete="off" />
-        </div>
-        <div class="hero-search-field">
-          <label for="hs-loc">Dónde</label>
-          <select id="hs-loc" name="distrito">
-            <option value="">Lima, PE</option>
-            <option>Miraflores</option>
-            <option>San Isidro</option>
-            <option>Barranco</option>
-            <option>Surco</option>
-            <option>San Borja</option>
-            <option>La Molina</option>
-            <option>Magdalena</option>
-            <option>Pueblo Libre</option>
-          </select>
-        </div>
-        <div class="hero-search-field">
-          <label for="hs-date">Cuándo</label>
-          <input id="hs-date" name="fecha" type="date" />
-        </div>
-        <button class="hero-search-btn" type="submit" aria-label="Buscar espacios">
-          Buscar
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </button>
-      </form>
-    </div>
-  </div>
+  <div class="hero-photo" role="img" aria-label="Evento corporativo en Lima"></div>
 
-  <div class="hero-block">
-    <div class="container">
+  <div class="container hero-inner">
+    <div class="hero-top">
       <span class="hero-badge">
         <svg class="hero-badge-mark" viewBox="0 0 20 20" aria-hidden="true">
           <circle class="draw-circle" cx="10" cy="10" r="8" fill="none" stroke="white" stroke-width="1.4" />
@@ -84,21 +53,51 @@
         <span class="hero-badge-text">Espacios verificados · Lima</span>
       </span>
       <h1>Espacios para tus eventos.<br>Por horas.</h1>
-      <p class="hero-block-sub">Salones, lofts, terrazas y estudios. Hablas directo con el host por WhatsApp. ¿Sin tiempo? Nuestro concierge se encarga de buscar y coordinar todo.</p>
+      <p class="hero-block-sub">Salones, lofts, terrazas y estudios. Hablas directo con el host por WhatsApp. ¿Sin tiempo? Nuestro concierge coordina todo.</p>
+    </div>
 
-      <div class="hero-block-meta">
-        <div class="hero-meta-item">
-          <span class="label">Reservas</span>
-          <span class="value">+1,500 coordinadas</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="label">Catálogo</span>
-          <span class="value">+200 espacios</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="label">Comisión</span>
-          <span class="value">0% para hosts</span>
-        </div>
+    <form class="hero-search" id="hero-search" action="./app/buscar.html" method="get">
+      <div class="hero-search-field hero-search-field-typeahead">
+        <label for="hs-act">Para qué</label>
+        <input id="hs-act" name="actividad" type="text" placeholder="Cumpleaños, sesión de fotos…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="hs-act-list" />
+        <ul class="hero-typeahead" id="hs-act-list" role="listbox" hidden></ul>
+      </div>
+      <div class="hero-search-field">
+        <label for="hs-loc">Dónde</label>
+        <select id="hs-loc" name="distrito">
+          <option value="">Lima, PE</option>
+          <option>Miraflores</option>
+          <option>San Isidro</option>
+          <option>Barranco</option>
+          <option>Surco</option>
+          <option>San Borja</option>
+          <option>La Molina</option>
+          <option>Magdalena</option>
+          <option>Pueblo Libre</option>
+        </select>
+      </div>
+      <div class="hero-search-field">
+        <label for="hs-date">Cuándo</label>
+        <input id="hs-date" name="fecha" type="date" />
+      </div>
+      <button class="hero-search-btn" type="submit" aria-label="Buscar espacios">
+        Buscar
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </form>
+
+    <div class="hero-block-meta">
+      <div class="hero-meta-item">
+        <span class="label">Reservas</span>
+        <span class="value">+1,500 coordinadas</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Catálogo</span>
+        <span class="value">+200 espacios</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Comisión</span>
+        <span class="value">0% para hosts</span>
       </div>
     </div>
   </div>
