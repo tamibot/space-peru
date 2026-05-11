@@ -65,27 +65,30 @@ function fmtPrice(n) {
 }
 
 function spaceCard(space) {
-  const verifiedBadge = space.verificado
-    ? `<span class="verified-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Verificado</span>`
+  const verifiedMark = space.verificado
+    ? `<span class="listing-card-verified" title="Espacio verificado">
+         <svg viewBox="0 0 24 24" aria-hidden="true">
+           <circle cx="12" cy="12" r="11" fill="#1D9BF0"/>
+           <path d="M7 12.5 L10.5 16 L17 9" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+       </span>`
     : '';
   const detailHref = './espacios/' + space.slug + '.html';
+  // Top 3 amenities (compactas)
+  const amenities = (space.amenidades || []).slice(0, 4).join(' · ');
   return `
-    <a class="space-card" href="${detailHref}">
-      <div class="img-wrap">
+    <a class="listing-card" href="${detailHref}">
+      <div class="listing-card-photo">
         <img src="${space.fotos[0]}" alt="${space.name}" loading="lazy" />
-        <span class="img-tag">${space.tipo}</span>
-        ${verifiedBadge}
+        ${verifiedMark}
       </div>
-      <div class="meta">
-        <div class="meta-top">
-          <strong>${space.name}</strong>
-          <span class="meta-rating"><span class="star">★</span>${space.rating}</span>
+      <div class="listing-card-body">
+        <div class="listing-card-head">
+          <h3>${space.name}</h3>
+          <strong class="listing-card-price">${fmtPrice(space.precio_hora_pen)}<span>/h</span></strong>
         </div>
-        <div class="meta-info">${space.distrito} · Hasta ${space.capacidad_max} pers</div>
-        <div class="meta-bottom">
-          <span class="price">${fmtPrice(space.precio_hora_pen)}<span class="price-unit"> /h</span></span>
-          <span class="meta-info">${space.reviews_count} reseñas</span>
-        </div>
+        <p class="listing-card-meta">${space.distrito} · Hasta ${space.capacidad_max} personas · ${space.tipo}</p>
+        ${amenities ? `<p class="listing-card-amenities">${amenities}</p>` : ''}
       </div>
     </a>
   `;
@@ -137,10 +140,9 @@ async function renderSearch() {
 
   if (filtered.length === 0) {
     target.innerHTML = `
-      <div class="empty" style="grid-column: 1 / -1;">
+      <div class="empty-state" style="grid-column: 1 / -1;">
         <h3>No encontramos espacios con esos filtros</h3>
         <p>Quita uno o pide ayuda al asistente — encontramos el que necesitas.</p>
-        <a href="../asistente.html" class="btn btn-primary">Probar el asistente</a>
       </div>
     `;
     return;

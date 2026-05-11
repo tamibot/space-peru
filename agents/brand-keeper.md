@@ -51,9 +51,35 @@ Eres el guardián del sistema visual y textual de **coordinaeventos**. Tu trabaj
 - [ ] ¿"coordina" peso 700 + "eventos" peso 500 gris suffix?
 - [ ] ¿NO es `COORDINA` mayúsculas, ni "Coordina Eventos" con espacio?
 
-### D. Radii (de `branding.md`)
-- [ ] ¿Todo recto (0)? Botones, cards, inputs, badges, tags.
-- [ ] ¿Excepción solo para status dots (50%)?
+### D. Radii ⚠️ REGLA CRÍTICA (de `branding.md`)
+
+**ZERO TOLERANCE para pills y bordes redondeados.** Mirar SIEMPRE este check.
+
+- [ ] ¿Botones `border-radius: 0`? (`.btn`, `.btn-primary`, `.btn-light`, `.btn-soft`, etc.)
+- [ ] ¿Cards de listing `border-radius: 0`? (NO 8px, 12px, 16px)
+- [ ] ¿Search bar `border-radius: 0`?
+- [ ] ¿Search fields `border-radius: 0`?
+- [ ] ¿Filter chips RECTANGULARES? `border-radius: 0` ⚠️ NUNCA pills
+- [ ] ¿Tags / etiquetas `border-radius: 0`?
+- [ ] ¿Badges `border-radius: 0`? (incluyendo el verified — el círculo del check va dentro del SVG, no en el contenedor)
+- [ ] ¿Inputs / select / textarea `border-radius: 0`?
+- [ ] ¿Image containers `border-radius: 0`?
+- [ ] ¿Cards de testimonios `border-radius: 0`?
+- [ ] ¿Modal / dialog containers `border-radius: 0`?
+
+**Excepciones permitidas (semánticas):**
+- ✅ Status dots (online indicator del chat): `border-radius: 50%`
+- ✅ Avatar de persona (foto circular del host): `border-radius: 50%`
+- ✅ Loading spinners: pueden ser circulares
+- ✅ El círculo dentro del SVG del verified check (parte del ícono, no del contenedor)
+
+**Si ves cualquiera de estos PATTERNS, es violación:**
+- ❌ `border-radius: 999px` o `border-radius: 9999px` (pill total)
+- ❌ `border-radius: 100px` o más (efecto pill)
+- ❌ `border-radius: 50px` en cualquier UI element (excepto los listados arriba)
+- ❌ `border-radius: 8px`, `12px`, `16px`, `20px`, `24px` (rounded soft)
+- ❌ `border-radius: 4px`, `6px`, `2px` (rounded sutil pero NO 0)
+- ❌ Filter chips con fondo redondeado tipo "tag cloud"
 
 ### E. Componentes (de `components.md`)
 - [ ] ¿Si agrega una nueva variante de botón, está documentada?

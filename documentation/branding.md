@@ -122,7 +122,7 @@ coordinaeventos
 
 ---
 
-## Radii — TODO RECTO
+## Radii — TODO RECTO ⚠️ REGLA CRÍTICA
 
 ```css
 --r-sm: 0;
@@ -130,11 +130,45 @@ coordinaeventos
 --r-lg: 0;
 ```
 
-Buttons, cards, search bar, hero badge, future-tags: **radius: 0**.
+**Border-radius en TODO debe ser 0**. Esto incluye:
 
-Excepciones permitidas (semánticas, no UI containers):
-- Status dots (online indicator): `border-radius: 50%`
-- Nada más.
+| Elemento | Radius |
+|---|---|
+| Botones (todos) | **0** |
+| Cards de listing | **0** |
+| Search bar (hero + catálogo) | **0** |
+| Search bar fields | **0** |
+| Filter chips | **0** ⚠️ NUNCA pills |
+| Tags / etiquetas | **0** |
+| Badges (incluido verified) | **0** |
+| Inputs / select / textarea | **0** |
+| Image containers | **0** |
+| Modals / dialogs | **0** |
+| Tooltips | **0** |
+| Dropdown menus | **0** |
+| Avatar containers | **0** *(o 50% solo si es foto circular de persona, justificado semánticamente)* |
+| Image thumbnails en cards | **0** |
+| Stat blocks | **0** |
+| Form fields | **0** |
+
+### Excepciones permitidas (semánticas únicamente):
+
+1. **Status dots** (online indicator del chat IA, badges de notificación): `border-radius: 50%` — son indicadores semánticos, no UI containers.
+2. **Avatar de persona** (foto circular de host/cliente): `border-radius: 50%` — convención universal para fotos personales.
+3. **Loading spinners**: pueden ser circulares.
+4. **Verified check icon** (el círculo azul del SVG): es parte del ícono semántico, no del badge container.
+
+### Lo que NUNCA tiene border-radius mayor a 0:
+
+- ❌ Pills de búsqueda (Cumpleaños, Boda, Sesión de fotos…) — son chips RECTANGULARES
+- ❌ Pills de distrito (Miraflores, San Isidro…) — RECTANGULARES
+- ❌ "Tags" de amenidades — RECTANGULARES
+- ❌ Botones con bordes pill (`border-radius: 999px`) — NUNCA
+- ❌ Cards con esquinas redondeadas (`border-radius: 8px`, `12px`) — NUNCA
+- ❌ Search bar con esquinas redondeadas — NUNCA
+- ❌ Imágenes con `border-radius` — NUNCA
+
+> Si ves un pill en cualquier mockup o implementación, es **error de branding**. Reportar y corregir.
 
 ---
 
@@ -332,6 +366,157 @@ Vertical labels rotated 90° en lados de fotos editoriales (magazine pattern):
 - Logos de partners: PNG grayscale 200px alto en `landing/src/brand/partners/`.
 - Hero photo preload con `fetchpriority="high"`.
 - Lazy loading en todas las imágenes below-fold.
+
+---
+
+## Componentes específicos del catálogo (`/buscar`)
+
+### Search bar del catálogo
+Misma estructura visual que el hero search bar de la landing:
+- Background: white
+- Border: 1px `--line`
+- Border-radius: **0** ⚠️
+- Padding interno: 6px
+- Grid columnas: `1.6fr 1fr 1fr auto` (actividad / distrito / capacidad / botón)
+- Separadores entre fields: 1px `rgba(0,0,0,.08)` border-right
+- Botón "Buscar": sólido negro, radius 0, padding 16-22px
+
+### Filter chips ⚠️ RECTOS
+```css
+.filter-chip {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--primary);
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  border-radius: 0; /* ⚠️ CRÍTICO */
+  cursor: pointer;
+  transition: background .15s ease, border-color .15s ease;
+}
+.filter-chip:hover { background: var(--soft); border-color: var(--primary); }
+.filter-chip.active { background: var(--primary); color: white; border-color: var(--primary); }
+```
+
+- ❌ NUNCA `border-radius: 999px` ni similar.
+- ❌ NUNCA fondo pill negro con texto blanco redondeado.
+- ✅ Rectángulo blanco con borde gris claro → cuando activo, rectángulo negro con texto blanco.
+
+### Listing card (resultado de búsqueda)
+
+```html
+<a class="listing-card" href="/espacio/[slug]">
+  <div class="listing-card-photo">
+    <img src="..." />
+    <span class="verified-mark" title="Espacio verificado">
+      <svg>...check azul...</svg>
+    </span>
+  </div>
+  <div class="listing-card-body">
+    <div class="listing-card-head">
+      <h3>El Alto Miraflores</h3>
+      <strong class="listing-card-price">S/ 220<span>/h</span></strong>
+    </div>
+    <p class="listing-card-meta">Miraflores · Hasta 40 personas · Salón</p>
+    <p class="listing-card-amenities">WiFi · Parking · Sonido · Cocina</p>
+  </div>
+</a>
+```
+
+**Spec visual**:
+- Border: 1px `--line`
+- Border-radius: **0**
+- Padding-bottom card: 18-22px
+- Foto aspect ratio: **4/3** (más compacta que Peerspace que usa 16:9)
+- Foto height en grid: ~200-240px
+- Hover: border-color `--primary` + foto scale(1.03) en 0.3s
+
+**Layout del header de card**:
+- `display: flex; justify-content: space-between; align-items: baseline`
+- Nombre a la izquierda (peso 700, 17px)
+- **Precio a la DERECHA** (peso 800, 18px, negro) — esto es crítico
+- `/h` en peso 500 grayed
+
+**Verified mark**:
+- Esquina superior derecha de la foto (top: 12px, right: 12px)
+- Width: 22px, fondo `--verified` `#1D9BF0` con check blanco
+- Tiene tooltip "Espacio verificado"
+
+### Grid de catálogo
+- `grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))`
+- Gap: 20-24px
+- En tablet: 2 cols. En mobile: 1 col.
+
+### Sort dropdown
+- `<select>` nativo con border 1px, radius 0, padding 10px 16px.
+- Etiqueta "Ordenar por" como label antes.
+
+### Results count
+- Texto pequeño: "**15** espacios encontrados"
+- font-size 14px, peso 500, color `--muted`.
+
+---
+
+## Componentes específicos del detalle de espacio (`/espacio/[slug]`)
+
+### Galería hero
+Inspirada en Peerspace pero rectangular siempre:
+- Hero photo grande (60-70% del width)
+- Grid de 4 thumbnails al lado (right side) en 2x2
+- En total: 5 fotos visibles arriba
+- Botón "Ver todas las fotos (12)" → lightbox fullscreen
+- Aspect hero: 16:10 o 4:3
+- Border-radius: **0**
+
+### Header del listing
+Después de la galería:
+- Eyebrow con tipo de espacio ("SALÓN · MIRAFLORES")
+- H1 nombre del espacio
+- Stats inline: capacidad · m² · # reviews (si hay rating)
+- Badge verified azul si aplica
+- CTAs principales: "Contactar por WhatsApp" + "Pedirle al concierge"
+
+### Pricing card sticky (right column)
+- Sticky a la derecha, scrollea con la página
+- Background blanco, border 1px `--line`, radius **0**
+- Precio prominente: "S/ 220 / hora"
+- Minimum hours si aplica: "Mínimo 2 horas"
+- Selectores: fecha + horas
+- Botón "Contactar por WhatsApp" sólido negro
+- Sub-CTA: "Pedir al concierge que lo gestione"
+- Microcopy: "Coordinas directo con el host. Sin pago anticipado en plataforma."
+
+### Sección Sobre el host
+- Foto host (avatar circular 64px - excepción semántica)
+- Nombre + badge verified si aplica
+- "Responde en X horas" + "X eventos hospedados"
+- **Otros espacios del host** (grid de 3-4 mini-cards)
+- Link "Ver todos los espacios de [nombre host] →"
+- Botón "Contactar al host"
+
+### Amenidades (collapsible por categoría)
+Categorías canónicas:
+- **Tecnología y AV**: WiFi, proyector, pantalla, sonido, micrófonos
+- **Comodidades**: Cocina, baños, AC, calefacción, accesibilidad
+- **Mobiliario**: Sillas, mesas, lounge
+- **Acceso**: Parking, ascensor, entrada vehicular
+- **Servicios incluidos**: Limpieza, recepcionista, seguridad
+
+### Facilidades extras (con precio)
+Lista de adicionales que el host ofrece:
+- Proyector premium · S/ 50
+- Sonido profesional · S/ 120
+- Iluminación de escenario · S/ 200
+- Mobiliario extra · S/ 80
+- Etc.
+
+Mostrar precio inline, separado del nombre.
+
+### Mapa
+- Embedded Mapbox/Leaflet
+- Pin aproximado (NO dirección exacta hasta post-contacto)
+- Microcopy: "Dirección exacta después de contactar al host"
 
 ---
 

@@ -3,47 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Buscar espacios — Coordina Eventos</title>
-  <meta name="description" content="Filtra por categoría, distrito y capacidad. Espacios verificados en Lima Moderna." />
+  <title>Catálogo de espacios — coordinaeventos</title>
+  <meta name="description" content="Encuentra el espacio para tu próximo evento en Lima. Filtra por tipo, distrito, capacidad y facilidades. Coordinas la visita directo con el host por WhatsApp." />
   <meta name="theme-color" content="#0A0A0A" />
   <link rel="icon" href="../../brand/logo/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body data-page="search">
 
 <div class="demo-banner">
   <strong>Catálogo demo</strong> · Los primeros hosts reales se publican en junio 2026 ·
-  <a href="../#hosts">¿Tienes un espacio? Publica gratis →</a>
+  <a href="../../#hosts">¿Tienes un espacio? Publica gratis →</a>
 </div>
 
-<header class="nav">
+<header class="nav" id="nav">
   <div class="nav-inner">
-    <a class="brand" href="./index.html">coordina<span class="brand-suffix">eventos</span></a>
+    <a class="brand" href="../../">coordina<span class="brand-suffix">eventos</span></a>
     <nav class="nav-links">
-      <a href="./buscar.html" class="active">Buscar</a>
+      <a href="./buscar.html" class="active">Espacios</a>
+      <a href="../../#concierge">Concierge</a>
       <a href="./asistente.html">Asistente IA</a>
-      <a href="../../" class="nav-back">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Landing
-      </a>
+      <a href="../../#hosts">Para hosts</a>
+      <a href="../../" class="nav-back">Inicio</a>
     </nav>
   </div>
 </header>
 
 <section class="app-hero">
   <div class="container">
-    <span class="eyebrow">Buscar · Lima</span>
-    <h1>Espacios verificados.</h1>
-    <p>Filtra por lo que necesitas y coordina la visita por WhatsApp con el encargado.</p>
+    <span class="eyebrow">Catálogo · Lima</span>
+    <h1>Encuentra tu espacio.</h1>
+    <p class="app-hero-sub">Filtra por lo que necesitas y coordina la visita directo por WhatsApp.</p>
+
     <form id="search-form" class="search-bar">
       <label class="search-field" for="q-event">
-        <span>Qué evento</span>
-        <input id="q-event" name="event" type="text" placeholder="Cumpleaños, sesión, reunión…" />
+        <span>Para qué</span>
+        <input id="q-event" name="event" type="text" placeholder="Cumpleaños, sesión de fotos…" autocomplete="off" />
       </label>
       <label class="search-field" for="q-where">
         <span>Distrito</span>
         <select id="q-where" name="where">
-          <option value="">Cualquiera</option>
+          <option value="">Lima, PE</option>
           <option>Miraflores</option>
           <option>San Isidro</option>
           <option>Barranco</option>
@@ -59,7 +62,7 @@
         <input id="q-cap" name="cap" type="number" min="1" placeholder="Personas" />
       </label>
       <button type="submit" class="btn-search">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
         Buscar
       </button>
     </form>
@@ -68,40 +71,73 @@
 
 <main>
   <div class="container">
-    <!-- Filtros por caso de uso -->
-    <div class="filters">
-      <button class="filter-chip" data-caso="cumpleanos">Cumpleaños</button>
-      <button class="filter-chip" data-caso="boda">Boda</button>
-      <button class="filter-chip" data-caso="sesion-fotos">Sesión de fotos</button>
-      <button class="filter-chip" data-caso="conferencia">Conferencia</button>
-      <button class="filter-chip" data-caso="reunion">Sala de reunión</button>
-      <button class="filter-chip" data-caso="capacitacion">Capacitación</button>
-      <button class="filter-chip" data-caso="coworking">Coworking</button>
-      <button class="filter-chip" data-caso="pop-up">Pop-up</button>
-      <button class="filter-chip" data-caso="yoga-clase">Yoga · clase</button>
-      <button class="filter-chip" data-caso="grabacion-video">Grabación de video</button>
+    <!-- Filtros por tipo de evento (USO) — priorizado -->
+    <div class="filters-group">
+      <span class="filters-label">Por evento</span>
+      <div class="filters" role="group" aria-label="Filtrar por tipo de evento">
+        <button class="filter-chip" data-caso="cumpleanos">Cumpleaños</button>
+        <button class="filter-chip" data-caso="boda">Boda</button>
+        <button class="filter-chip" data-caso="sesion-fotos">Sesión de fotos</button>
+        <button class="filter-chip" data-caso="conferencia">Conferencia</button>
+        <button class="filter-chip" data-caso="reunion">Sala de reunión</button>
+        <button class="filter-chip" data-caso="capacitacion">Capacitación</button>
+        <button class="filter-chip" data-caso="coworking">Coworking</button>
+        <button class="filter-chip" data-caso="pop-up">Pop-up</button>
+        <button class="filter-chip" data-caso="yoga-clase">Yoga · clase</button>
+        <button class="filter-chip" data-caso="grabacion-video">Grabación de video</button>
+        <button class="filter-chip" data-caso="cena-corporativa">Cena corporativa</button>
+        <button class="filter-chip" data-caso="lanzamiento">Lanzamiento</button>
+      </div>
     </div>
 
-    <!-- Filtros por distrito -->
-    <div class="filters">
-      <button class="filter-chip" data-distrito="Miraflores">Miraflores</button>
-      <button class="filter-chip" data-distrito="San Isidro">San Isidro</button>
-      <button class="filter-chip" data-distrito="Barranco">Barranco</button>
-      <button class="filter-chip" data-distrito="Surco">Surco</button>
-      <button class="filter-chip" data-distrito="San Borja">San Borja</button>
-      <button class="filter-chip" data-distrito="La Molina">La Molina</button>
-      <button class="filter-chip" data-distrito="Magdalena del Mar">Magdalena</button>
-      <button class="filter-chip" data-distrito="Pueblo Libre">Pueblo Libre</button>
+    <!-- Filtros por características — secundario -->
+    <div class="filters-group">
+      <span class="filters-label">Características</span>
+      <div class="filters" role="group" aria-label="Filtrar por características">
+        <button class="filter-chip filter-chip-verified" data-extra="verificado">
+          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="11" fill="#1D9BF0"/>
+            <path d="M7 12.5 L10.5 16 L17 9" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Verificados
+        </button>
+        <button class="filter-chip" data-extra="instant-book">Disponible inmediatamente</button>
+        <button class="filter-chip" data-extra="sin-reserva">Sin pago anticipado</button>
+        <button class="filter-chip" data-extra="con-parking">Con parking</button>
+        <button class="filter-chip" data-extra="con-cocina">Con cocina</button>
+        <button class="filter-chip" data-extra="con-wifi">Con WiFi</button>
+        <button class="filter-chip" data-extra="con-sonido">Sonido incluido</button>
+        <button class="filter-chip" data-extra="con-proyector">Proyector</button>
+      </div>
+    </div>
+
+    <!-- Filtros por distrito — terciario -->
+    <div class="filters-group">
+      <span class="filters-label">Por distrito</span>
+      <div class="filters" role="group" aria-label="Filtrar por distrito">
+        <button class="filter-chip" data-distrito="Miraflores">Miraflores</button>
+        <button class="filter-chip" data-distrito="San Isidro">San Isidro</button>
+        <button class="filter-chip" data-distrito="Barranco">Barranco</button>
+        <button class="filter-chip" data-distrito="Surco">Surco</button>
+        <button class="filter-chip" data-distrito="San Borja">San Borja</button>
+        <button class="filter-chip" data-distrito="La Molina">La Molina</button>
+        <button class="filter-chip" data-distrito="Magdalena del Mar">Magdalena</button>
+        <button class="filter-chip" data-distrito="Pueblo Libre">Pueblo Libre</button>
+      </div>
     </div>
 
     <div class="results-bar">
-      <span id="count">Cargando…</span>
-      <select id="sort" aria-label="Ordenar por">
-        <option value="rating">Mejor calificados</option>
-        <option value="price-asc">Precio: menor a mayor</option>
-        <option value="price-desc">Precio: mayor a menor</option>
-        <option value="cap">Capacidad</option>
-      </select>
+      <span id="count" class="results-count">Cargando…</span>
+      <label class="sort-label">
+        <span>Ordenar</span>
+        <select id="sort" aria-label="Ordenar por">
+          <option value="rating">Mejor calificados</option>
+          <option value="verified">Verificados primero</option>
+          <option value="price-asc">Precio: menor a mayor</option>
+          <option value="price-desc">Precio: mayor a menor</option>
+          <option value="cap">Capacidad</option>
+        </select>
+      </label>
     </div>
 
     <div class="grid" id="grid"></div>
@@ -110,8 +146,8 @@
 
 <footer class="footer">
   <div class="container footer-content">
-    <span>© 2026 Coordina Eventos · Lima, Perú</span>
-    <a href="../../">← Volver a la landing</a>
+    <span>© 2026 coordinaeventos · Lima, Perú</span>
+    <a href="../../">← Volver al inicio</a>
   </div>
 </footer>
 
