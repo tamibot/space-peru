@@ -59,27 +59,38 @@ function verifiedChip() {
 }
 
 async function loadSpaces() {
-  const candidates = ['./spaces.json', '../spaces.json', '/space-peru/app/web/spaces.json'];
-  for (const url of candidates) {
-    try {
-      const r = await fetch(url, { cache: 'no-store' });
-      if (r.ok) return (await r.json()).spaces;
-    } catch (_) { }
-  }
-  console.error('No se pudo cargar spaces.json');
-  return [];
+  const r = await fetch(new URL('spaces.json', appBase));
+  if (!r.ok) throw new Error('No se pudo cargar el catálogo');
+  const data = await r.json();
+  if (!Array.isArray(data.spaces)) throw new Error('Catálogo inválido');
+  demoCatalog = /demostración/i.test(data.note || '');
+  return data.spaces;
 }
 
 function getQuery() { return new URLSearchParams(location.search); }
+const appBase = new URL('./', document.querySelector('script[src*="app.js"]').src);
+const escapeHtml = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let demoCatalog = true;
+
+function eventMessage(name, q) {
+  return `Consulta de demostración sobre ${name}.` +
+    (q.get('date') ? ` Fecha: ${q.get('date')}.` : '') +
+    (q.get('cap') ? ` Personas: ${q.get('cap')}.` : '') +
+    (q.get('hours') ? ` Horas: ${q.get('hours')}.` : '') +
+    ' Disponibilidad y precios por confirmar. Catálogo de referencia; no es una reserva.';
+}
+
 
 // ──────────────────────────────────────────────────────────────
 // Listing card (catálogo) — formato ficha con lista de items
 // ──────────────────────────────────────────────────────────────
 function spaceCard(space) {
-  const verified = space.verificado ? verifiedChip() : '';
-  const detailHref = './espacios/' + space.slug + '.html';
+  const verified = !demoCatalog && space.verificado ? verifiedChip() : '';
+  const detailUrl = new URL('espacios/' + space.slug + '.html', appBase);
+  detailUrl.search = getQuery().toString();
+  const detailHref = escapeHtml(detailUrl.href);
   const address = briefAddress(space.direccion || space.distrito);
-  const rating = space.rating
+  const rating = !demoCatalog && space.rating
     ? `<span class="listing-card-rating">${ICONS.star} ${space.rating.toFixed(1)} <span>(${space.reviews_count || 0})</span></span>`
     : '';
   const minBloque = space.bloque_minimo_horas ? `· mín ${space.bloque_minimo_horas} h` : '';
@@ -148,11 +159,12 @@ function filterSpaces(spaces, q) {
 async function renderHome() {
   const target = document.getElementById('grid');
   if (!target) return;
-  const spaces = await loadSpaces();
+  let spaces;
+  try { spaces = await loadSpaces(); } catch { target.textContent = 'No pudimos cargar el catálogo. Recarga la página.'; return; }
   const top = spaces.slice().sort((a, b) => b.rating - a.rating).slice(0, 6);
   target.innerHTML = top.map(spaceCard).join('');
   const countEl = document.getElementById('count');
-  if (countEl) countEl.innerHTML = `<strong>${spaces.length}</strong> espacios verificados en Lima`;
+  if (countEl) countEl.innerHTML = `<strong>${spaces.length}</strong> espacios de referencia en Lima`;
 }
 
 // Labels humanos para los tags activos
@@ -173,13 +185,13 @@ function renderActiveFilterTags(q) {
   const tags = [];
   if (q.get('caso')) tags.push({ type: 'caso', value: q.get('caso'), label: CATEGORIAS[q.get('caso')] || q.get('caso') });
   if (q.get('distrito')) tags.push({ type: 'distrito', value: q.get('distrito'), label: q.get('distrito') });
-  if (q.get('cap')) tags.push({ type: 'cap', value: q.get('cap'), label: `Hasta ${q.get('cap')} personas` });
+  if (q.get('cap')) tags.push({ type: 'cap', value: q.get('cap'), label: `${q.get('cap')} personas` });
   if (q.get('date')) tags.push({ type: 'date', value: q.get('date'), label: `Fecha ${q.get('date')}` });
   const extras = (q.get('extras') || '').split(',').filter(Boolean);
   extras.forEach(extra => tags.push({ type: 'extra', value: extra, label: EXTRA_LABELS[extra] || extra }));
 
   wrap.innerHTML = tags.map(t =>
-    `<button class="filter-tag" type="button" data-tag-type="${t.type}" data-tag-value="${t.value}">${t.label} ${ICONS.close}</button>`
+    `<button class="filter-tag" type="button" data-tag-type="${t.type}" data-tag-value="${escapeHtml(t.value)}">${escapeHtml(t.label)} ${ICONS.close}</button>`
   ).join('');
   return tags.length;
 }
@@ -198,7 +210,11 @@ function updateFiltersCount(count) {
 async function renderSearch() {
   const target = document.getElementById('grid');
   if (!target) return;
-  const spaces = await loadSpaces();
+  let spaces;
+  try { spaces = await loadSpaces(); } catch {
+    target.innerHTML = '<div class="empty-state" role="alert"><h3>No pudimos cargar el catálogo.</h3><p>Recarga la página para volver a intentarlo.</p><button class="btn btn-primary" onclick="location.reload()">Reintentar</button></div>';
+    return;
+  }
   const q = getQuery();
   const filtered = filterSpaces(spaces, q);
 
@@ -209,7 +225,7 @@ async function renderSearch() {
     target.innerHTML = `
       <div class="empty-state" style="grid-column: 1 / -1;">
         <h3>No encontramos espacios con esos filtros</h3>
-        <p>Quita uno o pide ayuda al asistente — encontramos el que necesitas.</p>
+        <p>Prueba con otro distrito o menos filtros. La fecha se conserva para tu consulta; no confirma disponibilidad.</p>
       </div>
     `;
   } else {
@@ -265,12 +281,13 @@ function bindSearchBar() {
         caso = slug; break;
       }
     }
-    const params = new URLSearchParams();
+    const params = getQuery();
+    ['caso', 'date', 'distrito', 'cap'].forEach(key => params.delete(key));
     if (caso) params.set('caso', caso);
     if (date) params.set('date', date);
     if (where) params.set('distrito', where);
     if (cap) params.set('cap', cap);
-    const target = location.pathname.includes('/app/') ? './buscar.html' : './app/buscar.html';
+    const target = new URL('buscar.html', appBase).href;
     spaNavigate(target + '?' + params.toString());
   });
 }
@@ -294,9 +311,9 @@ function bindFiltersToolbar() {
     clear.dataset.bound = '1';
     clear.addEventListener('click', () => {
       const q = getQuery();
-      const sort = q.get('sort');
+      ['caso', 'distrito', 'cap', 'extras'].forEach(key => q.delete(key));
       const url = new URL(location.href);
-      url.search = sort ? `sort=${sort}` : '';
+      url.search = q.toString();
       spaNavigate(url.pathname + url.search);
     });
   }
@@ -373,80 +390,43 @@ function bindSort() {
 // SPA Navigation — History API + fetch + replace body
 // Evita refresh visual cuando el usuario navega entre páginas
 // ──────────────────────────────────────────────────────────────
-function spaSupported() {
-  return typeof window.history !== 'undefined' && typeof window.fetch !== 'undefined';
-}
+// Native navigation keeps browser Back/Forward, styles and relative URLs correct.
+function spaNavigate(url) { location.assign(url); }
 
-function showSpaLoading() {
-  let bar = document.querySelector('.spa-loading');
-  if (!bar) {
-    bar = document.createElement('div');
-    bar.className = 'spa-loading';
-    document.body.appendChild(bar);
+function bindDetail() {
+  const form = document.querySelector('.pricing-form');
+  if (!form) return;
+  const q = getQuery();
+  const names = { fecha: 'date', personas: 'cap', horas: 'hours' };
+  const links = [...document.querySelectorAll('a[href^="https://wa.me/"]')];
+  const title = document.querySelector('.detail-header h1')?.textContent || 'el espacio';
+  for (const [name, key] of Object.entries(names)) {
+    const input = form.elements.namedItem(name);
+    if (input) input.value = q.get(key) || (name === 'horas' ? input.min : '');
   }
-}
-
-function hideSpaLoading() {
-  document.querySelectorAll('.spa-loading').forEach(el => el.remove());
-}
-
-async function spaNavigate(url) {
-  if (!spaSupported()) { location.href = url; return; }
-
-  // Si es un link externo o anchor de la misma página, navegación normal
-  if (url.startsWith('http') && !url.startsWith(location.origin)) {
-    location.href = url; return;
+  function update() {
+    for (const [name, key] of Object.entries(names)) {
+      const value = form.elements.namedItem(name)?.value;
+      if (value) q.set(key, value); else q.delete(key);
+    }
+    history.replaceState(null, '', location.pathname + '?' + q.toString());
+    links.forEach(link => link.href = 'https://wa.me/?text=' + encodeURIComponent(eventMessage(title, q)));
+    document.querySelectorAll('.breadcrumb a, .listing-card, .host-more-card').forEach(link => {
+      const url = new URL(link.href);
+      for (const key of ['date', 'cap', 'hours']) if (q.get(key)) url.searchParams.set(key, q.get(key));
+      link.href = url.href;
+    });
   }
-  if (url.startsWith('#')) {
-    location.hash = url; return;
-  }
-
-  showSpaLoading();
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error('Fetch failed');
-    const text = await res.text();
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(text, 'text/html');
-
-    // Actualizar title + body
-    document.title = doc.title;
-    document.body.innerHTML = doc.body.innerHTML;
-    document.body.dataset.page = doc.body.dataset.page || '';
-
-    // Update history
-    history.pushState({ url }, '', url);
-
-    // Re-init scripts/listeners para el nuevo DOM
-    initPage();
-    window.scrollTo(0, 0);
-  } catch (err) {
-    console.error('SPA nav failed, fallback to full reload', err);
-    location.href = url;
-  } finally {
-    hideSpaLoading();
-  }
-}
-
-function bindSpaLinks() {
-  document.body.addEventListener('click', (e) => {
-    const link = e.target.closest('a[data-spa-link]');
-    if (!link) return;
-    const href = link.getAttribute('href');
-    if (!href || href.startsWith('http') && !href.startsWith(location.origin)) return;
-    if (link.target === '_blank') return;
-    if (e.metaKey || e.ctrlKey || e.shiftKey) return; // open in new tab
-    e.preventDefault();
-    spaNavigate(href);
-  });
-
-  window.addEventListener('popstate', () => {
-    spaNavigate(location.pathname + location.search);
-  });
+  form.addEventListener('input', update);
+  form.addEventListener('submit', e => e.preventDefault());
+  links.forEach(link => link.addEventListener('click', e => {
+    if (!form.reportValidity()) e.preventDefault();
+  }));
+  update();
 }
 
 // ──────────────────────────────────────────────────────────────
-// FAB Asistente IA
+// FAB Atajos de búsqueda
 // ──────────────────────────────────────────────────────────────
 function bindAIFab() {
   const fab = document.getElementById('ai-fab');
@@ -456,13 +436,13 @@ function bindAIFab() {
       const btn = document.createElement('button');
       btn.id = 'ai-fab';
       btn.className = 'ai-fab';
-      btn.setAttribute('aria-label', 'Abrir asistente IA');
+      btn.setAttribute('aria-label', 'Abrir atajos de búsqueda');
       btn.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" aria-hidden="true">
         <path d="M12 2 C6.5 2 2 6.5 2 12 C2 14 2.5 15.8 3.4 17.4 L2 22 L6.6 20.6 C8.2 21.5 10 22 12 22 C17.5 22 22 17.5 22 12 C22 6.5 17.5 2 12 2 Z"/>
         <circle cx="8" cy="12" r="1" fill="white"/>
         <circle cx="12" cy="12" r="1" fill="white"/>
         <circle cx="16" cy="12" r="1" fill="white"/>
-      </svg><span class="ai-fab-label">Asistente IA</span>`;
+      </svg><span class="ai-fab-label">Atajos de búsqueda</span>`;
       document.body.appendChild(btn);
     }
   }
@@ -478,16 +458,16 @@ function bindAIFab() {
       panel.className = 'ai-panel';
       panel.innerHTML = `
         <div class="ai-panel-header">
-          <strong>Asistente IA</strong>
+          <strong>Atajos de búsqueda</strong>
           <button class="ai-panel-close" aria-label="Cerrar">×</button>
         </div>
         <div class="ai-panel-body">
-          <p>Cuéntame qué estás buscando y te traigo los espacios que encajan.</p>
-          <span class="ai-suggestion" data-q="Cumpleaños para 30 personas">Cumpleaños para 30 personas</span>
-          <span class="ai-suggestion" data-q="Sala de reuniones en San Isidro">Sala de reuniones en San Isidro</span>
-          <span class="ai-suggestion" data-q="Cena corporativa de fin de año">Cena corporativa de fin de año</span>
-          <span class="ai-suggestion" data-q="Sesión de fotos con luz natural">Sesión de fotos con luz natural</span>
-          <p style="margin-top:14px;font-size:12px;color:var(--muted);">El asistente completo está en desarrollo. Por ahora estos shortcuts filtran el catálogo.</p>
+          <p>Elige un ejemplo para filtrar el catálogo. Son atajos, no una conversación con IA.</p>
+          <button type="button" class="ai-suggestion" data-q="Cumpleaños para 30 personas">Cumpleaños para 30 personas</button>
+          <button type="button" class="ai-suggestion" data-q="Sala de reuniones en San Isidro">Sala de reuniones en San Isidro</button>
+          <button type="button" class="ai-suggestion" data-q="Cena corporativa de fin de año">Cena corporativa de fin de año</button>
+          <button type="button" class="ai-suggestion" data-q="Sesión de fotos con luz natural">Sesión de fotos con luz natural</button>
+          <p style="margin-top:14px;font-size:12px;color:var(--muted);">Estos atajos filtran ejemplos. No confirman disponibilidad.</p>
         </div>
       `;
       document.body.appendChild(panel);
@@ -496,7 +476,11 @@ function bindAIFab() {
       panel.querySelectorAll('.ai-suggestion').forEach(s => {
         s.addEventListener('click', () => {
           const q = s.dataset.q;
-          const params = new URLSearchParams();
+          const params = getQuery();
+          params.delete('caso');
+          params.delete('distrito');
+          const capacity = /(?:para\s+)?(\d+)\s+personas/i.exec(q);
+          if (capacity) params.set('cap', capacity[1]);
           // Detectar slug y distrito básicos
           for (const [slug, label] of Object.entries(CATEGORIAS)) {
             if (q.toLowerCase().includes(label.toLowerCase())) { params.set('caso', slug); break; }
@@ -505,7 +489,7 @@ function bindAIFab() {
           for (const d of distritos) {
             if (q.toLowerCase().includes(d.toLowerCase().split(' ')[0])) { params.set('distrito', d); break; }
           }
-          const target = location.pathname.includes('/app/') ? './buscar.html' : '/app/buscar.html';
+          const target = new URL('buscar.html', appBase).href;
           panel.classList.remove('open');
           spaNavigate(target + '?' + params.toString());
         });
@@ -528,11 +512,8 @@ function initPage() {
     bindFiltersToolbar();
     bindSort();
   }
+  bindDetail();
   bindAIFab();
 }
 
-if (!window.__spaInit) {
-  window.__spaInit = true;
-  bindSpaLinks();
-}
 initPage();

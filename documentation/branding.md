@@ -2,7 +2,7 @@
 
 > **Documento canónico vigente.** Si entra en conflicto con cualquier otro doc, **este manda**.
 > Marca: `coordinaeventos` · Dominio: `coordinaeventos.com`
-> Última actualización: 2026-05-06
+> Última actualización: 2026-09-30
 
 ---
 
@@ -27,8 +27,9 @@ Tipografía bold con peso editorial, fotografía documental, abundante whitespac
 
 | Token | Hex | Uso |
 |---|---|---|
-| `--primary` | `#0A0A0A` | Brand mark, headings, footer, sección dark, botón primary |
-| `--primary-2` | `#1F1F1F` | Hover de primary |
+| `--primary` | `#0A0A0A` | Brand mark, headings, footer, sección dark |
+| `--primary-2` | `#1F1F1F` | Superficie oscura secundaria |
+| `--blue` | `#2563EB` | CTA principal aprobado por el owner el 30-sep-2026 |
 | `--body` | `#2B2B2B` | Body text largo |
 | `--muted` | `#6B6B6B` | Captions, eyebrows, labels secundarios |
 | `--muted-light` | `#C4C4C4` | Placeholders, items inactivos |
@@ -39,13 +40,13 @@ Tipografía bold con peso editorial, fotografía documental, abundante whitespac
 | `--line` | `#E8E8E8` | Bordes default |
 | `--line-soft` | `#F0F0F0` | Separadores ultra sutiles |
 | `--ok` | `#1A8754` | Status indicator (asistente IA "en línea") |
-| `--verified` | `#1D9BF0` | **Excepción**: solo para badge "Espacio verificado" (check + halo). Único color funcional fuera del monocromo. |
+| `--verified` | `#1D9BF0` | **Excepción**: solo para badge "Espacio verificado" (check + halo). Color funcional reservado para verificaciones reales; los datos demo no muestran este badge. |
 
 ### Reglas duras
 
 - **NO usar marrón / cream / beige** (#F5EFE0, #EBE3D0). Reemplazado por plomo claro.
-- **NO accent color decorativo**. Todo es monocromo blanco/negro/plomo.
-- **Excepción: `--verified` `#1D9BF0`** se usa SOLO para el badge "Espacio verificado" (check icon + label). Es funcional, no decorativo: comunica que el host envió video y pasó verificación humana. NO usar en headlines, links, botones u otros elementos.
+- Base monocroma blanco/negro/plomo. El CTA principal usa azul `#2563EB`, según instrucción vigente del owner.
+- **Excepción: `--verified` `#1D9BF0`** se usa SOLO para el badge "Espacio verificado" (check icon + label). Es funcional, no decorativo: comunica que el host envió video y pasó verificación humana. No usar este tono de verificación en otros elementos. El CTA azul utiliza `#2563EB`.
 - **Cero gradientes decorativos**. Solo gradientes funcionales (fade en bordes de carruseles).
 - **Cero sombras decorativas**. Una sombra solo aparece si comunica elevación funcional.
 - Status dots de IA pueden ser circles (semánticos), todo lo demás es recto.

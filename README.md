@@ -5,7 +5,7 @@
 Marketplace de **espacios alquilables por horas en Lima**, con catálogo gratuito + asistente conversacional + concierge humano que enruta leads premium a la **agencia de eventos del owner**.
 
 ## Estado
-MVP en construcción. Hospedaje temporal en **GitHub Pages**; migrará a hosting propio cuando se compre el dominio. Base de datos en **Railway (PostgreSQL)**.
+Versión estática desplegada en el Caddy existente de AWS Creators Latam: https://coordina.52.205.205.232.sslip.io. El catálogo de 15 espacios es demostrativo. Ayuda y propuestas de publicación se coordinan por correo; esta fuente no incluye un backend operativo, reservas ni pagos. Replit queda excluido por decisión del owner. El dominio de GoDaddy está pendiente de verificar acceso y conectar DNS. Ver `documentation/aws-deployment.md`.
 
 ## Estructura del repo
 
@@ -49,7 +49,7 @@ python3 scripts/test_db.py
 ## Branding (resumen)
 
 - Nombre: **Coordina Eventos** (working name).
-- Color principal: azul `#2563EB`.
+- Base editorial negro/blanco/plomo y CTA principal azul `#2563EB`, aprobados por el owner. `documentation/branding.md` es la referencia vigente.
 - Estética: minimalista, limpio, alto contraste, mucho espacio en blanco.
 - Wordmark: ver `brand/logo/wordmark.svg`.
 - Diferenciación vs Peerspace/SpacePal: asistente IA conectado a inventario real + concierge humano + agencia de eventos propia como vehículo de monetización.
