@@ -1,11 +1,11 @@
 # Coordina Eventos
 
-> Working name. Dominio placeholder: `coordinaeventos.com`. El nombre del repo (`space-peru`) es legacy.
+> Dominio activo: `coordinaeventos.com`. El nombre del repo (`space-peru`) es legacy.
 
-Marketplace de **espacios alquilables por horas en Lima**, con catálogo gratuito + asistente conversacional + concierge humano que enruta leads premium a la **agencia de eventos del owner**.
+Visión de producto: marketplace de **espacios alquilables por horas en Lima**, con asistente conversacional y concierge humano que conecta solicitudes con la **agencia de eventos del owner**. La entrega actual es el portal estático demo descrito abajo.
 
 ## Estado
-Versión estática desplegada en el Caddy existente de AWS Creators Latam: https://coordina.52.205.205.232.sslip.io. El catálogo de 15 espacios es demostrativo. Ayuda y propuestas de publicación se coordinan por correo; esta fuente no incluye un backend operativo, reservas ni pagos. Replit queda excluido por decisión del owner. El dominio de GoDaddy está pendiente de verificar acceso y conectar DNS. Ver `documentation/aws-deployment.md`.
+Versión estática desplegada en el Caddy existente de AWS Creators Latam: https://coordinaeventos.com. El catálogo de 15 espacios es demostrativo. Ayuda y propuestas de publicación se coordinan por correo; esta fuente no incluye un backend operativo, reservas ni pagos. Replit queda excluido por decisión del owner. GoDaddy mantiene el registro; Route 53 sirve la zona con los registros auxiliares conservados y HTTPS activo para raíz y www. Ver `documentation/aws-deployment.md`.
 
 ## Estructura del repo
 
@@ -13,8 +13,8 @@ Versión estática desplegada en el Caddy existente de AWS Creators Latam: https
 |---|---|
 | `analisis-mercado/` | Research de competidores, perfil de usuario, pricing, oportunidades |
 | `brand/` | Identidad, manifiesto, posicionamiento, pitch deck, taglines |
-| `landing/` | Landing pública (estática, sirve por GitHub Pages) |
-| `app/` | Producto principal (frontend + backend + DB) |
+| `landing/` | Landing pública estática, alojada en AWS existente |
+| `app/` | Frontend estático del catálogo, fichas y páginas informativas |
 | `social/` | Contenido para LinkedIn / IG / TikTok / FB / X |
 | `agents/` | Sub-agentes de Claude (orchestrator, librarian, reviewer + 5 ejecutores) |
 | `skills/` | Skills locales + `.claude/skills/` con `find-skills` y otras instaladas |
@@ -34,17 +34,12 @@ Versión estática desplegada en el Caddy existente de AWS Creators Latam: https
 
 ## Quickstart
 
-```bash
-# Clonar y entrar
-git clone <repo> space-peru && cd space-peru
-
-# Cargar credenciales
-cp .env.example credentials.env
-# editar credentials.env con tus valores
-
-# Probar conexión a la DB
-python3 scripts/test_db.py
+```sh
+sh scripts/build_static.sh /private/tmp/coordina-eventos-site
+python3 -m http.server 4178 --bind 127.0.0.1 --directory /private/tmp/coordina-eventos-site
 ```
+
+Abrir `http://127.0.0.1:4178`. Esta entrega no requiere credenciales, base de datos ni instalación de dependencias. Comprobaciones: `node landing/src/check.mjs` y `node app/scripts/check-web.cjs`.
 
 ## Branding (resumen)
 

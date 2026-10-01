@@ -10,7 +10,9 @@ Estado verificado: 30-sep-2026. Fuente: `tamibot/space-peru`; Replit excluido po
 - Enlace activo: `/opt/creators/datos/caddy/coordina/current`, visto en Caddy como `/data/coordina/current`.
 - Caddyfile: `/opt/creators/Caddyfile`; copia previa `/opt/creators/Caddyfile.before-coordina-20260930`. La ruta de Coordina se agregó conservando las rutas anteriores y se validó antes de una recarga sin reiniciar el servicio.
 - Paquetes de versión: bucket S3 privado `coordina-eventos-backups-077296715670`, prefijo `releases/`. Cifrado, bloqueo de acceso público y versionado activos. No hay base operativa de Coordina que respaldar en esta fuente.
-- Portal temporal HTTPS: https://coordina.52.205.205.232.sslip.io. El dominio propio está pendiente de acceso API GoDaddy verificable; no cambiar nameservers ni MX/TXT del dominio.
+- Portal HTTPS: https://coordinaeventos.com y https://www.coordinaeventos.com. GoDaddy conserva el registro; el cliente instalado `gddy` confirmó acceso real y actualizó los nameservers hacia Route 53.
+- Zona pública Route 53: `Z085993615VP858140ZV5`; A raíz `52.205.205.232` (TTL 600), CNAME www y registros _domainconnect/_dmarc conservados. No había MX ni DS. El registro A anterior estaba protegido por Website Builder; se revirtió el intento parcial antes de migrar autoridad. Zona adicional: US$0,50/mes más consultas (tarifa AWS), sin nueva EC2.
+- Respaldo DNS previo privado fuera de Git; copias Caddy previas adicionales: `/opt/creators/Caddyfile.before-godaddy-20260930` y `/opt/creators/Caddyfile.before-coordina-https-20260930`. La dirección temporal https://coordina.52.205.205.232.sslip.io sigue disponible.
 
 ## Preparación y comprobación
 
